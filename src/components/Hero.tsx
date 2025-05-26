@@ -22,7 +22,7 @@ export const Hero = () => {
             </div>
             
             <div className="max-w-md ml-8 lg:ml-20">
-              <p className="text-xl md:text-2xl text-gray-500 leading-[1.6] mb-20 font-inter font-light">
+              <p className="text-xl md:text-2xl text-gray-500 leading-[1.6] mb-20 font-departure font-light">
                 Sınırları zorlayan dijital deneyimler tasarlıyor, 
                 <br />
                 <em className="italic text-gray-700">kod ile sanatı buluşturuyorum.</em>
@@ -37,7 +37,7 @@ export const Hero = () => {
                     <span className="text-white text-lg transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </div>
                   <div>
-                    <span className="text-gray-900 font-medium font-inter text-lg">Çalışmalarımı keşfet</span>
+                    <span className="text-gray-900 font-medium font-departure text-lg">Çalışmalarımı keşfet</span>
                     <div className="text-xs font-departure text-gray-400 mt-1 tracking-wider">PORTFOLIO</div>
                   </div>
                 </button>
@@ -50,7 +50,7 @@ export const Hero = () => {
                     <span className="text-gray-600 group-hover:text-white text-sm transform group-hover:translate-x-0.5 transition-all duration-300">→</span>
                   </div>
                   <div>
-                    <span className="text-gray-600 font-inter">İletişime geç</span>
+                    <span className="text-gray-600 font-departure">İletişime geç</span>
                     <div className="text-xs font-departure text-gray-400 mt-0.5 tracking-wider">CONTACT</div>
                   </div>
                 </button>

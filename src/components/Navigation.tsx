@@ -25,25 +25,25 @@ export const Navigation = () => {
           <div className="hidden md:flex space-x-8">
             <button 
               onClick={() => scrollToSection('hero')}
-              className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
+              className="text-gray-700 hover:text-gray-900 transition-colors font-departure"
             >
               Ana Sayfa
             </button>
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
+              className="text-gray-700 hover:text-gray-900 transition-colors font-departure"
             >
               Hakkımda
             </button>
             <button 
               onClick={() => scrollToSection('portfolio')}
-              className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
+              className="text-gray-700 hover:text-gray-900 transition-colors font-departure"
             >
               Portfolyo
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
+              className="text-gray-700 hover:text-gray-900 transition-colors font-departure"
             >
               İletişim
             </button>
@@ -64,25 +64,25 @@ export const Navigation = () => {
             <div className="flex flex-col space-y-4">
               <button 
                 onClick={() => scrollToSection('hero')}
-                className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
+                className="text-gray-700 hover:text-gray-900 transition-colors text-left font-departure"
               >
                 Ana Sayfa
               </button>
               <button 
                 onClick={() => scrollToSection('about')}
-                className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
+                className="text-gray-700 hover:text-gray-900 transition-colors text-left font-departure"
               >
                 Hakkımda
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio')}
-                className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
+                className="text-gray-700 hover:text-gray-900 transition-colors text-left font-departure"
               >
                 Portfolyo
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
+                className="text-gray-700 hover:text-gray-900 transition-colors text-left font-departure"
               >
                 İletişim
               </button>

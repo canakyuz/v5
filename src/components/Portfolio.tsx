@@ -82,7 +82,7 @@ export const Portfolio = () => {
                       </p>
                     </div>
                     
-                    <p className="text-gray-600 font-inter leading-[1.7] text-lg font-light">
+                    <p className="text-gray-600 font-departure leading-[1.7] text-lg font-light">
                       {project.description}
                     </p>
                     
@@ -92,7 +92,7 @@ export const Portfolio = () => {
                       <div className="flex flex-wrap gap-x-8 gap-y-4">
                         {project.technologies.map((tech, techIndex) => (
                           <div key={tech} className="group/tech">
-                            <span className="text-sm font-inter text-gray-600 group-hover/tech:text-gray-900 transition-colors">
+                            <span className="text-sm font-departure text-gray-600 group-hover/tech:text-gray-900 transition-colors">
                               {String(techIndex + 1).padStart(2, '0')} {tech}
                             </span>
                           </div>
@@ -109,7 +109,7 @@ export const Portfolio = () => {
                         <div className="w-12 h-12 border border-gray-200 rounded-full flex items-center justify-center group-hover/link:border-gray-900 group-hover/link:bg-gray-900 transition-all duration-300">
                           <span className="text-gray-600 group-hover/link:text-white text-sm transform group-hover/link:translate-x-0.5 transition-all duration-300">→</span>
                         </div>
-                        <span className="font-inter font-medium">Projeyi İncele</span>
+                        <span className="font-departure font-medium">Projeyi İncele</span>
                       </a>
                     </div>
                   </div>
