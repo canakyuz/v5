@@ -45,7 +45,7 @@ export const Contact = () => {
               </div>
               
               <div className="space-y-12">
-                <p className="text-xl text-gray-300 leading-[1.6] font-departure font-light max-w-md">
+                <p className="text-xl text-gray-300 leading-[1.6] font-inter font-light max-w-md">
                   Yeni projeler, yaratıcı işbirlikleri veya sadece merhaba demek için 
                   benimle iletişime geçin.
                 </p>
@@ -57,7 +57,7 @@ export const Contact = () => {
                     </div>
                     <div>
                       <div className="text-xs font-departure text-gray-500 mb-2 tracking-[0.2em] uppercase">Email</div>
-                      <a href="mailto:john.doe@example.com" className="text-white hover:text-gray-300 transition-colors font-departure text-lg">
+                      <a href="mailto:john.doe@example.com" className="text-white hover:text-gray-300 transition-colors font-inter text-lg">
                         john.doe@example.com
                       </a>
                     </div>
@@ -69,7 +69,7 @@ export const Contact = () => {
                     </div>
                     <div>
                       <div className="text-xs font-departure text-gray-500 mb-2 tracking-[0.2em] uppercase">Telefon</div>
-                      <span className="text-white font-departure text-lg">+90 555 123 45 67</span>
+                      <span className="text-white font-inter text-lg">+90 555 123 45 67</span>
                     </div>
                   </div>
                   
@@ -79,7 +79,7 @@ export const Contact = () => {
                     </div>
                     <div>
                       <div className="text-xs font-departure text-gray-500 mb-2 tracking-[0.2em] uppercase">Konum</div>
-                      <span className="text-white font-departure text-lg">İstanbul, Türkiye</span>
+                      <span className="text-white font-inter text-lg">İstanbul, Türkiye</span>
                     </div>
                   </div>
                 </div>
@@ -102,7 +102,7 @@ export const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-transparent border-0 border-b border-gray-700 px-0 py-4 text-white placeholder-gray-600 focus:border-white focus:ring-0 transition-colors font-departure text-lg"
+                    className="w-full bg-transparent border-0 border-b border-gray-700 px-0 py-4 text-white placeholder-gray-600 focus:border-white focus:ring-0 transition-colors font-inter text-lg"
                     placeholder="John Doe"
                   />
                 </div>
@@ -118,7 +118,7 @@ export const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full bg-transparent border-0 border-b border-gray-700 px-0 py-4 text-white placeholder-gray-600 focus:border-white focus:ring-0 transition-colors font-departure text-lg"
+                    className="w-full bg-transparent border-0 border-b border-gray-700 px-0 py-4 text-white placeholder-gray-600 focus:border-white focus:ring-0 transition-colors font-inter text-lg"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -135,7 +135,7 @@ export const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full bg-transparent border-0 border-b border-gray-700 px-0 py-4 text-white placeholder-gray-600 focus:border-white focus:ring-0 transition-colors resize-none font-departure text-lg"
+                  className="w-full bg-transparent border-0 border-b border-gray-700 px-0 py-4 text-white placeholder-gray-600 focus:border-white focus:ring-0 transition-colors resize-none font-inter text-lg"
                   placeholder="Projeniz hakkında bize biraz bilgi verin..."
                 />
               </div>
@@ -149,7 +149,7 @@ export const Contact = () => {
                     <span className="transform group-hover:translate-x-1 group-hover:text-gray-900 text-lg transition-all duration-300">→</span>
                   </div>
                   <div>
-                    <span className="font-medium font-departure text-lg">Mesaj Gönder</span>
+                    <span className="font-medium font-inter text-lg">Mesaj Gönder</span>
                     <div className="text-xs font-departure text-gray-500 mt-1 tracking-[0.2em] uppercase">Send Message</div>
                   </div>
                 </button>

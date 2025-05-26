@@ -22,12 +22,12 @@ export const About = () => {
             <div className="space-y-32">
               {/* Main description */}
               <div className="space-y-12 pt-8">
-                <p className="text-2xl md:text-3xl text-gray-800 leading-[1.4] font-departure font-light max-w-4xl">
+                <p className="text-2xl md:text-3xl text-gray-800 leading-[1.4] font-cooper font-light max-w-4xl">
                   Teknoloji ve tasarım arasındaki sınırları bulanıklaştırarak, 
                   <em className="italic font-normal text-gray-600"> kullanıcı deneyimini yeniden tanımlayan</em> çözümler geliştiriyorum.
                 </p>
                 
-                <p className="text-lg text-gray-500 leading-[1.7] max-w-2xl font-departure font-light">
+                <p className="text-lg text-gray-500 leading-[1.7] max-w-2xl font-inter font-light">
                   Her proje benim için yeni bir keşif yolculuğu. Minimal tasarım prensipleriyle 
                   modern teknolojileri harmanlayarak, hem işlevsel hem de estetik değer taşıyan 
                   dijital ürünler yaratıyorum.
@@ -43,23 +43,23 @@ export const About = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
                       <div className="group hover:transform hover:translate-x-2 transition-all duration-300">
                         <div className="font-departure text-xs text-gray-300 mb-2 tracking-[0.2em]">01</div>
-                        <div className="text-gray-900 font-departure font-medium text-lg">React & Next.js</div>
-                        <div className="text-sm text-gray-400 mt-1 font-departure">Modern UI Framework</div>
+                        <div className="text-gray-900 font-inter font-medium text-lg">React & Next.js</div>
+                        <div className="text-sm text-gray-400 mt-1">Modern UI Framework</div>
                       </div>
                       <div className="group hover:transform hover:translate-x-2 transition-all duration-300">
                         <div className="font-departure text-xs text-gray-300 mb-2 tracking-[0.2em]">02</div>
-                        <div className="text-gray-900 font-departure font-medium text-lg">TypeScript</div>
-                        <div className="text-sm text-gray-400 mt-1 font-departure">Type Safety</div>
+                        <div className="text-gray-900 font-inter font-medium text-lg">TypeScript</div>
+                        <div className="text-sm text-gray-400 mt-1">Type Safety</div>
                       </div>
                       <div className="group hover:transform hover:translate-x-2 transition-all duration-300">
                         <div className="font-departure text-xs text-gray-300 mb-2 tracking-[0.2em]">03</div>
-                        <div className="text-gray-900 font-departure font-medium text-lg">Tailwind CSS</div>
-                        <div className="text-sm text-gray-400 mt-1 font-departure">Utility-First Styling</div>
+                        <div className="text-gray-900 font-inter font-medium text-lg">Tailwind CSS</div>
+                        <div className="text-sm text-gray-400 mt-1">Utility-First Styling</div>
                       </div>
                       <div className="group hover:transform hover:translate-x-2 transition-all duration-300">
                         <div className="font-departure text-xs text-gray-300 mb-2 tracking-[0.2em]">04</div>
-                        <div className="text-gray-900 font-departure font-medium text-lg">Framer Motion</div>
-                        <div className="text-sm text-gray-400 mt-1 font-departure">Animation & Interaction</div>
+                        <div className="text-gray-900 font-inter font-medium text-lg">Framer Motion</div>
+                        <div className="text-sm text-gray-400 mt-1">Animation & Interaction</div>
                       </div>
                     </div>
                   </div>
@@ -72,23 +72,23 @@ export const About = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
                       <div className="group hover:transform hover:translate-x-2 transition-all duration-300">
                         <div className="font-departure text-xs text-gray-300 mb-2 tracking-[0.2em]">01</div>
-                        <div className="text-gray-700 font-departure font-medium text-lg">Node.js</div>
-                        <div className="text-sm text-gray-400 mt-1 font-departure">Server Runtime</div>
+                        <div className="text-gray-700 font-inter font-medium text-lg">Node.js</div>
+                        <div className="text-sm text-gray-400 mt-1">Server Runtime</div>
                       </div>
                       <div className="group hover:transform hover:translate-x-2 transition-all duration-300">
                         <div className="font-departure text-xs text-gray-300 mb-2 tracking-[0.2em]">02</div>
-                        <div className="text-gray-700 font-departure font-medium text-lg">Python</div>
-                        <div className="text-sm text-gray-400 mt-1 font-departure">Data & AI</div>
+                        <div className="text-gray-700 font-inter font-medium text-lg">Python</div>
+                        <div className="text-sm text-gray-400 mt-1">Data & AI</div>
                       </div>
                       <div className="group hover:transform hover:translate-x-2 transition-all duration-300">
                         <div className="font-departure text-xs text-gray-300 mb-2 tracking-[0.2em]">03</div>
-                        <div className="text-gray-700 font-departure font-medium text-lg">PostgreSQL</div>
-                        <div className="text-sm text-gray-400 mt-1 font-departure">Database</div>
+                        <div className="text-gray-700 font-inter font-medium text-lg">PostgreSQL</div>
+                        <div className="text-sm text-gray-400 mt-1">Database</div>
                       </div>
                       <div className="group hover:transform hover:translate-x-2 transition-all duration-300">
                         <div className="font-departure text-xs text-gray-300 mb-2 tracking-[0.2em]">04</div>
-                        <div className="text-gray-700 font-departure font-medium text-lg">GraphQL</div>
-                        <div className="text-sm text-gray-400 mt-1 font-departure">API Layer</div>
+                        <div className="text-gray-700 font-inter font-medium text-lg">GraphQL</div>
+                        <div className="text-sm text-gray-400 mt-1">API Layer</div>
                       </div>
                     </div>
                   </div>
