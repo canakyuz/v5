@@ -35,8 +35,8 @@ export const Contact = () => {
           <div className="col-span-12 lg:col-span-5">
             <div className="space-y-16">
               <div>
-                <div className="text-sm font-mono text-gray-400 mb-4">04 — İLETİŞİM</div>
-                <h2 className="text-4xl md:text-5xl font-light leading-tight">
+                <div className="text-sm font-departure text-gray-400 mb-4 tracking-wider">04 — İLETİŞİM</div>
+                <h2 className="text-4xl md:text-5xl font-cooper font-light leading-tight">
                   Hadi bir şeyler
                   <br />
                   <span className="italic">yapalım</span>
@@ -44,7 +44,7 @@ export const Contact = () => {
               </div>
               
               <div className="space-y-8">
-                <p className="text-lg text-gray-300 leading-relaxed">
+                <p className="text-lg text-gray-300 leading-relaxed font-inter">
                   Yeni projeler, yaratıcı işbirlikleri veya sadece merhaba demek için 
                   benimle iletişime geçin.
                 </p>
@@ -55,8 +55,8 @@ export const Contact = () => {
                       <Mail className="w-5 h-5 text-gray-400" />
                     </div>
                     <div>
-                      <div className="text-sm font-mono text-gray-400 mb-1">EMAIL</div>
-                      <a href="mailto:john.doe@example.com" className="text-white hover:text-gray-300 transition-colors">
+                      <div className="text-sm font-departure text-gray-400 mb-1 tracking-wider">EMAIL</div>
+                      <a href="mailto:john.doe@example.com" className="text-white hover:text-gray-300 transition-colors font-inter">
                         john.doe@example.com
                       </a>
                     </div>
@@ -67,8 +67,8 @@ export const Contact = () => {
                       <Phone className="w-5 h-5 text-gray-400" />
                     </div>
                     <div>
-                      <div className="text-sm font-mono text-gray-400 mb-1">TELEFON</div>
-                      <span className="text-white">+90 555 123 45 67</span>
+                      <div className="text-sm font-departure text-gray-400 mb-1 tracking-wider">TELEFON</div>
+                      <span className="text-white font-inter">+90 555 123 45 67</span>
                     </div>
                   </div>
                   
@@ -77,8 +77,8 @@ export const Contact = () => {
                       <MapPin className="w-5 h-5 text-gray-400" />
                     </div>
                     <div>
-                      <div className="text-sm font-mono text-gray-400 mb-1">KONUM</div>
-                      <span className="text-white">İstanbul, Türkiye</span>
+                      <div className="text-sm font-departure text-gray-400 mb-1 tracking-wider">KONUM</div>
+                      <span className="text-white font-inter">İstanbul, Türkiye</span>
                     </div>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ export const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-mono text-gray-400 mb-3 tracking-wider">
+                  <label htmlFor="name" className="block text-sm font-departure text-gray-400 mb-3 tracking-wider">
                     AD SOYAD
                   </label>
                   <input
@@ -101,13 +101,13 @@ export const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-transparent border-0 border-b border-gray-600 px-0 py-3 text-white placeholder-gray-500 focus:border-white focus:ring-0 transition-colors"
+                    className="w-full bg-transparent border-0 border-b border-gray-600 px-0 py-3 text-white placeholder-gray-500 focus:border-white focus:ring-0 transition-colors font-inter"
                     placeholder="John Doe"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-mono text-gray-400 mb-3 tracking-wider">
+                  <label htmlFor="email" className="block text-sm font-departure text-gray-400 mb-3 tracking-wider">
                     E-POSTA
                   </label>
                   <input
@@ -117,14 +117,14 @@ export const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full bg-transparent border-0 border-b border-gray-600 px-0 py-3 text-white placeholder-gray-500 focus:border-white focus:ring-0 transition-colors"
+                    className="w-full bg-transparent border-0 border-b border-gray-600 px-0 py-3 text-white placeholder-gray-500 focus:border-white focus:ring-0 transition-colors font-inter"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-mono text-gray-400 mb-3 tracking-wider">
+                <label htmlFor="message" className="block text-sm font-departure text-gray-400 mb-3 tracking-wider">
                   MESAJ
                 </label>
                 <textarea
@@ -134,7 +134,7 @@ export const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full bg-transparent border-0 border-b border-gray-600 px-0 py-3 text-white placeholder-gray-500 focus:border-white focus:ring-0 transition-colors resize-none"
+                  className="w-full bg-transparent border-0 border-b border-gray-600 px-0 py-3 text-white placeholder-gray-500 focus:border-white focus:ring-0 transition-colors resize-none font-inter"
                   placeholder="Projeniz hakkında bize biraz bilgi verin..."
                 />
               </div>
@@ -147,7 +147,7 @@ export const Contact = () => {
                   <div className="w-12 h-12 border border-gray-600 rounded-full flex items-center justify-center group-hover:border-white transition-colors">
                     <span className="transform group-hover:translate-x-1 transition-transform">→</span>
                   </div>
-                  <span className="font-medium">Mesaj Gönder</span>
+                  <span className="font-medium font-inter">Mesaj Gönder</span>
                 </button>
               </div>
             </form>

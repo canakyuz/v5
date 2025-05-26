@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,9 +19,10 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'mono': ['JetBrains Mono', 'monospace'],
-				'cooper': ['Playfair Display', 'serif'],
+				'mono': ['Space Mono', 'JetBrains Mono', 'monospace'], // DepartureMono alternatifi
+				'cooper': ['Crimson Text', 'Playfair Display', 'serif'], // Cooper BT Light alternatifi
 				'inter': ['Inter', 'sans-serif'],
+				'departure': ['Space Mono', 'monospace'], // DepartureMono için özel alias
 			},
 			colors: {
 				border: 'hsl(var(--border))',

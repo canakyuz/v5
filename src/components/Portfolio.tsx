@@ -38,7 +38,7 @@ export const Portfolio = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-32">
-          <div className="text-sm font-mono text-gray-500 mb-4">03 — SEÇILMIŞ ÇALIŞMALAR</div>
+          <div className="text-sm font-departure text-gray-500 mb-4 tracking-wider">03 — SEÇILMIŞ ÇALIŞMALAR</div>
           <h2 className="text-4xl md:text-6xl font-cooper font-light text-gray-900 leading-tight max-w-4xl">
             Her proje, bir
             <br />
@@ -52,10 +52,10 @@ export const Portfolio = () => {
             <div key={project.id} className="group">
               {/* Project number and year */}
               <div className="flex items-center justify-between mb-6 border-b border-gray-100 pb-4">
-                <div className="font-mono text-sm text-gray-400">
+                <div className="font-departure text-sm text-gray-400">
                   {String(index + 1).padStart(2, '0')}
                 </div>
-                <div className="font-mono text-sm text-gray-400">
+                <div className="font-departure text-sm text-gray-400">
                   {project.year}
                 </div>
               </div>
@@ -76,7 +76,7 @@ export const Portfolio = () => {
                     
                     {/* Technologies - minimal badges */}
                     <div className="pt-4">
-                      <div className="font-mono text-xs text-gray-400 mb-3">STACK</div>
+                      <div className="font-departure text-xs text-gray-400 mb-3 tracking-wider">STACK</div>
                       <div className="flex flex-wrap gap-x-6 gap-y-2">
                         {project.technologies.map((tech, techIndex) => (
                           <span key={tech} className="text-sm font-inter text-gray-600">
@@ -101,7 +101,7 @@ export const Portfolio = () => {
                         href={project.link}
                         className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-900 hover:bg-white transition-all duration-300 opacity-0 group-hover:opacity-100"
                       >
-                        <span className="text-sm font-mono">→</span>
+                        <span className="text-sm font-departure">→</span>
                       </a>
                     </div>
                   </div>
@@ -115,7 +115,7 @@ export const Portfolio = () => {
         <div className="mt-32 text-center">
           <div className="inline-flex items-center space-x-4 group cursor-pointer">
             <div className="w-16 h-px bg-gray-300 group-hover:bg-gray-900 transition-colors duration-300"></div>
-            <span className="font-mono text-sm text-gray-500 group-hover:text-gray-900 transition-colors duration-300">
+            <span className="font-departure text-sm text-gray-500 group-hover:text-gray-900 transition-colors duration-300 tracking-wider">
               DAHA FAZLA PROJE
             </span>
             <div className="w-16 h-px bg-gray-300 group-hover:bg-gray-900 transition-colors duration-300"></div>

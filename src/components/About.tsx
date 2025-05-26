@@ -7,7 +7,7 @@ export const About = () => {
           {/* Section number and title */}
           <div className="col-span-12 lg:col-span-3">
             <div className="sticky top-32">
-              <div className="text-sm font-mono text-gray-500 mb-4">02 — HAKKIMDA</div>
+              <div className="text-sm font-departure text-gray-500 mb-4 tracking-wider">02 — HAKKIMDA</div>
               <h2 className="text-4xl md:text-5xl font-cooper font-light text-gray-900 leading-tight">
                 Yaratıcılık
                 <br />
@@ -41,19 +41,19 @@ export const About = () => {
                     <h3 className="text-2xl font-cooper font-light text-gray-900 mb-8">Frontend</h3>
                     <div className="grid grid-cols-2 gap-x-12 gap-y-6">
                       <div className="group">
-                        <div className="font-mono text-xs text-gray-400 mb-1">01</div>
+                        <div className="font-departure text-xs text-gray-400 mb-1">01</div>
                         <div className="text-gray-900 font-inter font-medium">React & Next.js</div>
                       </div>
                       <div className="group">
-                        <div className="font-mono text-xs text-gray-400 mb-1">02</div>
+                        <div className="font-departure text-xs text-gray-400 mb-1">02</div>
                         <div className="text-gray-900 font-inter font-medium">TypeScript</div>
                       </div>
                       <div className="group">
-                        <div className="font-mono text-xs text-gray-400 mb-1">03</div>
+                        <div className="font-departure text-xs text-gray-400 mb-1">03</div>
                         <div className="text-gray-900 font-inter font-medium">Tailwind CSS</div>
                       </div>
                       <div className="group">
-                        <div className="font-mono text-xs text-gray-400 mb-1">04</div>
+                        <div className="font-departure text-xs text-gray-400 mb-1">04</div>
                         <div className="text-gray-900 font-inter font-medium">Framer Motion</div>
                       </div>
                     </div>
@@ -66,19 +66,19 @@ export const About = () => {
                     <h3 className="text-2xl font-cooper font-light text-gray-900 mb-8">Backend</h3>
                     <div className="grid grid-cols-2 gap-x-12 gap-y-6">
                       <div className="group">
-                        <div className="font-mono text-xs text-gray-400 mb-1">01</div>
+                        <div className="font-departure text-xs text-gray-400 mb-1">01</div>
                         <div className="text-gray-700 font-inter">Node.js</div>
                       </div>
                       <div className="group">
-                        <div className="font-mono text-xs text-gray-400 mb-1">02</div>
+                        <div className="font-departure text-xs text-gray-400 mb-1">02</div>
                         <div className="text-gray-700 font-inter">Python</div>
                       </div>
                       <div className="group">
-                        <div className="font-mono text-xs text-gray-400 mb-1">03</div>
+                        <div className="font-departure text-xs text-gray-400 mb-1">03</div>
                         <div className="text-gray-700 font-inter">PostgreSQL</div>
                       </div>
                       <div className="group">
-                        <div className="font-mono text-xs text-gray-400 mb-1">04</div>
+                        <div className="font-departure text-xs text-gray-400 mb-1">04</div>
                         <div className="text-gray-700 font-inter">GraphQL</div>
                       </div>
                     </div>
