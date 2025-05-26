@@ -28,57 +28,58 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 px-6 bg-gray-900 text-white">
+    <section id="contact" className="py-40 px-6 bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-12 gap-8">
+        <div className="grid grid-cols-12 gap-12">
           {/* Left side - Contact info */}
           <div className="col-span-12 lg:col-span-5">
-            <div className="space-y-16">
+            <div className="space-y-20">
               <div>
-                <div className="text-sm font-departure text-gray-400 mb-4 tracking-wider">04 — İLETİŞİM</div>
-                <h2 className="text-4xl md:text-5xl font-cooper font-light leading-tight">
+                <div className="text-xs font-departure text-gray-500 mb-8 tracking-[0.2em] uppercase">04 — İletişim</div>
+                <h2 className="text-5xl md:text-7xl font-cooper font-extralight leading-[0.9] mb-8">
                   Hadi bir şeyler
                   <br />
-                  <span className="italic">yapalım</span>
+                  <span className="italic text-gray-400">yapalım</span>
                 </h2>
+                <div className="w-24 h-px bg-gray-700 mt-8"></div>
               </div>
               
-              <div className="space-y-8">
-                <p className="text-lg text-gray-300 leading-relaxed font-inter">
+              <div className="space-y-12">
+                <p className="text-xl text-gray-300 leading-[1.6] font-inter font-light max-w-md">
                   Yeni projeler, yaratıcı işbirlikleri veya sadece merhaba demek için 
                   benimle iletişime geçin.
                 </p>
                 
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-6 h-6 mt-1">
-                      <Mail className="w-5 h-5 text-gray-400" />
+                <div className="space-y-8">
+                  <div className="flex items-start space-x-6 group hover:transform hover:translate-x-2 transition-all duration-300">
+                    <div className="w-8 h-8 mt-2 flex items-center justify-center bg-gray-800 rounded-full group-hover:bg-gray-700 transition-colors">
+                      <Mail className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <div className="text-sm font-departure text-gray-400 mb-1 tracking-wider">EMAIL</div>
-                      <a href="mailto:john.doe@example.com" className="text-white hover:text-gray-300 transition-colors font-inter">
+                      <div className="text-xs font-departure text-gray-500 mb-2 tracking-[0.2em] uppercase">Email</div>
+                      <a href="mailto:john.doe@example.com" className="text-white hover:text-gray-300 transition-colors font-inter text-lg">
                         john.doe@example.com
                       </a>
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4">
-                    <div className="w-6 h-6 mt-1">
-                      <Phone className="w-5 h-5 text-gray-400" />
+                  <div className="flex items-start space-x-6 group hover:transform hover:translate-x-2 transition-all duration-300">
+                    <div className="w-8 h-8 mt-2 flex items-center justify-center bg-gray-800 rounded-full group-hover:bg-gray-700 transition-colors">
+                      <Phone className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <div className="text-sm font-departure text-gray-400 mb-1 tracking-wider">TELEFON</div>
-                      <span className="text-white font-inter">+90 555 123 45 67</span>
+                      <div className="text-xs font-departure text-gray-500 mb-2 tracking-[0.2em] uppercase">Telefon</div>
+                      <span className="text-white font-inter text-lg">+90 555 123 45 67</span>
                     </div>
                   </div>
                   
-                  <div className="flex items-start space-x-4">
-                    <div className="w-6 h-6 mt-1">
-                      <MapPin className="w-5 h-5 text-gray-400" />
+                  <div className="flex items-start space-x-6 group hover:transform hover:translate-x-2 transition-all duration-300">
+                    <div className="w-8 h-8 mt-2 flex items-center justify-center bg-gray-800 rounded-full group-hover:bg-gray-700 transition-colors">
+                      <MapPin className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <div className="text-sm font-departure text-gray-400 mb-1 tracking-wider">KONUM</div>
-                      <span className="text-white font-inter">İstanbul, Türkiye</span>
+                      <div className="text-xs font-departure text-gray-500 mb-2 tracking-[0.2em] uppercase">Konum</div>
+                      <span className="text-white font-inter text-lg">İstanbul, Türkiye</span>
                     </div>
                   </div>
                 </div>
@@ -88,11 +89,11 @@ export const Contact = () => {
           
           {/* Right side - Contact form */}
           <div className="col-span-12 lg:col-span-6 lg:col-start-7">
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="space-y-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-departure text-gray-400 mb-3 tracking-wider">
-                    AD SOYAD
+                  <label htmlFor="name" className="block text-xs font-departure text-gray-500 mb-4 tracking-[0.2em] uppercase">
+                    Ad Soyad
                   </label>
                   <input
                     type="text"
@@ -101,14 +102,14 @@ export const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-transparent border-0 border-b border-gray-600 px-0 py-3 text-white placeholder-gray-500 focus:border-white focus:ring-0 transition-colors font-inter"
+                    className="w-full bg-transparent border-0 border-b border-gray-700 px-0 py-4 text-white placeholder-gray-600 focus:border-white focus:ring-0 transition-colors font-inter text-lg"
                     placeholder="John Doe"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-departure text-gray-400 mb-3 tracking-wider">
-                    E-POSTA
+                  <label htmlFor="email" className="block text-xs font-departure text-gray-500 mb-4 tracking-[0.2em] uppercase">
+                    E-Posta
                   </label>
                   <input
                     type="email"
@@ -117,15 +118,15 @@ export const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full bg-transparent border-0 border-b border-gray-600 px-0 py-3 text-white placeholder-gray-500 focus:border-white focus:ring-0 transition-colors font-inter"
+                    className="w-full bg-transparent border-0 border-b border-gray-700 px-0 py-4 text-white placeholder-gray-600 focus:border-white focus:ring-0 transition-colors font-inter text-lg"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-departure text-gray-400 mb-3 tracking-wider">
-                  MESAJ
+                <label htmlFor="message" className="block text-xs font-departure text-gray-500 mb-4 tracking-[0.2em] uppercase">
+                  Mesaj
                 </label>
                 <textarea
                   id="message"
@@ -133,21 +134,24 @@ export const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={5}
-                  className="w-full bg-transparent border-0 border-b border-gray-600 px-0 py-3 text-white placeholder-gray-500 focus:border-white focus:ring-0 transition-colors resize-none font-inter"
+                  rows={6}
+                  className="w-full bg-transparent border-0 border-b border-gray-700 px-0 py-4 text-white placeholder-gray-600 focus:border-white focus:ring-0 transition-colors resize-none font-inter text-lg"
                   placeholder="Projeniz hakkında bize biraz bilgi verin..."
                 />
               </div>
               
-              <div className="pt-8">
+              <div className="pt-12">
                 <button
                   type="submit"
-                  className="group flex items-center space-x-4 text-white hover:text-gray-300 transition-colors"
+                  className="group flex items-center space-x-6 text-white hover:text-gray-300 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 border border-gray-600 rounded-full flex items-center justify-center group-hover:border-white transition-colors">
-                    <span className="transform group-hover:translate-x-1 transition-transform">→</span>
+                  <div className="w-16 h-16 border border-gray-700 rounded-full flex items-center justify-center group-hover:border-white group-hover:bg-white transition-all duration-300">
+                    <span className="transform group-hover:translate-x-1 group-hover:text-gray-900 text-lg transition-all duration-300">→</span>
                   </div>
-                  <span className="font-medium font-inter">Mesaj Gönder</span>
+                  <div>
+                    <span className="font-medium font-inter text-lg">Mesaj Gönder</span>
+                    <div className="text-xs font-departure text-gray-500 mt-1 tracking-[0.2em] uppercase">Send Message</div>
+                  </div>
                 </button>
               </div>
             </form>
