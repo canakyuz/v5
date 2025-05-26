@@ -34,84 +34,92 @@ const projects = [
 
 export const Portfolio = () => {
   return (
-    <section id="portfolio" className="py-32 px-6">
+    <section id="portfolio" className="py-32 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-24">
+        <div className="mb-32">
           <div className="text-sm font-mono text-gray-500 mb-4">03 — SEÇILMIŞ ÇALIŞMALAR</div>
-          <h2 className="text-4xl md:text-6xl font-light text-gray-900 leading-tight max-w-4xl">
+          <h2 className="text-4xl md:text-6xl font-cooper font-light text-gray-900 leading-tight max-w-4xl">
             Her proje, bir
             <br />
             <span className="italic">hikaye anlatır</span>
           </h2>
         </div>
         
-        {/* Projects */}
-        <div className="space-y-32">
+        {/* Projects - Ultra minimalist grid */}
+        <div className="space-y-24">
           {projects.map((project, index) => (
-            <div 
-              key={project.id}
-              className={`grid grid-cols-12 gap-8 items-center ${
-                index % 2 === 1 ? 'lg:direction-reverse' : ''
-              }`}
-            >
-              {/* Project Image */}
-              <div className={`col-span-12 lg:col-span-7 ${
-                index % 2 === 1 ? 'lg:order-2' : ''
-              }`}>
-                <div className="relative group overflow-hidden">
-                  <img 
-                    src={`https://images.unsplash.com/${project.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80`}
-                    alt={project.title}
-                    className="w-full h-[400px] lg:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div key={project.id} className="group">
+              {/* Project number and year */}
+              <div className="flex items-center justify-between mb-6 border-b border-gray-100 pb-4">
+                <div className="font-mono text-sm text-gray-400">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+                <div className="font-mono text-sm text-gray-400">
+                  {project.year}
                 </div>
               </div>
               
-              {/* Project Info */}
-              <div className={`col-span-12 lg:col-span-5 ${
-                index % 2 === 1 ? 'lg:order-1' : ''
-              }`}>
-                <div className="space-y-6">
-                  <div>
-                    <div className="text-sm font-mono text-gray-500 mb-2">
-                      {String(index + 1).padStart(2, '0')} — {project.year}
-                    </div>
-                    <h3 className="text-3xl md:text-4xl font-light text-gray-900 mb-2">
+              <div className="grid grid-cols-12 gap-8 items-start">
+                {/* Project title and info */}
+                <div className="col-span-12 lg:col-span-4">
+                  <div className="space-y-4">
+                    <h3 className="text-3xl md:text-4xl font-cooper font-light text-gray-900 leading-tight">
                       {project.title}
                     </h3>
-                    <p className="text-lg text-gray-600 italic">
+                    <p className="text-lg text-gray-600 italic font-cooper">
                       {project.subtitle}
                     </p>
+                    <p className="text-gray-700 font-inter leading-relaxed text-sm">
+                      {project.description}
+                    </p>
+                    
+                    {/* Technologies - minimal badges */}
+                    <div className="pt-4">
+                      <div className="font-mono text-xs text-gray-400 mb-3">STACK</div>
+                      <div className="flex flex-wrap gap-x-6 gap-y-2">
+                        {project.technologies.map((tech, techIndex) => (
+                          <span key={tech} className="text-sm font-inter text-gray-600">
+                            {String(techIndex + 1).padStart(2, '0')} {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                  
-                  <p className="text-gray-700 leading-relaxed max-w-md">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span 
-                        key={tech}
-                        className="text-sm font-mono text-gray-500 px-3 py-1 border border-gray-200 rounded-full"
+                </div>
+                
+                {/* Project Image */}
+                <div className="col-span-12 lg:col-span-8">
+                  <div className="relative overflow-hidden bg-gray-50">
+                    <img 
+                      src={`https://images.unsplash.com/${project.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80`}
+                      alt={project.title}
+                      className="w-full h-[300px] lg:h-[400px] object-cover transition-transform duration-700 group-hover:scale-102"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <a 
+                        href={project.link}
+                        className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-900 hover:bg-white transition-all duration-300 opacity-0 group-hover:opacity-100"
                       >
-                        {tech}
-                      </span>
-                    ))}
+                        <span className="text-sm font-mono">→</span>
+                      </a>
+                    </div>
                   </div>
-                  
-                  <a 
-                    href={project.link}
-                    className="inline-flex items-center text-gray-900 hover:text-gray-600 transition-colors group"
-                  >
-                    <span className="font-medium mr-2">Projeyi İncele</span>
-                    <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-                  </a>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+        
+        {/* More projects link */}
+        <div className="mt-32 text-center">
+          <div className="inline-flex items-center space-x-4 group cursor-pointer">
+            <div className="w-16 h-px bg-gray-300 group-hover:bg-gray-900 transition-colors duration-300"></div>
+            <span className="font-mono text-sm text-gray-500 group-hover:text-gray-900 transition-colors duration-300">
+              DAHA FAZLA PROJE
+            </span>
+            <div className="w-16 h-px bg-gray-300 group-hover:bg-gray-900 transition-colors duration-300"></div>
+          </div>
         </div>
       </div>
     </section>
