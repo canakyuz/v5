@@ -13,8 +13,8 @@ export const Hero = () => {
       
       <div className="max-w-7xl w-full relative z-10">
         <div className="grid grid-cols-12 gap-6 items-center">
-          {/* Left content */}
-          <div className="col-span-12 lg:col-span-8">
+          {/* Left content - expanded to take more space */}
+          <div className="col-span-12 lg:col-span-10">
             <div className="mb-16">
               <div className="text-xs font-departure text-gray-400 mb-6 tracking-[0.2em] uppercase">
                 {heroContent.sectionNumber}
@@ -28,7 +28,7 @@ export const Hero = () => {
               <div className="w-24 h-1 bg-gray-900 mt-6 ml-8 lg:ml-16"></div>
             </div>
             
-            <div className="max-w-lg ml-8 lg:ml-16">
+            <div className="max-w-2xl ml-8 lg:ml-16">
               <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-16 font-inter font-light">
                 {heroContent.description}
               </p>
@@ -63,13 +63,13 @@ export const Hero = () => {
             </div>
           </div>
           
-          {/* Right content */}
-          <div className="col-span-12 lg:col-span-4 flex justify-end">
+          {/* Right content - reduced to minimal space */}
+          <div className="col-span-12 lg:col-span-2 flex justify-end">
             <div className="hidden lg:block relative">
-              <div className="writing-mode-vertical text-gray-300 font-departure text-xs tracking-[0.3em] uppercase absolute right-8 top-0">
+              <div className="writing-mode-vertical text-gray-300 font-departure text-xs tracking-[0.3em] uppercase absolute right-4 top-0">
                 {heroContent.sideText}
               </div>
-              <div className="w-px h-32 bg-gray-200 ml-4"></div>
+              <div className="w-px h-32 bg-gray-200 ml-2"></div>
             </div>
           </div>
         </div>
