@@ -4,13 +4,7 @@ import { ChevronDown, ArrowUpRight } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center px-6 pt-20 relative overflow-hidden bg-white">
-      {/* Simplified background elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 right-20 w-80 h-80 bg-gray-100/60 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-60 h-60 bg-gray-50/80 rounded-full blur-2xl"></div>
-      </div>
-      
+    <section id="hero" className="min-h-screen flex items-center justify-center px-6 pt-20 relative bg-white">
       <div className="max-w-5xl w-full relative z-10">
         <div className="text-center space-y-8">
           {/* Section indicator */}
