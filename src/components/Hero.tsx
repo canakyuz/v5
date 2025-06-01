@@ -1,4 +1,6 @@
 
+import { heroContent } from "@/content/hero";
+
 export const Hero = () => {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-start px-6 pt-20 relative overflow-hidden">
@@ -12,20 +14,18 @@ export const Hero = () => {
           <div className="col-span-12 lg:col-span-8 animate-fade-in">
             <div className="mb-16">
               <div className="text-xs font-departure text-gray-400 mb-6 tracking-[0.2em] uppercase">
-                01 — Creative Developer
+                {heroContent.sectionNumber}
               </div>
               <h1 className="text-7xl md:text-9xl lg:text-[12rem] font-extralight text-gray-900 leading-[0.85] tracking-tight font-cooper">
-                John
+                {heroContent.name.first}
                 <br />
-                <span className="font-normal italic text-gray-600">Doe</span>
+                <span className="font-normal italic text-gray-600">{heroContent.name.last}</span>
               </h1>
             </div>
             
             <div className="max-w-md ml-8 lg:ml-20">
               <p className="text-xl md:text-2xl text-gray-500 leading-[1.6] mb-20 font-inter font-light">
-                Sınırları zorlayan dijital deneyimler tasarlıyor, 
-                <br />
-                <em className="italic text-gray-700">kod ile sanatı buluşturuyorum.</em>
+                {heroContent.description}
               </p>
               
               <div className="flex flex-col space-y-8">
@@ -37,8 +37,8 @@ export const Hero = () => {
                     <span className="text-white text-lg transform group-hover:translate-x-1 transition-transform duration-300">→</span>
                   </div>
                   <div>
-                    <span className="text-gray-900 font-medium font-inter text-lg">Çalışmalarımı keşfet</span>
-                    <div className="text-xs font-departure text-gray-400 mt-1 tracking-wider">PORTFOLIO</div>
+                    <span className="text-gray-900 font-medium font-inter text-lg">{heroContent.cta.primary.text}</span>
+                    <div className="text-xs font-departure text-gray-400 mt-1 tracking-wider">{heroContent.cta.primary.label}</div>
                   </div>
                 </button>
                 
@@ -50,8 +50,8 @@ export const Hero = () => {
                     <span className="text-gray-600 group-hover:text-white text-sm transform group-hover:translate-x-0.5 transition-all duration-300">→</span>
                   </div>
                   <div>
-                    <span className="text-gray-600 font-inter">İletişime geç</span>
-                    <div className="text-xs font-departure text-gray-400 mt-0.5 tracking-wider">CONTACT</div>
+                    <span className="text-gray-600 font-inter">{heroContent.cta.secondary.text}</span>
+                    <div className="text-xs font-departure text-gray-400 mt-0.5 tracking-wider">{heroContent.cta.secondary.label}</div>
                   </div>
                 </button>
               </div>
@@ -62,7 +62,7 @@ export const Hero = () => {
           <div className="col-span-12 lg:col-span-4 flex justify-end">
             <div className="hidden lg:block relative">
               <div className="writing-mode-vertical text-gray-300 font-departure text-xs tracking-[0.3em] absolute right-8 top-0">
-                PORTFOLIO — 2024
+                {heroContent.sideText}
               </div>
               <div className="w-px h-32 bg-gradient-to-b from-transparent via-gray-200 to-transparent ml-4"></div>
             </div>

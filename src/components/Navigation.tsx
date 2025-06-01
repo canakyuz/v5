@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { navigationContent } from "@/content/navigation";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ export const Navigation = () => {
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-xl font-semibold text-gray-900 font-cooper">
-            Portfolio
+            {navigationContent.brand}
           </div>
           
           {/* Desktop Menu */}
@@ -27,25 +28,25 @@ export const Navigation = () => {
               onClick={() => scrollToSection('hero')}
               className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
             >
-              Ana Sayfa
+              {navigationContent.menu.home}
             </button>
             <button 
               onClick={() => scrollToSection('about')}
               className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
             >
-              Hakkımda
+              {navigationContent.menu.about}
             </button>
             <button 
               onClick={() => scrollToSection('portfolio')}
               className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
             >
-              Portfolyo
+              {navigationContent.menu.portfolio}
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
               className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
             >
-              İletişim
+              {navigationContent.menu.contact}
             </button>
           </div>
 
@@ -66,25 +67,25 @@ export const Navigation = () => {
                 onClick={() => scrollToSection('hero')}
                 className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
               >
-                Ana Sayfa
+                {navigationContent.menu.home}
               </button>
               <button 
                 onClick={() => scrollToSection('about')}
                 className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
               >
-                Hakkımda
+                {navigationContent.menu.about}
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio')}
                 className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
               >
-                Portfolyo
+                {navigationContent.menu.portfolio}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
               >
-                İletişim
+                {navigationContent.menu.contact}
               </button>
             </div>
           </div>

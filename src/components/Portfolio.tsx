@@ -1,39 +1,5 @@
 
-const projects = [
-  {
-    id: 1,
-    title: "Ethereal Commerce",
-    subtitle: "E-ticaret Deneyimi",
-    description: "Sınırları aşan alışveriş deneyimi için geliştirilmiş modern platform. Kullanıcı deneyimini ön planda tutan, performans odaklı çözümler.",
-    image: "photo-1460925895917-afdab827c52f",
-    technologies: ["React", "Node.js", "MongoDB"],
-    year: "2024",
-    category: "E-commerce",
-    link: "#"
-  },
-  {
-    id: 2,
-    title: "Minimal Portfolio",
-    subtitle: "Kişisel Marka",
-    description: "Sanat ve teknolojinin buluşması ile yaratılmış kişisel portfolio. Minimalist tasarım anlayışı ile güçlü görsel hikaye.",
-    image: "photo-1498050108023-c5249f4df085",
-    technologies: ["Next.js", "Tailwind", "Framer"],
-    year: "2024",
-    category: "Branding",
-    link: "#"
-  },
-  {
-    id: 3,
-    title: "Flow Management",
-    subtitle: "Proje Yönetimi",
-    description: "Ekip işbirliğini yeniden tanımlayan akıllı proje yönetim sistemi. Verimlilik ve kullanıcı deneyimini harmanlayan çözüm.",
-    image: "photo-1581091226825-a6a2a5aee158",
-    technologies: ["React", "Express", "PostgreSQL"],
-    year: "2023",
-    category: "Productivity",
-    link: "#"
-  }
-];
+import { portfolioContent } from "@/content/portfolio";
 
 export const Portfolio = () => {
   return (
@@ -43,15 +9,14 @@ export const Portfolio = () => {
           {/* Section number and title - Sticky like About section */}
           <div className="col-span-12 lg:col-span-4">
             <div className="sticky top-32">
-              <div className="text-xs font-departure text-gray-400 mb-8 tracking-[0.2em] uppercase">03 — Seçilmiş Çalışmalar</div>
+              <div className="text-xs font-departure text-gray-400 mb-8 tracking-[0.2em] uppercase">{portfolioContent.sectionNumber}</div>
               <h2 className="text-5xl md:text-7xl font-cooper font-extralight text-gray-900 leading-[0.9] mb-8">
-                Her proje,
+                {portfolioContent.title.main}
                 <br />
-                <span className="italic text-gray-600">bir hikaye</span>
+                <span className="italic text-gray-600">{portfolioContent.title.accent}</span>
               </h2>
               <p className="font-inter text-gray-500 text-lg font-light leading-relaxed mb-8 max-w-sm">
-                Teknoloji ile yaratıcılığın buluştuğu noktada, 
-                her detayın özenle tasarlandığı projeler.
+                {portfolioContent.description}
               </p>
               <div className="w-24 h-px bg-gray-200 mt-8"></div>
             </div>
@@ -60,7 +25,7 @@ export const Portfolio = () => {
           {/* Content */}
           <div className="col-span-12 lg:col-span-8">
             <div className="space-y-32 pt-8">
-              {projects.map((project, index) => (
+              {portfolioContent.projects.map((project, index) => (
                 <article key={project.id} className="group relative">
                   {/* Project with similar structure to About skills sections */}
                   <div className="relative">
@@ -140,10 +105,10 @@ export const Portfolio = () => {
                           </div>
                           <div>
                             <span className="font-inter font-medium text-gray-900 group-hover/link:text-gray-600 transition-colors duration-300">
-                              Projeyi İncele
+                              {portfolioContent.cta.text}
                             </span>
                             <div className="font-departure text-xs text-gray-400 tracking-[0.2em] uppercase">
-                              View Project
+                              {portfolioContent.cta.label}
                             </div>
                           </div>
                         </a>
