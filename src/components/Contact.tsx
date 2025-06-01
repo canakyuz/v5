@@ -1,24 +1,36 @@
 
 import { useState } from "react";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter, Instagram, ArrowRight } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { contactContent } from "@/content/contact";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
     console.log('Form submitted:', formData);
     toast({
-      title: contactContent.toast.title,
-      description: contactContent.toast.description,
+      title: contactContent.toast.success.title,
+      description: contactContent.toast.success.description,
     });
-    setFormData({ name: '', email: '', message: '' });
+    
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsSubmitting(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -28,133 +40,224 @@ export const Contact = () => {
     });
   };
 
+  const getIconComponent = (iconName: string) => {
+    const icons = { Github, Linkedin, Twitter, Instagram };
+    return icons[iconName as keyof typeof icons] || Github;
+  };
+
   return (
-    <section id="contact" className="py-40 px-6 bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-12 gap-12">
-          {/* Left side - Contact info */}
-          <div className="col-span-12 lg:col-span-5">
-            <div className="space-y-20">
-              <div>
-                <div className="text-xs font-departure text-gray-500 mb-8 tracking-[0.2em] uppercase">{contactContent.sectionNumber}</div>
-                <h2 className="text-5xl md:text-7xl font-cooper font-extralight leading-[0.9] mb-8">
-                  {contactContent.title.main}
-                  <br />
-                  <span className="italic text-gray-400">{contactContent.title.accent}</span>
-                </h2>
-                <div className="w-24 h-px bg-gray-700 mt-8"></div>
-              </div>
+    <section id="contact" className="py-24 lg:py-32 px-6 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-grid-gray-100/50 bg-[size:20px_20px] opacity-30"></div>
+      <div className="absolute top-0 right-0 w-72 h-72 bg-blue-50 rounded-full blur-3xl opacity-30"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-50 rounded-full blur-3xl opacity-20"></div>
+      
+      <div className="max-w-7xl mx-auto relative">
+        {/* Header */}
+        <div className="text-center mb-16 lg:mb-20">
+          <div className="text-xs font-departure text-gray-500 mb-6 tracking-[0.3em] uppercase">
+            {contactContent.sectionNumber}
+          </div>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-cooper font-light leading-[0.9] mb-6 text-gray-900">
+            {contactContent.title.main}
+            <br />
+            <span className="italic text-blue-600">{contactContent.title.accent}</span>
+          </h2>
+          <p className="text-xl lg:text-2xl text-gray-600 font-light max-w-3xl mx-auto leading-relaxed">
+            {contactContent.subtitle}
+          </p>
+          <div className="w-24 h-px bg-gray-300 mx-auto mt-8"></div>
+        </div>
+
+        <div className="grid lg:grid-cols-5 gap-16 lg:gap-20">
+          {/* Contact Info & Social */}
+          <div className="lg:col-span-2 space-y-12">
+            <div>
+              <p className="text-lg text-gray-600 leading-relaxed mb-12 font-light">
+                {contactContent.description}
+              </p>
               
-              <div className="space-y-12">
-                <p className="text-xl text-gray-300 leading-[1.6] font-inter font-light max-w-md">
-                  {contactContent.description}
-                </p>
-                
-                <div className="space-y-8">
-                  <div className="flex items-start space-x-6 group hover:transform hover:translate-x-2 transition-all duration-300">
-                    <div className="w-8 h-8 mt-2 flex items-center justify-center bg-gray-800 rounded-full group-hover:bg-gray-700 transition-colors">
-                      <Mail className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+              {/* Contact Information */}
+              <div className="space-y-8">
+                <div className="group">
+                  <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-md hover:border-gray-200 transition-all duration-300">
+                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-blue-100 transition-colors">
+                      <Mail className="w-5 h-5 text-blue-600" />
                     </div>
-                    <div>
-                      <div className="text-xs font-departure text-gray-500 mb-2 tracking-[0.2em] uppercase">{contactContent.contactInfo.email.label}</div>
-                      <a href={`mailto:${contactContent.contactInfo.email.value}`} className="text-white hover:text-gray-300 transition-colors font-inter text-lg">
+                    <div className="flex-1">
+                      <div className="text-xs font-departure text-gray-500 mb-2 tracking-[0.2em] uppercase">
+                        {contactContent.contactInfo.email.label}
+                      </div>
+                      <a 
+                        href={contactContent.contactInfo.email.href} 
+                        className="text-gray-900 hover:text-blue-600 transition-colors font-medium text-lg"
+                      >
                         {contactContent.contactInfo.email.value}
                       </a>
                     </div>
                   </div>
-                  
-                  <div className="flex items-start space-x-6 group hover:transform hover:translate-x-2 transition-all duration-300">
-                    <div className="w-8 h-8 mt-2 flex items-center justify-center bg-gray-800 rounded-full group-hover:bg-gray-700 transition-colors">
-                      <Phone className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+                </div>
+                
+                <div className="group">
+                  <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-md hover:border-gray-200 transition-all duration-300">
+                    <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                      <Phone className="w-5 h-5 text-green-600" />
                     </div>
-                    <div>
-                      <div className="text-xs font-departure text-gray-500 mb-2 tracking-[0.2em] uppercase">{contactContent.contactInfo.phone.label}</div>
-                      <span className="text-white font-inter text-lg">{contactContent.contactInfo.phone.value}</span>
+                    <div className="flex-1">
+                      <div className="text-xs font-departure text-gray-500 mb-2 tracking-[0.2em] uppercase">
+                        {contactContent.contactInfo.phone.label}
+                      </div>
+                      <a 
+                        href={contactContent.contactInfo.phone.href}
+                        className="text-gray-900 hover:text-green-600 transition-colors font-medium text-lg"
+                      >
+                        {contactContent.contactInfo.phone.value}
+                      </a>
                     </div>
                   </div>
-                  
-                  <div className="flex items-start space-x-6 group hover:transform hover:translate-x-2 transition-all duration-300">
-                    <div className="w-8 h-8 mt-2 flex items-center justify-center bg-gray-800 rounded-full group-hover:bg-gray-700 transition-colors">
-                      <MapPin className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+                </div>
+                
+                <div className="group">
+                  <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-md hover:border-gray-200 transition-all duration-300">
+                    <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center group-hover:bg-purple-100 transition-colors">
+                      <MapPin className="w-5 h-5 text-purple-600" />
                     </div>
-                    <div>
-                      <div className="text-xs font-departure text-gray-500 mb-2 tracking-[0.2em] uppercase">{contactContent.contactInfo.location.label}</div>
-                      <span className="text-white font-inter text-lg">{contactContent.contactInfo.location.value}</span>
+                    <div className="flex-1">
+                      <div className="text-xs font-departure text-gray-500 mb-2 tracking-[0.2em] uppercase">
+                        {contactContent.contactInfo.location.label}
+                      </div>
+                      <span className="text-gray-900 font-medium text-lg">
+                        {contactContent.contactInfo.location.value}
+                      </span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* Social Links */}
+            <div className="pt-8 border-t border-gray-200">
+              <h3 className="text-xs font-departure text-gray-500 mb-6 tracking-[0.2em] uppercase">
+                {contactContent.social.title}
+              </h3>
+              <div className="flex space-x-4">
+                {contactContent.social.links.map((social) => {
+                  const IconComponent = getIconComponent(social.icon);
+                  return (
+                    <a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-white border border-gray-200 rounded-xl flex items-center justify-center hover:border-gray-900 hover:bg-gray-900 transition-all duration-300 group shadow-sm"
+                      aria-label={social.name}
+                    >
+                      <IconComponent size={20} className="text-gray-600 group-hover:text-white transition-colors" />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
           </div>
           
-          {/* Right side - Contact form */}
-          <div className="col-span-12 lg:col-span-6 lg:col-start-7">
-            <form onSubmit={handleSubmit} className="space-y-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <label htmlFor="name" className="block text-xs font-departure text-gray-500 mb-4 tracking-[0.2em] uppercase">
-                    {contactContent.form.fields.name.label}
-                  </label>
-                  <input
+          {/* Contact Form */}
+          <div className="lg:col-span-3">
+            <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-100">
+              <div className="mb-8">
+                <h3 className="text-2xl lg:text-3xl font-cooper font-light text-gray-900 mb-4">
+                  {contactContent.form.title}
+                </h3>
+                <div className="w-16 h-px bg-gray-300"></div>
+              </div>
+              
+              <form onSubmit={handleSubmit} className="space-y-8">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-3">
+                    <Label htmlFor="name" className="text-sm font-medium text-gray-700">
+                      {contactContent.form.fields.name.label}
+                    </Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      type="text"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder={contactContent.form.fields.name.placeholder}
+                      required={contactContent.form.fields.name.required}
+                      className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500 rounded-xl"
+                    />
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                      {contactContent.form.fields.email.label}
+                    </Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder={contactContent.form.fields.email.placeholder}
+                      required={contactContent.form.fields.email.required}
+                      className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500 rounded-xl"
+                    />
+                  </div>
+                </div>
+                
+                <div className="space-y-3">
+                  <Label htmlFor="subject" className="text-sm font-medium text-gray-700">
+                    {contactContent.form.fields.subject.label}
+                  </Label>
+                  <Input
+                    id="subject"
+                    name="subject"
                     type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    value={formData.subject}
                     onChange={handleChange}
-                    required
-                    className="w-full bg-transparent border-0 border-b border-gray-700 px-0 py-4 text-white placeholder-gray-600 focus:border-white focus:ring-0 transition-colors font-inter text-lg"
-                    placeholder={contactContent.form.fields.name.placeholder}
+                    placeholder={contactContent.form.fields.subject.placeholder}
+                    required={contactContent.form.fields.subject.required}
+                    className="h-12 border-gray-200 focus:border-blue-500 focus:ring-blue-500 rounded-xl"
                   />
                 </div>
                 
-                <div>
-                  <label htmlFor="email" className="block text-xs font-departure text-gray-500 mb-4 tracking-[0.2em] uppercase">
-                    {contactContent.form.fields.email.label}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
+                <div className="space-y-3">
+                  <Label htmlFor="message" className="text-sm font-medium text-gray-700">
+                    {contactContent.form.fields.message.label}
+                  </Label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
                     onChange={handleChange}
-                    required
-                    className="w-full bg-transparent border-0 border-b border-gray-700 px-0 py-4 text-white placeholder-gray-600 focus:border-white focus:ring-0 transition-colors font-inter text-lg"
-                    placeholder={contactContent.form.fields.email.placeholder}
+                    placeholder={contactContent.form.fields.message.placeholder}
+                    required={contactContent.form.fields.message.required}
+                    rows={6}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-20 resize-none transition-colors"
                   />
                 </div>
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-xs font-departure text-gray-500 mb-4 tracking-[0.2em] uppercase">
-                  {contactContent.form.fields.message.label}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  className="w-full bg-transparent border-0 border-b border-gray-700 px-0 py-4 text-white placeholder-gray-600 focus:border-white focus:ring-0 transition-colors resize-none font-inter text-lg"
-                  placeholder={contactContent.form.fields.message.placeholder}
-                />
-              </div>
-              
-              <div className="pt-12">
-                <button
-                  type="submit"
-                  className="group flex items-center space-x-6 text-white hover:text-gray-300 transition-all duration-300"
-                >
-                  <div className="w-16 h-16 border border-gray-700 rounded-full flex items-center justify-center group-hover:border-white group-hover:bg-white transition-all duration-300">
-                    <span className="transform group-hover:translate-x-1 group-hover:text-gray-900 text-lg transition-all duration-300">→</span>
-                  </div>
-                  <div>
-                    <span className="font-medium font-inter text-lg">{contactContent.form.cta.text}</span>
-                    <div className="text-xs font-departure text-gray-500 mt-1 tracking-[0.2em] uppercase">{contactContent.form.cta.label}</div>
-                  </div>
-                </button>
-              </div>
-            </form>
+                
+                <div className="pt-4">
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full h-14 bg-gray-900 hover:bg-gray-800 text-white rounded-xl font-medium text-lg transition-all duration-300 group disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-3" />
+                        {contactContent.form.submitButton.loadingText}
+                      </>
+                    ) : (
+                      <>
+                        {contactContent.form.submitButton.text}
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </Button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
