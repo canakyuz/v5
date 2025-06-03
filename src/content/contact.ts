@@ -2,25 +2,25 @@
 export const contactContent = {
   sectionNumber: "04 — Contact",
   title: {
-    main: "Let's create",
-    accent: "something amazing"
+    main: "Let's work",
+    accent: "together"
   },
   subtitle: "Ready to bring your ideas to life?",
-  description: "Get in touch for new projects, creative collaborations, or just to say hello. I'd love to hear about your next big idea.",
+  description: "Get in touch for new projects, creative collaborations, or just to say hello. I'd love to hear about your next frontend challenge.",
   contactInfo: {
     email: {
       label: "Email",
-      value: "john.doe@example.com",
-      href: "mailto:john.doe@example.com"
+      value: "canakyuz23@gmail.com",
+      href: "mailto:canakyuz23@gmail.com"
     },
     phone: {
       label: "Phone",
-      value: "+90 555 123 45 67",
-      href: "tel:+905551234567"
+      value: "+90 546 870 04 09",
+      href: "tel:+905468700409"
     },
     location: {
       label: "Location",
-      value: "Istanbul, Turkey"
+      value: "Turkey"
     }
   },
   form: {
@@ -57,7 +57,7 @@ export const contactContent = {
     links: [
       {
         name: "GitHub",
-        url: "https://github.com",
+        url: "https://github.com/canakyuz",
         icon: "Github"
       },
       {
@@ -66,14 +66,14 @@ export const contactContent = {
         icon: "Linkedin"
       },
       {
-        name: "Twitter",
-        url: "https://twitter.com",
-        icon: "Twitter"
+        name: "Portfolio",
+        url: "https://canakyuz.dev",
+        icon: "ExternalLink"
       },
       {
-        name: "Instagram",
-        url: "https://instagram.com",
-        icon: "Instagram"
+        name: "Email",
+        url: "mailto:canakyuz23@gmail.com",
+        icon: "Mail"
       }
     ]
   },

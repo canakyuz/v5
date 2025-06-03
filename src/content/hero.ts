@@ -1,11 +1,11 @@
 
 export const heroContent = {
-  sectionNumber: "01 — Creative Developer",
+  sectionNumber: "01 — Frontend Engineer",
   name: {
-    first: "John",
-    last: "Doe"
+    first: "Bekircan",
+    last: "Akyüz"
   },
-  description: "Creating boundary-pushing digital experiences, where code meets art.",
+  description: "Experienced frontend software engineer focused on building accessible products for the web.",
   cta: {
     primary: {
       text: "Explore my work",

@@ -1,43 +1,43 @@
 
 export const portfolioContent = {
-  sectionNumber: "03 — Selected Works",
+  sectionNumber: "03 — Selected Projects",
   title: {
-    main: "Every project,",
-    accent: "a story"
+    main: "Featured",
+    accent: "Projects"
   },
-  description: "At the intersection of technology and creativity, projects where every detail is carefully crafted.",
+  description: "Showcasing my expertise in frontend development through innovative web applications and user-centric solutions.",
   projects: [
     {
       id: 1,
-      title: "Ethereal Commerce",
-      subtitle: "E-commerce Experience",
-      description: "Modern platform developed for a boundary-transcending shopping experience. Performance-focused solutions that prioritize user experience.",
+      title: "AI Companion",
+      subtitle: "SaaS Application",
+      description: "A web application where I perform API integrations using Next.js and Tailwind CSS and monitor the database with Prisma. Built with modern technologies for seamless user experience.",
       image: "photo-1721322800607-8c38375eef04",
-      technologies: ["React", "Node.js", "MongoDB"],
+      technologies: ["Next.js", "Tailwind CSS", "Prisma", "TypeScript"],
       year: "2024",
-      category: "E-commerce",
+      category: "SaaS",
       link: "#"
     },
     {
       id: 2,
-      title: "Minimal Portfolio",
-      subtitle: "Personal Branding",
-      description: "Personal portfolio created through the fusion of art and technology. A powerful visual story with minimalist design philosophy.",
+      title: "Notion Clone",
+      subtitle: "Note Taking Application",
+      description: "An end-to-end full-stack application with a convenient concept style editor, cover images, nested documents, public publishing of documents, real-time database and more.",
       image: "photo-1649972904349-6e44c42644a7",
-      technologies: ["Next.js", "Tailwind", "Framer"],
+      technologies: ["React", "Node.js", "Real-time DB", "TypeScript"],
       year: "2024",
-      category: "Branding",
+      category: "Productivity",
       link: "#"
     },
     {
       id: 3,
-      title: "Flow Management",
-      subtitle: "Project Management",
-      description: "Smart project management system that redefines team collaboration. A solution that blends efficiency and user experience.",
+      title: "Integrated Web Applications",
+      subtitle: "Multiple Projects at Zirve Bilgisayar",
+      description: "Developed integrated web applications using Vue.js and modern PHP technologies. Created comprehensive user management systems by implementing TypeScript for code security.",
       image: "photo-1605810230434-7631ac76ec81",
-      technologies: ["React", "Express", "PostgreSQL"],
-      year: "2023",
-      category: "Productivity",
+      technologies: ["Vue.js", "PHP", "TypeScript", "SCSS"],
+      year: "2024",
+      category: "Enterprise",
       link: "#"
     }
   ],

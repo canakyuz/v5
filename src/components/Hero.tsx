@@ -91,14 +91,14 @@ export const Hero = () => {
                   {/* Stats Cards */}
                   <div className="space-y-6 animate-fade-in">
                     <div className="text-right">
-                      <div className="text-4xl font-cooper font-light text-gray-900 mb-1">5+</div>
+                      <div className="text-4xl font-cooper font-light text-gray-900 mb-1">4+</div>
                       <div className="text-xs font-departure text-gray-400 tracking-[0.2em] uppercase">
                         Years Experience
                       </div>
                     </div>
                     
                     <div className="text-right">
-                      <div className="text-4xl font-cooper font-light text-gray-900 mb-1">50+</div>
+                      <div className="text-4xl font-cooper font-light text-gray-900 mb-1">20+</div>
                       <div className="text-xs font-departure text-gray-400 tracking-[0.2em] uppercase">
                         Projects Completed
                       </div>
@@ -109,7 +109,7 @@ export const Hero = () => {
                   <div className="flex justify-end animate-fade-in">
                     <div className="w-20 h-20 border border-gray-200 rounded-full flex items-center justify-center hover:border-gray-400 transition-colors cursor-pointer group">
                       <div className="text-[10px] font-departure text-gray-400 text-center tracking-[0.2em] uppercase group-hover:text-gray-600 transition-colors leading-tight">
-                        Creative<br />Developer
+                        Frontend<br />Engineer
                       </div>
                     </div>
                   </div>

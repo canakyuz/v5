@@ -2,30 +2,30 @@
 export const aboutContent = {
   sectionNumber: "02 — About Me",
   title: {
-    main: "Creativity",
-    accent: "& Code"
+    main: "Frontend",
+    accent: "Engineer"
   },
   description: {
-    main: "Blurring the boundaries between technology and design, developing solutions that redefine user experience.",
-    secondary: "Every project is a new journey of discovery for me. Combining minimal design principles with modern technologies, I create digital products that carry both functional and aesthetic value."
+    main: "Experienced frontend software engineer focused on building accessible products for the web using modern technologies.",
+    secondary: "With extensive experience in Vue.js, React, TypeScript, and modern web technologies, I create scalable and user-friendly applications. I prioritize performance optimization, code security, and responsive design principles."
   },
   skills: {
     frontend: {
-      title: "Frontend Development",
+      title: "Programming Languages",
       items: [
-        { name: "React & Next.js", description: "Modern UI Framework" },
-        { name: "TypeScript", description: "Type Safety" },
-        { name: "Tailwind CSS", description: "Utility-First Styling" },
-        { name: "Framer Motion", description: "Animation & Interaction" }
+        { name: "JavaScript", description: "ES6+ & Modern Features" },
+        { name: "TypeScript", description: "Type Safety & Code Security" },
+        { name: "HTML & CSS", description: "Semantic & Responsive" },
+        { name: "Python", description: "Backend Integration" }
       ]
     },
     backend: {
-      title: "Backend Development",
+      title: "Libraries & Frameworks",
       items: [
-        { name: "Node.js", description: "Server Runtime" },
-        { name: "Python", description: "Data & AI" },
-        { name: "PostgreSQL", description: "Database" },
-        { name: "GraphQL", description: "API Layer" }
+        { name: "React & Next.js", description: "Modern UI Development" },
+        { name: "Vue.js", description: "Progressive Framework" },
+        { name: "Tailwind CSS", description: "Utility-First Styling" },
+        { name: "Node.js", description: "Server-Side Development" }
       ]
     }
   }

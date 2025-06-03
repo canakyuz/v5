@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Mail, MapPin, Phone, ArrowRight, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Mail, MapPin, Phone, ArrowRight, Github, Linkedin, ExternalLink } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { contactContent } from "@/content/contact";
 import { Button } from "@/components/ui/button";
@@ -41,7 +41,7 @@ export const Contact = () => {
   };
 
   const getIconComponent = (iconName: string) => {
-    const icons = { Github, Linkedin, Twitter, Instagram };
+    const icons = { Github, Linkedin, ExternalLink, Mail };
     return icons[iconName as keyof typeof icons] || Github;
   };
 
