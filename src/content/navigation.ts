@@ -4,7 +4,7 @@ export const navigationContent = {
   menu: {
     about: "About",
     portfolio: "Portfolio",
-    blog: "Blog"
+    blog: "Blog",
     contact: "Contact"
   }
 };
