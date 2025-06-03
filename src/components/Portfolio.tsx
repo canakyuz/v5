@@ -1,142 +1,129 @@
+
 import { portfolioContent } from "@/content/portfolio";
-import { ArrowUpRight } from "lucide-react";
+import { stylesContent } from "@/content/styles";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 
 export const Portfolio = () => {
+  const { fonts, colors, typography, spacing, animations, buttons, grid, cards } = stylesContent;
+  
   return (
-    <section id="portfolio" className="py-20 md:py-40 px-4 md:px-6 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-          {/* Section number and title - Responsive adjustments */}
-          <div className="lg:col-span-4">
-            <div className="lg:sticky lg:top-32">
-              <div className="text-xs font-departure text-gray-400 mb-6 md:mb-8 tracking-[0.2em] uppercase">{portfolioContent.sectionNumber}</div>
-              <h2 className="text-4xl md:text-5xl lg:text-7xl font-cooper font-extralight text-gray-900 leading-[0.9] mb-6 md:mb-8">
+    <section id="portfolio" className={`${spacing.section.padding} ${spacing.content.padding} ${colors.background.main}`}>
+      <div className={spacing.content.maxWidth}>
+        <div className={grid.main}>
+          {/* Section header */}
+          <div className={grid.sidebar}>
+            <div className={grid.sticky}>
+              <div className={`${typography.section.small} ${fonts.mono} ${colors.primary.lighter} mb-4 tracking-[0.2em] uppercase`}>
+                {portfolioContent.sectionNumber}
+              </div>
+              <h2 className={`${typography.section.title} ${fonts.primary} font-extralight ${colors.primary.main} leading-[0.9] mb-6`}>
                 {portfolioContent.title.main}
                 <br />
-                <span className="italic text-gray-600">{portfolioContent.title.accent}</span>
+                <span className={`italic ${colors.primary.light}`}>{portfolioContent.title.accent}</span>
               </h2>
-              <p className="font-inter text-gray-500 text-base md:text-lg font-light leading-relaxed mb-6 md:mb-8 max-w-sm">
+              <p className={`${fonts.secondary} ${colors.primary.accent} ${typography.section.description} font-light leading-relaxed max-w-sm`}>
                 {portfolioContent.description}
               </p>
-              <div className="w-24 h-px bg-gray-200 mt-6 md:mt-8"></div>
+              <div className="w-20 h-px bg-gray-200 mt-6"></div>
             </div>
           </div>
           
-          {/* Content - Better mobile spacing */}
-          <div className="lg:col-span-8">
-            <div className="space-y-16 md:space-y-24 lg:space-y-32 pt-4 md:pt-8">
+          {/* Projects grid */}
+          <div className={grid.content}>
+            <div className={`${spacing.section.margin} pt-4`}>
               {portfolioContent.projects.map((project, index) => (
-                <article key={project.id} className="group relative">
+                <article key={project.id} className={cards.project}>
                   
-                  <div className="relative">
-                    {/* Mobile-friendly indicator */}
-                    <div className="absolute -left-4 md:-left-8 lg:-left-12 top-0 w-1 md:w-2 h-16 md:h-24 bg-gradient-to-b from-gray-900 to-gray-400"></div>
-                    <div className="pl-8 md:pl-12 lg:pl-16">
-                      {/* Project metadata - Better mobile layout */}
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 md:mb-6 space-y-2 md:space-y-0">
-                        <div className="flex items-center space-x-4 md:space-x-8">
-                          <div className="font-departure text-xs text-gray-300 tracking-[0.2em] font-medium">
-                            {String(index + 1).padStart(2, '0')}
-                          </div>
-                          <div className="flex items-center space-x-3 md:space-x-4">
-                            <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
-                            <div className="font-departure text-xs text-gray-400 tracking-[0.2em] uppercase">
-                              {project.category} — {project.year}
-                            </div>
-                          </div>
-                        </div>
+                  {/* Project image */}
+                  <div className={cards.projectImage}>
+                    <img 
+                      src={`https://images.unsplash.com/${project.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80`}
+                      alt={project.title}
+                      className={`w-full h-full object-cover ${animations.transition.slow} group-hover:scale-105`}
+                      loading="lazy"
+                    />
+                    <div className={`absolute inset-0 bg-black/0 group-hover:bg-black/10 ${animations.transition.default}`}></div>
+                    
+                    {/* Project number overlay */}
+                    <div className="absolute top-4 left-4">
+                      <div className={`${fonts.mono} ${typography.section.small} ${colors.primary.lighter} bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full tracking-[0.2em] font-medium`}>
+                        {String(index + 1).padStart(2, '0')}
                       </div>
-                      
-                      {/* Project title - Responsive text */}
-                      <h3 className="text-2xl md:text-3xl font-cooper font-light text-gray-900 mb-3 md:mb-4 tracking-wide">
+                    </div>
+                    
+                    {/* Category badge */}
+                    <div className="absolute top-4 right-4">
+                      <div className={`${fonts.mono} ${typography.section.small} ${colors.primary.lighter} bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full tracking-[0.1em] uppercase`}>
+                        {project.category}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Project content */}
+                  <div className={cards.projectContent}>
+                    
+                    {/* Title and subtitle */}
+                    <div className="space-y-2">
+                      <h3 className={`${typography.post.title} ${fonts.primary} font-medium ${colors.primary.main} ${animations.hover.color} ${animations.transition.colors}`}>
                         {project.title}
                       </h3>
-                      <p className="text-lg md:text-xl font-cooper font-light italic text-gray-500 leading-relaxed mb-6 md:mb-8">
+                      <p className={`${typography.post.excerpt} ${fonts.primary} font-light italic ${colors.primary.light}`}>
                         {project.subtitle}
                       </p>
-                      
-                      {/* Project image - Better responsive sizing */}
-                      <div className="mb-6 md:mb-8">
-                        <div className="relative aspect-[4/3] md:aspect-[16/10] overflow-hidden bg-gray-50 rounded-sm group-hover:shadow-2xl transition-all duration-700 w-full max-w-none md:max-w-2xl">
-                          <img 
-                            src={`https://images.unsplash.com/${project.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=95`}
-                            alt={project.title}
-                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                            loading="lazy"
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all duration-500"></div>
-                        </div>
-                      </div>
-                      
-                      {/* Description - Better mobile text */}
-                      <p className="text-base md:text-lg text-gray-500 leading-[1.7] max-w-full md:max-w-2xl font-inter font-light mb-6 md:mb-8">
-                        {project.description}
-                      </p>
-                      
-                      {/* Technology Stack - Responsive grid */}
-                      <div className="mb-6 md:mb-8">
-                        <div className="font-departure text-xs text-gray-400 mb-3 md:mb-4 tracking-[0.2em] uppercase">
-                          Technology Stack
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-3 md:gap-y-4 max-w-full md:max-w-xl">
-                          {project.technologies.map((tech, techIndex) => (
-                            <div key={tech} className="group/tech hover:transform hover:translate-x-2 transition-all duration-300">
-                              <div className="font-departure text-xs text-gray-300 mb-1 tracking-[0.2em]">
-                                {String(techIndex + 1).padStart(2, '0')}
-                              </div>
-                              <div className="text-gray-900 font-inter font-medium text-base md:text-lg group-hover/tech:text-gray-600 transition-colors duration-300">
-                                {tech}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      {/* Project Link - Mobile-friendly */}
-                      <div className="pt-3 md:pt-4">
-                        <a 
-                          href={project.link}
-                          className="inline-flex items-center space-x-3 md:space-x-4 group/link"
+                    </div>
+                    
+                    {/* Description */}
+                    <p className={`${typography.post.excerpt} ${colors.primary.accent} leading-relaxed ${fonts.secondary} font-light`}>
+                      {project.description}
+                    </p>
+                    
+                    {/* Technology stack */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <span 
+                          key={tech} 
+                          className={`px-3 py-1 ${colors.background.light} ${colors.primary.light} ${typography.post.meta} ${fonts.secondary} ${stylesContent.colors.border.light} rounded-full text-xs font-medium`}
                         >
-                          <div className="relative">
-                            <div className="w-10 h-10 md:w-12 md:h-12 border border-gray-200 rounded-full flex items-center justify-center group-hover/link:border-gray-900 group-hover/link:bg-gray-900 transition-all duration-500">
-                              <span className="text-gray-600 group-hover/link:text-white text-sm transform group-hover/link:translate-x-1 transition-all duration-300">
-                                →
-                              </span>
-                            </div>
-                          </div>
-                          <div>
-                            <span className="font-inter font-medium text-gray-900 group-hover/link:text-gray-600 transition-colors duration-300 text-sm md:text-base">
-                              {portfolioContent.cta.text}
-                            </span>
-                            <div className="font-departure text-xs text-gray-400 tracking-[0.2em] uppercase">
-                              {portfolioContent.cta.label}
-                            </div>
-                          </div>
-                        </a>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    {/* Project link */}
+                    <div className="flex items-center justify-between pt-2">
+                      <div className={`${fonts.mono} ${typography.post.meta} ${colors.primary.lighter} tracking-[0.1em] uppercase`}>
+                        {project.year}
                       </div>
+                      <a 
+                        href={project.link}
+                        className="inline-flex items-center space-x-2 group/link"
+                      >
+                        <span className={`${fonts.secondary} font-medium ${colors.primary.main} group-hover/link:${colors.primary.light} ${animations.transition.colors} ${typography.post.meta}`}>
+                          View Project
+                        </span>
+                        <div className={buttons.icon}>
+                          <ExternalLink className={`${colors.primary.light} group-hover/link:text-white w-3 h-3 ${animations.transition.default}`} />
+                        </div>
+                      </a>
                     </div>
                   </div>
                 </article>
               ))}
               
               {/* More Projects Link */}
-              <div className="text-center pt-8 md:pt-16">
+              <div className="text-center pt-8">
                 <a 
                   href="#" 
-                  className="inline-flex items-center space-x-3 group/more hover:transform hover:translate-y-[-2px] transition-all duration-300"
+                  className={`inline-flex items-center space-x-3 group/more ${animations.hover.translate} ${animations.transition.default}`}
                 >
-                  <div className="text-gray-900 font-inter font-medium text-lg group-hover/more:text-gray-600 transition-colors duration-300">
+                  <div className={`${colors.primary.main} ${fonts.secondary} font-medium text-base ${animations.hover.color} ${animations.transition.colors}`}>
                     More Projects
                   </div>
                   <ArrowUpRight 
-                    size={20} 
-                    className="text-gray-600 group-hover/more:text-gray-900 group-hover/more:transform group-hover/more:translate-x-1 group-hover/more:translate-y-[-1px] transition-all duration-300" 
+                    size={16} 
+                    className={`${colors.primary.light} ${animations.hover.color} group-hover/more:transform group-hover/more:translate-x-1 group-hover/more:translate-y-[-1px] ${animations.transition.default}`}
                   />
                 </a>
-                <div className="font-departure text-xs text-gray-400 tracking-[0.2em] uppercase mt-2">
-                  View All Work
-                </div>
               </div>
             </div>
           </div>

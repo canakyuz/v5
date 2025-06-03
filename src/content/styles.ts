@@ -18,7 +18,9 @@ export const stylesContent = {
     background: {
       main: "bg-white",
       light: "bg-gray-50",
-      lighter: "bg-gray-50/30"
+      lighter: "bg-gray-50/30",
+      card: "bg-white",
+      cardHover: "bg-gray-50"
     },
     border: {
       light: "border-gray-100",
@@ -41,21 +43,26 @@ export const stylesContent = {
       small: "text-xs"
     },
     post: {
-      title: "text-2xl md:text-3xl",
-      excerpt: "text-base md:text-lg",
-      meta: "text-sm"
+      title: "text-xl md:text-2xl",
+      excerpt: "text-sm md:text-base",
+      meta: "text-xs"
     }
   },
   
-  // Spacing değerleri
+  // Spacing değerleri - Daha kompakt
   spacing: {
     section: {
-      padding: "py-20 md:py-40",
-      margin: "space-y-12 md:space-y-16"
+      padding: "py-16 md:py-24",
+      margin: "space-y-8 md:space-y-12"
     },
     content: {
       padding: "px-4 md:px-6",
       maxWidth: "max-w-7xl mx-auto"
+    },
+    card: {
+      padding: "p-6",
+      margin: "mb-6 md:mb-8",
+      gap: "space-y-4"
     }
   },
   
@@ -63,9 +70,10 @@ export const stylesContent = {
   animations: {
     fadeIn: "animate-fade-in",
     hover: {
-      scale: "hover:scale-105",
-      translate: "hover:transform hover:translate-x-2",
-      color: "hover:text-gray-900"
+      scale: "hover:scale-[1.02]",
+      translate: "hover:transform hover:translate-x-1",
+      color: "hover:text-gray-900",
+      shadow: "hover:shadow-lg"
     },
     transition: {
       default: "transition-all duration-300",
@@ -76,22 +84,24 @@ export const stylesContent = {
   
   // Button stilleri
   buttons: {
-    primary: "bg-gray-900 text-white px-8 py-4 rounded-full hover:bg-gray-800 transition-all duration-300 hover:scale-105",
-    secondary: "border border-gray-300 rounded-full hover:border-gray-900 transition-colors duration-300",
-    icon: "w-10 h-10 md:w-12 md:h-12 border border-gray-200 rounded-full flex items-center justify-center group-hover/link:border-gray-900 group-hover/link:bg-gray-900 transition-all duration-500"
+    primary: "bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-all duration-300 hover:scale-105",
+    secondary: "border border-gray-300 rounded-lg hover:border-gray-900 transition-colors duration-300",
+    icon: "w-8 h-8 md:w-10 md:h-10 border border-gray-200 rounded-lg flex items-center justify-center group-hover/link:border-gray-900 group-hover/link:bg-gray-900 transition-all duration-300"
   },
   
   // Grid sistemi
   grid: {
-    main: "grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16",
+    main: "grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12",
     sidebar: "lg:col-span-4",
     content: "lg:col-span-8",
-    sticky: "lg:sticky lg:top-32"
+    sticky: "lg:sticky lg:top-24"
   },
   
-  // Card stilleri
+  // Card stilleri - Tamamen yeniden tasarlandı
   cards: {
-    post: "group relative",
-    project: "group hover:transform hover:translate-y-[-2px] transition-all duration-300"
+    post: "group relative bg-white border border-gray-100 rounded-xl p-6 hover:border-gray-200 hover:shadow-lg transition-all duration-300 hover:transform hover:translate-y-[-2px]",
+    project: "group relative bg-white border border-gray-100 rounded-xl overflow-hidden hover:border-gray-200 hover:shadow-xl transition-all duration-300 hover:transform hover:translate-y-[-4px]",
+    projectImage: "relative aspect-[16/10] overflow-hidden bg-gray-50",
+    projectContent: "p-6 space-y-4"
   }
 };
