@@ -24,7 +24,24 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
   --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+  
 }
+
+/* light theme */
+:root.light {
+  --background: #ffffff;
+  --foreground: #171717;
+  --muted: #999999;
+  --primary: #0070f3;
+  --primary-foreground: #ffffff;
+  --secondary: #111111;
+  --secondary-foreground: #ffffff;
+  --accent: #333333;
+  --border: rgba(255, 255, 255, 0.08);
+  --ring: rgba(33, 33, 33, 0.2);
+}
+
+
 
 
 html {
