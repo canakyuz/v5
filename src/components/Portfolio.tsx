@@ -6,6 +6,12 @@ import { ArrowUpRight, ExternalLink } from "lucide-react";
 export const Portfolio = () => {
   const { fonts, colors, typography, spacing, animations, buttons, grid, cards } = stylesContent;
   
+  // Text truncation utility
+  const truncateText = (text: string, maxLength: number) => {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength).trim() + "...";
+  };
+  
   return (
     <section id="portfolio" className={`${spacing.section.padding} ${spacing.content.padding} ${colors.background.main}`}>
       <div className={spacing.content.maxWidth}>
@@ -59,27 +65,27 @@ export const Portfolio = () => {
                     </div>
                   </div>
                   
-                  {/* Project content */}
-                  <div className={cards.projectContent}>
-                    <div className="space-y-4">
+                  {/* Project content - Fixed height with proper spacing */}
+                  <div className="p-6 md:col-span-3 flex flex-col justify-between h-full min-h-0">
+                    <div className="flex-1 space-y-3 overflow-hidden">
                       {/* Title and subtitle */}
                       <div className="space-y-2">
-                        <h3 className={`${typography.post.title} ${fonts.primary} font-medium ${colors.primary.main} ${animations.hover.color} ${animations.transition.colors}`}>
-                          {project.title}
+                        <h3 className={`${typography.post.title} ${fonts.primary} font-medium ${colors.primary.main} ${animations.hover.color} ${animations.transition.colors} line-clamp-2`}>
+                          {truncateText(project.title, 50)}
                         </h3>
-                        <p className={`${typography.post.excerpt} ${fonts.primary} font-light italic ${colors.primary.light}`}>
-                          {project.subtitle}
+                        <p className={`${typography.post.excerpt} ${fonts.primary} font-light italic ${colors.primary.light} line-clamp-1`}>
+                          {truncateText(project.subtitle, 40)}
                         </p>
                       </div>
                       
-                      {/* Description */}
-                      <p className={`${typography.post.excerpt} ${colors.primary.accent} leading-relaxed ${fonts.secondary} font-light`}>
-                        {project.description}
+                      {/* Description - Fixed height with overflow */}
+                      <p className={`${typography.post.excerpt} ${colors.primary.accent} leading-relaxed ${fonts.secondary} font-light line-clamp-3`}>
+                        {truncateText(project.description, 120)}
                       </p>
                       
                       {/* Technology stack */}
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech) => (
+                      <div className="flex flex-wrap gap-2 min-h-[2rem]">
+                        {project.technologies.slice(0, 4).map((tech) => (
                           <span 
                             key={tech} 
                             className={`px-3 py-1 ${colors.background.light} ${colors.primary.light} ${typography.post.meta} ${fonts.secondary} ${stylesContent.colors.border.light} rounded-full text-xs font-medium`}
@@ -87,11 +93,16 @@ export const Portfolio = () => {
                             {tech}
                           </span>
                         ))}
+                        {project.technologies.length > 4 && (
+                          <span className={`px-3 py-1 ${colors.primary.lighter} ${typography.post.meta} ${fonts.secondary} text-xs`}>
+                            +{project.technologies.length - 4}
+                          </span>
+                        )}
                       </div>
                     </div>
                     
-                    {/* Project link */}
-                    <div className="flex items-center justify-between pt-2 border-t border-gray-100 mt-4">
+                    {/* Project link - Always visible at bottom */}
+                    <div className="flex items-center justify-between pt-3 border-t border-gray-100 mt-auto">
                       <div className={`${fonts.mono} ${typography.post.meta} ${colors.primary.lighter} tracking-[0.1em] uppercase`}>
                         {project.year}
                       </div>

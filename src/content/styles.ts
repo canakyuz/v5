@@ -97,11 +97,27 @@ export const stylesContent = {
     sticky: "lg:sticky lg:top-24"
   },
   
-  // Card stilleri - Fixed height for consistent sizing
+  // Card stilleri - Optimized for better text handling and button visibility
   cards: {
     post: "group relative bg-white border border-gray-100 rounded-xl p-6 hover:border-gray-200 hover:shadow-lg transition-all duration-300 hover:transform hover:translate-y-[-2px]",
-    project: "group relative bg-white border border-gray-100 rounded-xl overflow-hidden hover:border-gray-200 hover:shadow-xl transition-all duration-300 hover:transform hover:translate-y-[-4px] grid grid-cols-1 md:grid-cols-5 gap-0 h-[400px] md:h-[280px]",
+    project: "group relative bg-white border border-gray-100 rounded-xl overflow-hidden hover:border-gray-200 hover:shadow-xl transition-all duration-300 hover:transform hover:translate-y-[-4px] grid grid-cols-1 md:grid-cols-5 gap-0 h-[420px] md:h-[320px]",
     projectImage: "relative md:col-span-2 overflow-hidden bg-gray-50 h-full w-full",
-    projectContent: "p-6 space-y-4 md:col-span-3 flex flex-col justify-between h-full"
+    projectContent: "p-6 space-y-4 md:col-span-3 flex flex-col justify-between h-full min-h-0"
+  },
+
+  // Text utilities for truncation
+  textUtils: {
+    truncate: {
+      single: "truncate",
+      multiline: {
+        2: "line-clamp-2",
+        3: "line-clamp-3",
+        4: "line-clamp-4"
+      }
+    },
+    overflow: {
+      hidden: "overflow-hidden",
+      ellipsis: "text-ellipsis"
+    }
   }
 };
