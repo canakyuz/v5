@@ -19,10 +19,10 @@ export const Portfolio = () => {
           {/* Section header */}
           <div className={grid.sidebar}>
             <div className={grid.sticky}>
-              <div className={`${typography.section.small} ${fonts.mono} ${colors.primary.lighter} mb-4 tracking-[0.2em] uppercase`}>
+              <div className={`${typography.section.small} ${fonts.mono} ${colors.primary.lighter} mb-6 tracking-[0.3em] uppercase`}>
                 {portfolioContent.sectionNumber}
               </div>
-              <h2 className={`${typography.section.title} ${fonts.primary} font-extralight ${colors.primary.main} leading-[0.9] mb-6`}>
+              <h2 className={`${typography.section.title} ${fonts.primary} font-light ${colors.primary.main} leading-[0.9] mb-8`}>
                 {portfolioContent.title.main}
                 <br />
                 <span className={`italic ${colors.primary.light}`}>{portfolioContent.title.accent}</span>
@@ -30,13 +30,13 @@ export const Portfolio = () => {
               <p className={`${fonts.secondary} ${colors.primary.accent} ${typography.section.description} font-light leading-relaxed max-w-sm`}>
                 {portfolioContent.description}
               </p>
-              <div className="w-20 h-px bg-gray-200 mt-6"></div>
+              <div className="w-24 h-px bg-gray-300 mt-8"></div>
             </div>
           </div>
           
           {/* Projects grid */}
           <div className={grid.content}>
-            <div className={`${spacing.section.margin} pt-4`}>
+            <div className={`${spacing.section.margin} pt-8`}>
               {portfolioContent.projects.map((project, index) => (
                 <article key={project.id} className={cards.project}>
                   
@@ -51,26 +51,26 @@ export const Portfolio = () => {
                     <div className={`absolute inset-0 bg-black/0 group-hover:bg-black/10 ${animations.transition.default}`}></div>
                     
                     {/* Project number overlay */}
-                    <div className="absolute top-4 left-4">
-                      <div className={`${fonts.mono} ${typography.section.small} ${colors.primary.lighter} bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full tracking-[0.2em] font-medium`}>
+                    <div className="absolute top-6 left-6">
+                      <div className={`${fonts.mono} ${typography.section.small} ${colors.primary.lighter} bg-white/90 backdrop-blur-sm px-4 py-2 tracking-[0.3em] font-medium`}>
                         {String(index + 1).padStart(2, '0')}
                       </div>
                     </div>
                     
                     {/* Category badge */}
-                    <div className="absolute top-4 right-4">
-                      <div className={`${fonts.mono} ${typography.section.small} ${colors.primary.lighter} bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full tracking-[0.1em] uppercase`}>
+                    <div className="absolute top-6 right-6">
+                      <div className={`${fonts.mono} ${typography.section.small} ${colors.primary.lighter} bg-white/90 backdrop-blur-sm px-4 py-2 tracking-[0.2em] uppercase`}>
                         {project.category}
                       </div>
                     </div>
                   </div>
                   
-                  {/* Project content - Fixed height with proper spacing */}
-                  <div className="p-6 md:col-span-3 flex flex-col justify-between h-full min-h-0">
-                    <div className="flex-1 space-y-3 overflow-hidden">
+                  {/* Project content */}
+                  <div className={cards.projectContent}>
+                    <div className="flex-1 space-y-4 overflow-hidden">
                       {/* Title and subtitle */}
-                      <div className="space-y-2">
-                        <h3 className={`${typography.post.title} ${fonts.primary} font-medium ${colors.primary.main} ${animations.hover.color} ${animations.transition.colors} line-clamp-2`}>
+                      <div className="space-y-3">
+                        <h3 className={`${typography.post.title} ${fonts.primary} font-medium ${colors.primary.main} ${animations.hover.color} ${animations.transition.colors} line-clamp-2 text-xl`}>
                           {truncateText(project.title, 50)}
                         </h3>
                         <p className={`${typography.post.excerpt} ${fonts.primary} font-light italic ${colors.primary.light} line-clamp-1`}>
@@ -78,17 +78,17 @@ export const Portfolio = () => {
                         </p>
                       </div>
                       
-                      {/* Description - Fixed height with overflow */}
+                      {/* Description */}
                       <p className={`${typography.post.excerpt} ${colors.primary.accent} leading-relaxed ${fonts.secondary} font-light line-clamp-3`}>
                         {truncateText(project.description, 120)}
                       </p>
                       
                       {/* Technology stack */}
-                      <div className="flex flex-wrap gap-2 min-h-[2rem]">
+                      <div className="flex flex-wrap gap-3 min-h-[2rem]">
                         {project.technologies.slice(0, 4).map((tech) => (
                           <span 
                             key={tech} 
-                            className={`px-3 py-1 ${colors.background.light} ${colors.primary.light} ${typography.post.meta} ${fonts.secondary} ${stylesContent.colors.border.light} rounded-full text-xs font-medium`}
+                            className={`px-3 py-1 ${colors.background.light} ${colors.primary.light} ${typography.post.meta} ${fonts.secondary} border border-gray-200 text-xs font-medium`}
                           >
                             {tech}
                           </span>
@@ -101,20 +101,20 @@ export const Portfolio = () => {
                       </div>
                     </div>
                     
-                    {/* Project link - Always visible at bottom */}
-                    <div className="flex items-center justify-between pt-3 border-t border-gray-100 mt-auto">
-                      <div className={`${fonts.mono} ${typography.post.meta} ${colors.primary.lighter} tracking-[0.1em] uppercase`}>
+                    {/* Project link */}
+                    <div className="flex items-center justify-between pt-6 border-t border-gray-100 mt-auto">
+                      <div className={`${fonts.mono} ${typography.post.meta} ${colors.primary.lighter} tracking-[0.2em] uppercase`}>
                         {project.year}
                       </div>
                       <a 
                         href={project.link}
-                        className="inline-flex items-center space-x-2 group/link"
+                        className="inline-flex items-center space-x-3 group/link"
                       >
-                        <span className={`${fonts.secondary} font-medium ${colors.primary.main} group-hover/link:${colors.primary.light} ${animations.transition.colors} ${typography.post.meta}`}>
+                        <span className={`${fonts.secondary} font-medium ${colors.primary.main} group-hover/link:${colors.primary.light} ${animations.transition.colors} text-sm`}>
                           View Project
                         </span>
                         <div className={buttons.icon}>
-                          <ExternalLink className={`${colors.primary.light} group-hover/link:text-white w-3 h-3 ${animations.transition.default}`} />
+                          <ExternalLink className={`${colors.primary.light} group-hover/link:text-white w-4 h-4 ${animations.transition.default}`} />
                         </div>
                       </a>
                     </div>
@@ -123,16 +123,16 @@ export const Portfolio = () => {
               ))}
               
               {/* More Projects Link */}
-              <div className="text-center pt-8">
+              <div className="text-center pt-12">
                 <a 
                   href="#" 
-                  className={`inline-flex items-center space-x-3 group/more ${animations.hover.translate} ${animations.transition.default}`}
+                  className={`inline-flex items-center space-x-4 group/more ${animations.hover.translate} ${animations.transition.default}`}
                 >
-                  <div className={`${colors.primary.main} ${fonts.secondary} font-medium text-base ${animations.hover.color} ${animations.transition.colors}`}>
+                  <div className={`${colors.primary.main} ${fonts.secondary} font-medium text-lg ${animations.hover.color} ${animations.transition.colors}`}>
                     More Projects
                   </div>
                   <ArrowUpRight 
-                    size={16} 
+                    size={18} 
                     className={`${colors.primary.light} ${animations.hover.color} group-hover/more:transform group-hover/more:translate-x-1 group-hover/more:translate-y-[-1px] ${animations.transition.default}`}
                   />
                 </a>
