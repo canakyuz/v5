@@ -1,0 +1,38 @@
+{
+  "skills": {
+    "title": "Technical Expertise",
+    "badge": "🛠️ Skills",
+    "subtitle": "Technologies and tools I use to bring ideas to life.",
+    "frontendBackend": "Frontend & Backend",
+    "devopsTools": "DevOps, Tools & Others",
+    "total": "Total: {count} skills"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "nav": {
+    "skills": "Skills",
+    "work": "Work",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "aria": {
+    "toggleLanguage": "Toggle Language",
+    "toggleTheme": "Toggle Theme",
+    "openMenu": "Open Menu",
+    "closeMenu": "Close Menu"
+  },
+  "theme": {
+    "light": "Light Theme",
+    "dark": "Dark Theme",
+    "system": "System Theme"
+  },
+  "language": {
+    "tr": "Turkish",
+    "en": "English"
+  }
+}

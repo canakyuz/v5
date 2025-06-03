@@ -1,0 +1,38 @@
+{
+  "skills": {
+    "title": "Teknik Uzmanlık",
+    "badge": "🛠️ Yetenekler",
+    "subtitle": "Fikirleri hayata geçirmek için kullandığım teknolojiler ve araçlar.",
+    "frontendBackend": "Frontend & Backend",
+    "devopsTools": "DevOps, Araçlar & Diğer",
+    "total": "Toplam: {count} yetenek"
+  },
+  "navigation": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "projects": "Projeler",
+    "skills": "Yetenekler",
+    "contact": "İletişim"
+  },
+  "nav": {
+    "skills": "Yetenekler",
+    "work": "Çalışmalar",
+    "blog": "Blog",
+    "contact": "İletişim"
+  },
+  "aria": {
+    "toggleLanguage": "Dil Değiştir",
+    "toggleTheme": "Tema Değiştir",
+    "openMenu": "Menüyü Aç",
+    "closeMenu": "Menüyü Kapat"
+  },
+  "theme": {
+    "light": "Açık Tema",
+    "dark": "Koyu Tema",
+    "system": "Sistem Teması"
+  },
+  "language": {
+    "tr": "Türkçe",
+    "en": "İngilizce"
+  }
+}
