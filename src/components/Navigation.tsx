@@ -43,6 +43,12 @@ export const Navigation = () => {
               {navigationContent.menu.portfolio}
             </button>
             <button 
+              onClick={() => scrollToSection('blog')}
+              className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
+            >
+              {navigationContent.menu.blog}
+            </button>
+            <button 
               onClick={() => scrollToSection('contact')}
               className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
             >
@@ -80,6 +86,12 @@ export const Navigation = () => {
                 className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
               >
                 {navigationContent.menu.portfolio}
+              </button>
+              <button 
+                onClick={() => scrollToSection('blog')}
+                className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
+              >
+                {navigationContent.menu.blog}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
