@@ -1,4 +1,3 @@
-
 export const stylesContent = {
   // Font ailesi tanımları
   fonts: {
@@ -97,11 +96,11 @@ export const stylesContent = {
     sticky: "lg:sticky lg:top-24"
   },
   
-  // Card stilleri - Tamamen yeniden tasarlandı
+  // Card stilleri - Horizontal layout için yeniden tasarlandı
   cards: {
     post: "group relative bg-white border border-gray-100 rounded-xl p-6 hover:border-gray-200 hover:shadow-lg transition-all duration-300 hover:transform hover:translate-y-[-2px]",
-    project: "group relative bg-white border border-gray-100 rounded-xl overflow-hidden hover:border-gray-200 hover:shadow-xl transition-all duration-300 hover:transform hover:translate-y-[-4px]",
-    projectImage: "relative aspect-[16/10] overflow-hidden bg-gray-50",
-    projectContent: "p-6 space-y-4"
+    project: "group relative bg-white border border-gray-100 rounded-xl overflow-hidden hover:border-gray-200 hover:shadow-xl transition-all duration-300 hover:transform hover:translate-y-[-4px] grid grid-cols-1 md:grid-cols-5 gap-0",
+    projectImage: "relative aspect-[4/3] md:aspect-auto md:col-span-2 overflow-hidden bg-gray-50 md:h-full min-h-[200px]",
+    projectContent: "p-6 space-y-4 md:col-span-3 flex flex-col justify-between"
   }
 };

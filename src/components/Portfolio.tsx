@@ -61,36 +61,37 @@ export const Portfolio = () => {
                   
                   {/* Project content */}
                   <div className={cards.projectContent}>
-                    
-                    {/* Title and subtitle */}
-                    <div className="space-y-2">
-                      <h3 className={`${typography.post.title} ${fonts.primary} font-medium ${colors.primary.main} ${animations.hover.color} ${animations.transition.colors}`}>
-                        {project.title}
-                      </h3>
-                      <p className={`${typography.post.excerpt} ${fonts.primary} font-light italic ${colors.primary.light}`}>
-                        {project.subtitle}
+                    <div className="space-y-4">
+                      {/* Title and subtitle */}
+                      <div className="space-y-2">
+                        <h3 className={`${typography.post.title} ${fonts.primary} font-medium ${colors.primary.main} ${animations.hover.color} ${animations.transition.colors}`}>
+                          {project.title}
+                        </h3>
+                        <p className={`${typography.post.excerpt} ${fonts.primary} font-light italic ${colors.primary.light}`}>
+                          {project.subtitle}
+                        </p>
+                      </div>
+                      
+                      {/* Description */}
+                      <p className={`${typography.post.excerpt} ${colors.primary.accent} leading-relaxed ${fonts.secondary} font-light`}>
+                        {project.description}
                       </p>
-                    </div>
-                    
-                    {/* Description */}
-                    <p className={`${typography.post.excerpt} ${colors.primary.accent} leading-relaxed ${fonts.secondary} font-light`}>
-                      {project.description}
-                    </p>
-                    
-                    {/* Technology stack */}
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span 
-                          key={tech} 
-                          className={`px-3 py-1 ${colors.background.light} ${colors.primary.light} ${typography.post.meta} ${fonts.secondary} ${stylesContent.colors.border.light} rounded-full text-xs font-medium`}
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                      
+                      {/* Technology stack */}
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.map((tech) => (
+                          <span 
+                            key={tech} 
+                            className={`px-3 py-1 ${colors.background.light} ${colors.primary.light} ${typography.post.meta} ${fonts.secondary} ${stylesContent.colors.border.light} rounded-full text-xs font-medium`}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                     
                     {/* Project link */}
-                    <div className="flex items-center justify-between pt-2">
+                    <div className="flex items-center justify-between pt-2 border-t border-gray-100 mt-4">
                       <div className={`${fonts.mono} ${typography.post.meta} ${colors.primary.lighter} tracking-[0.1em] uppercase`}>
                         {project.year}
                       </div>
