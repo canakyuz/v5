@@ -32,7 +32,7 @@ export const Hero = () => {
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-px bg-gray-300" />
                   <span className={`${typography.section.small} ${fonts.mono} ${colors.primary.lighter} tracking-[0.3em] uppercase`}>
-                    01 — Software Developer
+                    {heroContent.sectionNumber}
                   </span>
                 </div>
                 
@@ -47,27 +47,27 @@ export const Hero = () => {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
                 
                 {/* Left Column - Name and Description */}
-                <div className="lg:col-span-8 space-y-16">
+                <div className="lg:col-span-8 space-y-12">
                   
                   {/* Hero Title */}
                   <div className={`${animations.fadeIn}`}>
-                    <h1 className={`${typography.hero.title} ${fonts.primary} font-light ${colors.primary.main} leading-[0.85] tracking-tighter mb-6`}>
+                    <h1 className={`${typography.hero.title} ${fonts.primary} font-light ${colors.primary.main} leading-[0.8] tracking-tighter mb-4`}>
                       {heroContent.name.first}
                     </h1>
-                    <h1 className={`${typography.hero.subtitle} ${fonts.primary} font-light italic ${colors.primary.lighter} leading-[0.85] tracking-tight ml-8 lg:ml-20`}>
+                    <h1 className={`${typography.hero.subtitle} ${fonts.primary} font-light italic ${colors.primary.lighter} leading-[0.8] tracking-tight ml-8 lg:ml-16`}>
                       {heroContent.name.last}
                     </h1>
                   </div>
 
                   {/* Description */}
-                  <div className={`${animations.fadeIn} max-w-3xl`}>
-                    <p className={`${typography.hero.description} ${colors.primary.light} leading-[1.6] ${fonts.secondary} font-light`}>
+                  <div className={`${animations.fadeIn} max-w-2xl`}>
+                    <p className={`${typography.hero.description} ${colors.primary.light} leading-[1.5] ${fonts.secondary} font-light`}>
                       {heroContent.description}
                     </p>
                   </div>
 
                   {/* Action Buttons */}
-                  <div className={`flex flex-col sm:flex-row items-start sm:items-center gap-8 ${animations.fadeIn}`}>
+                  <div className={`flex flex-col sm:flex-row items-start sm:items-center gap-6 ${animations.fadeIn}`}>
                     <button 
                       onClick={() => document.getElementById('portfolio')?.scrollIntoView({
                         behavior: 'smooth'
@@ -86,8 +86,8 @@ export const Hero = () => {
                       })} 
                       className={`group flex items-center space-x-3 ${colors.primary.light} ${animations.hover.color} ${animations.transition.colors}`}
                     >
-                      <div className={`w-12 h-12 border ${stylesContent.colors.border.dark} rounded-full flex items-center justify-center group-hover:border-gray-900 ${animations.transition.colors}`}>
-                        <Play className="w-4 h-4" />
+                      <div className={`w-10 h-10 border ${stylesContent.colors.border.dark} rounded-full flex items-center justify-center group-hover:border-gray-900 ${animations.transition.colors}`}>
+                        <Play className="w-3 h-3" />
                       </div>
                       <span className={`text-sm ${fonts.secondary}`}>{heroContent.cta.secondary.text}</span>
                     </button>
@@ -95,20 +95,20 @@ export const Hero = () => {
                 </div>
 
                 {/* Right Column - Stats and Visual Elements */}
-                <div className="lg:col-span-4 flex flex-col justify-center space-y-16">
+                <div className="lg:col-span-4 flex flex-col justify-center space-y-12">
                   
                   {/* Stats Section */}
-                  <div className={`space-y-12 ${animations.fadeIn}`}>
+                  <div className={`space-y-8 ${animations.fadeIn}`}>
                     <div className="text-center lg:text-right">
-                      <div className={`text-6xl lg:text-7xl ${fonts.primary} font-light ${colors.primary.main} mb-3`}>4+</div>
-                      <div className={`${typography.section.small} ${fonts.mono} ${colors.primary.lighter} tracking-[0.25em] uppercase`}>
+                      <div className={`text-5xl lg:text-6xl ${fonts.primary} font-light ${colors.primary.main} mb-2`}>4+</div>
+                      <div className={`${typography.section.small} ${fonts.mono} ${colors.primary.lighter} tracking-[0.2em] uppercase`}>
                         Years Experience
                       </div>
                     </div>
                     
                     <div className="text-center lg:text-right">
-                      <div className={`text-6xl lg:text-7xl ${fonts.primary} font-light ${colors.primary.main} mb-3`}>20+</div>
-                      <div className={`${typography.section.small} ${fonts.mono} ${colors.primary.lighter} tracking-[0.25em] uppercase`}>
+                      <div className={`text-5xl lg:text-6xl ${fonts.primary} font-light ${colors.primary.main} mb-2`}>20+</div>
+                      <div className={`${typography.section.small} ${fonts.mono} ${colors.primary.lighter} tracking-[0.2em] uppercase`}>
                         Projects Completed
                       </div>
                     </div>
@@ -117,13 +117,13 @@ export const Hero = () => {
                   {/* Decorative Elements */}
                   <div className={`flex justify-center lg:justify-end ${animations.fadeIn}`}>
                     <div className="relative">
-                      <div className={`w-28 h-28 ${stylesContent.colors.border.medium} rounded-full flex items-center justify-center hover:border-gray-400 ${animations.transition.colors} cursor-pointer group`}>
-                        <div className={`text-[10px] ${fonts.mono} ${colors.primary.lighter} text-center tracking-[0.15em] uppercase group-hover:text-gray-600 ${animations.transition.colors} leading-tight`}>
-                          Software<br />Developer
+                      <div className={`w-24 h-24 ${stylesContent.colors.border.medium} rounded-full flex items-center justify-center hover:border-gray-400 ${animations.transition.colors} cursor-pointer group`}>
+                        <div className={`text-[9px] ${fonts.mono} ${colors.primary.lighter} text-center tracking-[0.15em] uppercase group-hover:text-gray-600 ${animations.transition.colors} leading-tight`}>
+                          Frontend<br />Engineer
                         </div>
                       </div>
                       {/* Floating accent dot */}
-                      <div className="absolute -top-2 -right-2 w-4 h-4 bg-gray-900 rounded-full"></div>
+                      <div className="absolute -top-2 -right-2 w-3 h-3 bg-gray-900 rounded-full"></div>
                     </div>
                   </div>
                 </div>
