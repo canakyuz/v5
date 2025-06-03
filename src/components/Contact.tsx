@@ -6,6 +6,7 @@ import { contactContent } from "@/content/contact";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { stylesContent } from "@/content/styles";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -46,61 +47,67 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-40 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-12 gap-16">
+    <section id="contact" className={`${stylesContent.spacing.section.padding} ${stylesContent.spacing.content.padding} ${stylesContent.colors.background.main}`}>
+      <div className={stylesContent.spacing.content.maxWidth}>
+        <div className={stylesContent.grid.main}>
           {/* Left side - Header & Info */}
-          <div className="col-span-12 lg:col-span-5 space-y-12">
+          <div className={`${stylesContent.grid.sidebar} space-y-12`}>
             {/* Header */}
             <div>
-              <div className="flex items-center space-x-4 text-xs font-departure text-gray-400 tracking-[0.2em] uppercase mb-8">
-                <div className="w-8 h-px bg-gray-300"></div>
+              <div className={`flex items-center space-x-4 text-xs ${stylesContent.fonts.mono} ${stylesContent.colors.primary.accent} tracking-[0.2em] uppercase mb-8`}>
+                <div className={`w-8 h-px ${stylesContent.colors.border.medium}`}></div>
                 <span>{contactContent.sectionNumber}</span>
               </div>
-              <h2 className="text-5xl md:text-7xl font-cooper font-light leading-[0.8] mb-8 text-gray-900">
+              <h2 className={`${stylesContent.typography.section.title} ${stylesContent.fonts.primary} font-light leading-[0.8] mb-8 ${stylesContent.colors.primary.main}`}>
                 {contactContent.title.main}
                 <br />
-                <span className="italic text-gray-500">{contactContent.title.accent}</span>
+                <span className={`italic ${stylesContent.colors.primary.light}`}>{contactContent.title.accent}</span>
               </h2>
             </div>
 
-            <p className="text-xl text-gray-600 leading-relaxed font-inter font-light max-w-lg">
+            <p className={`${stylesContent.typography.hero.description} ${stylesContent.colors.primary.light} leading-relaxed ${stylesContent.fonts.secondary} font-light max-w-lg`}>
               {contactContent.description}
             </p>
             
             {/* Contact Information */}
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <Mail className="w-5 h-5 text-gray-400" />
+                <div className={`w-10 h-10 ${stylesContent.colors.background.card} ${stylesContent.colors.border.light} border rounded-xl flex items-center justify-center`}>
+                  <Mail size={16} className={stylesContent.colors.primary.accent} />
+                </div>
                 <a 
                   href={contactContent.contactInfo.email.href} 
-                  className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
+                  className={`${stylesContent.colors.primary.light} ${stylesContent.animations.hover.color} ${stylesContent.animations.transition.colors} ${stylesContent.fonts.secondary}`}
                 >
                   {contactContent.contactInfo.email.value}
                 </a>
               </div>
               
               <div className="flex items-center space-x-4">
-                <Phone className="w-5 h-5 text-gray-400" />
+                <div className={`w-10 h-10 ${stylesContent.colors.background.card} ${stylesContent.colors.border.light} border rounded-xl flex items-center justify-center`}>
+                  <Phone size={16} className={stylesContent.colors.primary.accent} />
+                </div>
                 <a 
                   href={contactContent.contactInfo.phone.href}
-                  className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
+                  className={`${stylesContent.colors.primary.light} ${stylesContent.animations.hover.color} ${stylesContent.animations.transition.colors} ${stylesContent.fonts.secondary}`}
                 >
                   {contactContent.contactInfo.phone.value}
                 </a>
               </div>
               
               <div className="flex items-center space-x-4">
-                <MapPin className="w-5 h-5 text-gray-400" />
-                <span className="text-gray-700 font-inter">
+                <div className={`w-10 h-10 ${stylesContent.colors.background.card} ${stylesContent.colors.border.light} border rounded-xl flex items-center justify-center`}>
+                  <MapPin size={16} className={stylesContent.colors.primary.accent} />
+                </div>
+                <span className={`${stylesContent.colors.primary.light} ${stylesContent.fonts.secondary}`}>
                   {contactContent.contactInfo.location.value}
                 </span>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="pt-8 border-t border-gray-200">
-              <h3 className="text-xs font-departure text-gray-400 mb-6 tracking-[0.2em] uppercase">
+            <div className={`pt-8 ${stylesContent.colors.border.light} border-t`}>
+              <h3 className={`text-xs ${stylesContent.fonts.mono} ${stylesContent.colors.primary.accent} mb-6 tracking-[0.2em] uppercase`}>
                 {contactContent.social.title}
               </h3>
               <div className="flex space-x-3">
@@ -112,10 +119,10 @@ export const Contact = () => {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center hover:border-gray-600 hover:bg-gray-900 transition-all duration-300 group"
+                      className={`${stylesContent.buttons.icon} ${stylesContent.animations.transition.default} group`}
                       aria-label={social.name}
                     >
-                      <IconComponent size={16} className="text-gray-600 group-hover:text-white transition-colors" />
+                      <IconComponent size={16} className={`${stylesContent.colors.primary.accent} group-hover:text-blue-400 ${stylesContent.animations.transition.colors}`} />
                     </a>
                   );
                 })}
@@ -124,19 +131,19 @@ export const Contact = () => {
           </div>
           
           {/* Right side - Contact Form */}
-          <div className="col-span-12 lg:col-span-7">
-            <div className="bg-gray-50 p-8 lg:p-12 rounded-lg">
+          <div className={stylesContent.grid.content}>
+            <div className={`${stylesContent.colors.background.card} ${stylesContent.colors.border.light} border backdrop-blur-sm p-8 lg:p-12 rounded-2xl`}>
               <div className="mb-8">
-                <h3 className="text-2xl font-cooper font-light text-gray-900 mb-2">
+                <h3 className={`text-2xl ${stylesContent.fonts.primary} font-light ${stylesContent.colors.primary.main} mb-2`}>
                   {contactContent.form.title}
                 </h3>
-                <div className="w-16 h-px bg-gray-300"></div>
+                <div className={`w-16 h-px ${stylesContent.colors.border.medium}`}></div>
               </div>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-sm font-medium text-gray-700">
+                    <Label htmlFor="name" className={`text-sm font-medium ${stylesContent.colors.primary.light}`}>
                       {contactContent.form.fields.name.label}
                     </Label>
                     <Input
@@ -147,12 +154,12 @@ export const Contact = () => {
                       onChange={handleChange}
                       placeholder={contactContent.form.fields.name.placeholder}
                       required={contactContent.form.fields.name.required}
-                      className="h-12 border-gray-200 focus:border-gray-600 focus:ring-gray-600 bg-white"
+                      className={`h-12 ${stylesContent.colors.border.light} border focus:border-blue-500 focus:ring-blue-500 ${stylesContent.colors.background.lighter}`}
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                    <Label htmlFor="email" className={`text-sm font-medium ${stylesContent.colors.primary.light}`}>
                       {contactContent.form.fields.email.label}
                     </Label>
                     <Input
@@ -163,13 +170,13 @@ export const Contact = () => {
                       onChange={handleChange}
                       placeholder={contactContent.form.fields.email.placeholder}
                       required={contactContent.form.fields.email.required}
-                      className="h-12 border-gray-200 focus:border-gray-600 focus:ring-gray-600 bg-white"
+                      className={`h-12 ${stylesContent.colors.border.light} border focus:border-blue-500 focus:ring-blue-500 ${stylesContent.colors.background.lighter}`}
                     />
                   </div>
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="subject" className="text-sm font-medium text-gray-700">
+                  <Label htmlFor="subject" className={`text-sm font-medium ${stylesContent.colors.primary.light}`}>
                     {contactContent.form.fields.subject.label}
                   </Label>
                   <Input
@@ -180,12 +187,12 @@ export const Contact = () => {
                     onChange={handleChange}
                     placeholder={contactContent.form.fields.subject.placeholder}
                     required={contactContent.form.fields.subject.required}
-                    className="h-12 border-gray-200 focus:border-gray-600 focus:ring-gray-600 bg-white"
+                    className={`h-12 ${stylesContent.colors.border.light} border focus:border-blue-500 focus:ring-blue-500 ${stylesContent.colors.background.lighter}`}
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-sm font-medium text-gray-700">
+                  <Label htmlFor="message" className={`text-sm font-medium ${stylesContent.colors.primary.light}`}>
                     {contactContent.form.fields.message.label}
                   </Label>
                   <textarea
@@ -196,7 +203,7 @@ export const Contact = () => {
                     placeholder={contactContent.form.fields.message.placeholder}
                     required={contactContent.form.fields.message.required}
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-200 rounded-md focus:border-gray-600 focus:ring-2 focus:ring-gray-600 focus:ring-opacity-20 resize-none transition-colors bg-white"
+                    className={`w-full px-4 py-3 border ${stylesContent.colors.border.light} rounded-xl focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-20 resize-none ${stylesContent.animations.transition.colors} ${stylesContent.colors.background.lighter} ${stylesContent.colors.primary.main}`}
                   />
                 </div>
                 
@@ -204,7 +211,7 @@ export const Contact = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full h-12 bg-gray-900 hover:bg-gray-800 text-white font-medium transition-all duration-300 group disabled:opacity-70 disabled:cursor-not-allowed"
+                    className={`w-full h-12 ${stylesContent.buttons.primary} group disabled:opacity-70 disabled:cursor-not-allowed`}
                   >
                     {isSubmitting ? (
                       <>
