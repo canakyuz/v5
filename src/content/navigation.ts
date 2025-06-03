@@ -1,10 +1,11 @@
 
 export const navigationContent = {
-  brand: "Portfolio",
+  brand: "Bekircan Akyüz",
   menu: {
+    home: "Home",
     about: "About",
-    portfolio: "Portfolio",
-    blog: "Blog",
+    portfolio: "Projects",
+    blog: "Posts", 
     contact: "Contact"
   }
 };

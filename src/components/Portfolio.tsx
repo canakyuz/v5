@@ -1,5 +1,5 @@
-
 import { portfolioContent } from "@/content/portfolio";
+import { ArrowUpRight } from "lucide-react";
 
 export const Portfolio = () => {
   return (
@@ -27,6 +27,7 @@ export const Portfolio = () => {
             <div className="space-y-16 md:space-y-24 lg:space-y-32 pt-4 md:pt-8">
               {portfolioContent.projects.map((project, index) => (
                 <article key={project.id} className="group relative">
+                  
                   <div className="relative">
                     {/* Mobile-friendly indicator */}
                     <div className="absolute -left-4 md:-left-8 lg:-left-12 top-0 w-1 md:w-2 h-16 md:h-24 bg-gradient-to-b from-gray-900 to-gray-400"></div>
@@ -118,6 +119,25 @@ export const Portfolio = () => {
                   </div>
                 </article>
               ))}
+              
+              {/* More Projects Link */}
+              <div className="text-center pt-8 md:pt-16">
+                <a 
+                  href="#" 
+                  className="inline-flex items-center space-x-3 group/more hover:transform hover:translate-y-[-2px] transition-all duration-300"
+                >
+                  <div className="text-gray-900 font-inter font-medium text-lg group-hover/more:text-gray-600 transition-colors duration-300">
+                    More Projects
+                  </div>
+                  <ArrowUpRight 
+                    size={20} 
+                    className="text-gray-600 group-hover/more:text-gray-900 group-hover/more:transform group-hover/more:translate-x-1 group-hover/more:translate-y-[-1px] transition-all duration-300" 
+                  />
+                </a>
+                <div className="font-departure text-xs text-gray-400 tracking-[0.2em] uppercase mt-2">
+                  View All Work
+                </div>
+              </div>
             </div>
           </div>
         </div>

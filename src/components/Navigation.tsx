@@ -67,13 +67,13 @@ export const Navigation = () => {
                 onClick={() => scrollToSection('hero')}
                 className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
               >
-                {navigationContent.menu.about}
+                {navigationContent.menu.home}
               </button>
               <button 
                 onClick={() => scrollToSection('about')}
                 className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
               >
-                {navigationContent.menu.blog}
+                {navigationContent.menu.about}
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio')}
