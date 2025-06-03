@@ -5,10 +5,10 @@ export const heroContent = {
     first: "Bekircan",
     last: "Akyüz"
   },
-  description: "Experienced software developer focused on building accessible products for the web.",
+  description: "Experienced software developer focused on building accessible, scalable, and high-performance web applications.",
   cta: {
     primary: {
-      text: "Explore my work",
+      text: "View Portfolio",
       label: "PORTFOLIO"
     },
     secondary: {
