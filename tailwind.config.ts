@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,10 +20,11 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'mono': ['Space Mono', 'JetBrains Mono', 'monospace'], // DepartureMono alternatifi
-				'cooper': ['Crimson Text', 'Playfair Display', 'serif'], // Cooper BT Light alternatifi
-				'inter': ['Inter', 'sans-serif'],
-				'departure': ['Space Mono', 'monospace'], // DepartureMono için özel alias
+				'mono': ['JetBrains Mono', 'Space Mono', 'monospace'],
+				'cooper': ['Inter', 'system-ui', 'sans-serif'], // Modern sans-serif instead
+				'inter': ['Inter', 'system-ui', 'sans-serif'],
+				'departure': ['JetBrains Mono', 'monospace'],
+				'display': ['Inter', 'system-ui', 'sans-serif'], // For large headings
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -76,25 +78,39 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(30px)'
 					},
-					to: {
-						height: '0'
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
 					}
+				},
+				'gradient': {
+					'0%, 100%': {
+						'background-size': '200% 200%',
+						'background-position': 'left center'
+					},
+					'50%': {
+						'background-size': '200% 200%',
+						'background-position': 'right center'
+					},
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.8s ease-out',
+				'gradient': 'gradient 3s ease infinite',
 			}
 		}
 	},

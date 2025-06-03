@@ -15,10 +15,10 @@ export const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-100">
-      <div className="max-w-6xl mx-auto px-6 py-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-gray-800">
+      <div className="max-w-7xl mx-auto px-8 py-6">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-semibold text-gray-900 font-cooper">
+          <div className="text-xl font-semibold text-white font-display">
             {navigationContent.brand}
           </div>
           
@@ -26,40 +26,45 @@ export const Navigation = () => {
           <div className="hidden md:flex space-x-8">
             <button 
               onClick={() => scrollToSection('hero')}
-              className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
+              className="text-gray-300 hover:text-white transition-colors font-inter relative group"
             >
               {navigationContent.menu.home}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
             </button>
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
+              className="text-gray-300 hover:text-white transition-colors font-inter relative group"
             >
               {navigationContent.menu.about}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
             </button>
             <button 
               onClick={() => scrollToSection('portfolio')}
-              className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
+              className="text-gray-300 hover:text-white transition-colors font-inter relative group"
             >
               {navigationContent.menu.portfolio}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
             </button>
             <button 
               onClick={() => scrollToSection('blog')}
-              className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
+              className="text-gray-300 hover:text-white transition-colors font-inter relative group"
             >
               {navigationContent.menu.blog}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-gray-700 hover:text-gray-900 transition-colors font-inter"
+              className="text-gray-300 hover:text-white transition-colors font-inter relative group"
             >
               {navigationContent.menu.contact}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden"
+            className="md:hidden text-white"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -67,35 +72,35 @@ export const Navigation = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
+          <div className="md:hidden mt-6 pb-6 border-t border-gray-800 pt-6">
             <div className="flex flex-col space-y-4">
               <button 
                 onClick={() => scrollToSection('hero')}
-                className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
+                className="text-gray-300 hover:text-white transition-colors text-left font-inter"
               >
                 {navigationContent.menu.home}
               </button>
               <button 
                 onClick={() => scrollToSection('about')}
-                className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
+                className="text-gray-300 hover:text-white transition-colors text-left font-inter"
               >
                 {navigationContent.menu.about}
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio')}
-                className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
+                className="text-gray-300 hover:text-white transition-colors text-left font-inter"
               >
                 {navigationContent.menu.portfolio}
               </button>
               <button 
                 onClick={() => scrollToSection('blog')}
-                className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
+                className="text-gray-300 hover:text-white transition-colors text-left font-inter"
               >
                 {navigationContent.menu.blog}
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="text-gray-700 hover:text-gray-900 transition-colors text-left font-inter"
+                className="text-gray-300 hover:text-white transition-colors text-left font-inter"
               >
                 {navigationContent.menu.contact}
               </button>
