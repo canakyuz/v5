@@ -11,7 +11,7 @@ const AnimationStyles = () => (
         transform: translateX(0);
       }
       to {
-        transform: translateX(calc(-50% - 0.5rem));
+        transform: translateX(calc(-50%));
       }
     }
 
@@ -19,9 +19,13 @@ const AnimationStyles = () => (
       animation: infiniteScroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
     }
 
+    .animate-infiniteScroll:hover {
+      animation-play-state: paused;
+    }
+
     .scroller {
-      mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+      mask-image: linear-gradient(to right, transparent, white 5%, white 95%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, white 5%, white 95%, transparent);
     }
   `}</style>
 );
@@ -166,38 +170,151 @@ const skills = [
     category: "tools",
     proficiency: 72,
     description: "UI component explorer"
-  }
+  },
+  {
+    name: "FileZilla",
+    category: "tools",
+    proficiency: 90,
+    description: "Dosya transfer aracı"
+  },
+  /* FortiClient */
+  {
+    name: "FortiClient",
+    category: "tools",
+    proficiency: 90,
+    description: "Masaüstü güvenlik yazılımı"
+  },
+  /* FortiGate */
+  {
+    name: "FortiGate",
+    category: "devops",
+    proficiency: 90,
+    description: "Masaüstü güvenlik yazılımı"
+  },
 ];
 
 // Skill card component
 const SkillCard = ({ skill }: { skill: any }) => {
-  // Renk tonu seçimi için ilerleme yüzdesine göre ayarlama
-  const getProgressColor = (percentage: number) => {
-    if (percentage >= 90) return 'from-accent/5 to-accent/20';
-    if (percentage >= 80) return 'from-accent/5 to-accent/15';
-    if (percentage >= 70) return 'from-accent/5 to-accent/10';
-    return 'from-accent/0 to-accent/5';
-  }
+  // Kategori sınıflarını alır
+  const getCategoryClasses = (category: string) => {
+    switch (category) {
+      case 'frontend':
+        return {
+          bg: 'bg-blue-500',
+          text: 'text-blue-500',
+          border: 'border-blue-500',
+          from: 'from-blue-500/10',
+          to: 'to-blue-500',
+          ring: 'ring-blue-500'
+        };
+      case 'backend':
+        return {
+          bg: 'bg-green-500',
+          text: 'text-green-500',
+          border: 'border-green-500',
+          from: 'from-green-500/10',
+          to: 'to-green-500',
+          ring: 'ring-green-500'
+        };
+      case 'devops':
+        return {
+          bg: 'bg-purple-500',
+          text: 'text-purple-500',
+          border: 'border-purple-500',
+          from: 'from-purple-500/10',
+          to: 'to-purple-500',
+          ring: 'ring-purple-500'
+        };
+      case 'tools':
+        return {
+          bg: 'bg-orange-500',
+          text: 'text-orange-500',
+          border: 'border-orange-500',
+          from: 'from-orange-500/10',
+          to: 'to-orange-500',
+          ring: 'ring-orange-500'
+        };
+      default:
+        return {
+          bg: 'bg-violet-600',
+          text: 'text-violet-600',
+          border: 'border-violet-600',
+          from: 'from-violet-600/10',
+          to: 'to-violet-600',
+          ring: 'ring-violet-600'
+        };
+    }
+  };
+
+  // Kartın sınıflarını hesapla
+  const classes = getCategoryClasses(skill.category);
+
+  // Yüzdeye göre opacity sınıfını ayarla
+  const getOpacityClass = (percentage: number) => {
+    if (percentage >= 90) return 'opacity-100';
+    if (percentage >= 80) return 'opacity-85';
+    if (percentage >= 70) return 'opacity-70';
+    return 'opacity-50';
+  };
+
+  // Kategori adını görüntülenebilir formata çevirme
+  const getCategoryName = (category: string) => {
+    const names: {[key: string]: string} = {
+      'frontend': 'Frontend',
+      'backend': 'Backend',
+      'devops': 'DevOps',
+      'tools': 'Tools'
+    };
+    return names[category] || category;
+  };
 
   return (
-    <div className="skill-card rounded-xl p-4 border border-[var(--border)] bg-[var(--surface)]/80 backdrop-blur-sm hover:border-[var(--border-hover)] transition-all duration-300 shadow-md relative overflow-hidden group">
-      {/* Progress bar */}
+    <div 
+      className={`skill-card rounded-xl backdrop-blur-sm transition-all duration-300 shadow-md relative overflow-hidden group min-w-[180px] sm:min-w-[250px] flex flex-col justify-between bg-black/80 border-2 ${classes.border} border-opacity-80`}
+    >
+      {/* Progress bar - yüzde kadar doldurulan arka plan */}
       <div 
-        className="absolute bottom-0 left-0 h-full bg-gradient-to-r from-accent/10 to-accent/20 z-0" 
+        className={`absolute bottom-0 left-0 h-full bg-gradient-to-r ${classes.from} ${classes.to} z-0 opacity-30`}
         style={{ width: `${skill.proficiency}%` }} 
       />
-      <div className="absolute bottom-0 left-[70%] w-px h-full bg-accent/30 z-0" />
+      
+      {/* İnce çizgi - proficiency değerine göre konumlandırılmış */}
+      <div 
+        className={`absolute bottom-0 w-px h-full z-0 ${classes.bg} opacity-80`}
+        style={{ left: `${skill.proficiency}%` }}
+      />
 
       {/* Content */}
-      <div className="relative z-10">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className="font-semibold text-base text-[var(--text-primary)]">{skill.name}</h3>
-          <span className="text-xs font-medium text-accent bg-accent/10 px-2 py-1 rounded-full">{skill.proficiency}%</span>
+      <div className="relative z-10 flex-1 px-2 py-1.5 sm:px-4 sm:py-2">
+        <div className="flex justify-between items-start mb-1">
+          <div>
+            <h3 className="font-semibold text-sm sm:text-base text-white">{skill.name}</h3>
+            <div className="flex items-center mt-1 mb-0.5">
+              <span 
+                className={`text-[8px] sm:text-[10px] font-medium px-1 py-0.5 sm:px-1.5 rounded ${classes.bg} text-white opacity-90`}
+              >
+                {getCategoryName(skill.category)}
+              </span>
+            </div>
+          </div>
+          <span 
+            className={`text-[10px] sm:text-xs font-medium px-1.5 py-0.5 sm:px-2 rounded-lg ${classes.bg} text-white ${skill.proficiency >= 90 ? 'opacity-90' : 'opacity-75'}`}
+          >
+            {skill.proficiency}%
+          </span>
         </div>
         
-        <p className="text-xs text-[var(--text-secondary)] opacity-90 mb-3 line-clamp-2">
+        <p className="text-[10px] sm:text-xs text-gray-300 opacity-90 mb-1 sm:mb-2 line-clamp-2">
           {skill.description}
         </p>
+        
+        {/* Progress bar görünür versiyon */}
+        <div className="w-full h-0.5 sm:h-1 bg-gray-800 rounded-lg overflow-hidden">
+          <div 
+            className={`h-full rounded-lg ${classes.bg} ${getOpacityClass(skill.proficiency)}`}
+            style={{ width: `${skill.proficiency}%` }}
+          />
+        </div>
         
         <div className="flex gap-1.5 flex-wrap">
           {skill.tags && skill.tags.map((tag: string, idx: number) => (
@@ -234,6 +351,12 @@ const InfiniteMovingCards = ({
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [start, setStart] = useState(false);
 
+  const renderItems = useCallback(() => {
+    return items.map((skill, idx) => (
+      <SkillCard key={`${skill.name}-${idx}`} skill={skill} />
+    ));
+  }, [items]);
+
   useEffect(() => {
     if (!containerRef.current || !scrollerRef.current) return;
     
@@ -250,35 +373,34 @@ const InfiniteMovingCards = ({
       direction === 'left' ? 'forwards' : 'reverse'
     );
     
-    // Klonlama işlemi
-    if (scrollerRef.current) {
-      // Mevcut öğeleri klonla ve ekle
-      const scrollerContent = Array.from(scrollerRef.current.children);
-      scrollerContent.forEach(item => {
-        const duplicate = item.cloneNode(true);
-        if (scrollerRef.current) scrollerRef.current.appendChild(duplicate);
-      });
-    }
-    
     setStart(true);
+
+    // Gözlemci ile genişlik değişikliklerini izle
+    const resizeObserver = new ResizeObserver(() => {
+      setStart(false);
+      setTimeout(() => setStart(true), 50);
+    });
+    
+    resizeObserver.observe(containerRef.current);
+    
+    return () => {
+      if (containerRef.current) {
+        resizeObserver.unobserve(containerRef.current);
+      }
+    };
   }, [direction, speed]);
 
   return (
     <div 
       ref={containerRef} 
-      className={`scroller relative overflow-hidden max-w-full ${className}`}
-      style={{
-        maskImage: 'linear-gradient(to right, transparent, white 10%, white 90%, transparent)',
-        WebkitMaskImage: 'linear-gradient(to right, transparent, white 10%, white 90%, transparent)'
-      }}
+      className={`scroller relative overflow-hidden max-w-full p-3 ${className}`}
     >
       <div 
         ref={scrollerRef}
-        className={`flex flex-nowrap gap-4 py-4 ${start ? 'animate-infiniteScroll' : ''} hover:[animation-play-state:paused]`}
+        className={`flex flex-nowrap gap-3 py-2 ${start ? 'animate-infiniteScroll' : ''}`}
       >
-        {items.map((skill, idx) => (
-          <SkillCard key={`${skill.name}-${idx}`} skill={skill} />
-        ))}
+        {renderItems()}
+        {renderItems()} {/* Klonlanmış öğeler - doğrudan JSX içinde render ediyoruz */}
       </div>
     </div>
   );
@@ -293,9 +415,14 @@ export default function Skills() {
   const devopsSkills = skills.filter(skill => skill.category === 'devops');
   const toolsSkills = skills.filter(skill => skill.category === 'tools');
   
-  // İki ayrı sıra için yetenekleri bölüştürelim
+  // Farklı dağılım için grupları shuffle edelim
+  const shuffleArray = (array: any[]) => {
+    return [...array].sort(() => Math.random() - 0.5);
+  };
+  
+  // İki ayrı sıra için yetenekleri bölüştürelim - daha dengeli bir görünüm için
   const topRowSkills = [...frontendSkills, ...backendSkills];
-  const bottomRowSkills = [...devopsSkills, ...toolsSkills, ...frontendSkills.slice(0, 3)]; // Dengeli görünmesi için
+  const bottomRowSkills = [...devopsSkills, ...toolsSkills];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -337,34 +464,32 @@ export default function Skills() {
         </div>
 
         {/* İki sıralı hareketli kartlar */}
-        <div className="space-y-12 bg-[var(--surface-elevated)]/80 backdrop-blur-sm p-8 rounded-xl border border-[var(--border)] shadow-xl">
+        <div className="space-y-4 sm:space-y-8 bg-[var(--surface-elevated)]/90 backdrop-blur-sm p-3 sm:p-6 rounded-xl border border-[var(--border)] shadow-xl">
           {/* Birinci sıra - sola doğru hareket eden */}
-          <div className="rounded-lg overflow-hidden">
-            <h3 className="text-lg font-semibold mb-4 text-[var(--text-primary)]/90 pl-2 border-l-4 border-accent">{t('skills.frontendBackend')}</h3>
+          <div className="overflow-hidden mb-2">
+            <h3 className="text-base sm:text-lg font-semibold my-1 text-[var(--text-primary)]/90 px-2 sm:px-4 py-1 border-l-4 border-accent">{t('skills.frontendBackend')}</h3>
             <InfiniteMovingCards 
               items={topRowSkills} 
               direction="left" 
-              speed="normal"
-              className="py-2"
+              speed="slow"
             />
           </div>
 
           {/* İkinci sıra - sağa doğru hareket eden */}
-          <div className="rounded-lg overflow-hidden">
-            <h3 className="text-lg font-semibold mb-4 text-[var(--text-primary)]/90 pl-2 border-l-4 border-accent">{t('skills.devopsTools')}</h3>
+          <div className="overflow-hidden mb-2">
+            <h3 className="text-base sm:text-lg font-semibold my-1 text-[var(--text-primary)]/90 px-2 sm:px-4 py-1 border-l-4 border-accent">{t('skills.devopsTools')}</h3>
             <InfiniteMovingCards 
               items={bottomRowSkills} 
               direction="right" 
-              speed="normal"
-              className="py-2"
+              speed="slow"
             />
           </div>
         </div>
 
         {/* Yetenek sayısı */}
-        <div className="mt-8 text-center text-sm text-muted-foreground">
+        {/* <div className="mt-8 text-center text-sm text-muted-foreground">
           {t('skills.total', skills.length)}
-        </div>
+        </div> */}
       </div>
     </section>
   );
