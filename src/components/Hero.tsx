@@ -1,19 +1,13 @@
-
 import { heroContent } from "@/content/hero";
 import { ArrowDown, ArrowUpRight, Play, Sparkles } from "lucide-react";
-
 export const Hero = () => {
-  return (
-    <section id="hero" className="relative min-h-screen bg-white overflow-hidden">
+  return <section id="hero" className="relative min-h-screen bg-white overflow-hidden">
       {/* Background Grid */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }}
-        />
+        <div className="absolute inset-0" style={{
+        backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0)`,
+        backgroundSize: '40px 40px'
+      }} />
       </div>
 
       {/* Floating Elements */}
@@ -66,20 +60,18 @@ export const Hero = () => {
 
                   {/* Action Buttons */}
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 animate-fade-in">
-                    <button 
-                      onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
-                      className="group relative overflow-hidden bg-gray-900 text-white px-10 py-5 rounded-full hover:bg-gray-800 transition-all duration-500 hover:scale-105 hover:shadow-2xl"
-                    >
+                    <button onClick={() => document.getElementById('portfolio')?.scrollIntoView({
+                    behavior: 'smooth'
+                  })} className="group relative overflow-hidden bg-gray-900 text-white px-10 py-5 rounded-full hover:bg-gray-800 transition-all duration-500 hover:scale-105 hover:shadow-2xl">
                       <div className="flex items-center space-x-4">
                         <span className="text-lg font-medium font-inter">{heroContent.cta.primary.text}</span>
                         <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
                       </div>
                     </button>
                     
-                    <button 
-                      onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                      className="group flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors"
-                    >
+                    <button onClick={() => document.getElementById('contact')?.scrollIntoView({
+                    behavior: 'smooth'
+                  })} className="group flex items-center space-x-3 text-gray-700 hover:text-gray-900 transition-colors">
                       <div className="w-12 h-12 border-2 border-gray-300 rounded-full flex items-center justify-center group-hover:border-gray-900 group-hover:bg-gray-900 transition-all duration-300">
                         <Play className="w-4 h-4 group-hover:text-white transition-colors" />
                       </div>
@@ -109,10 +101,10 @@ export const Hero = () => {
                   </div>
 
                   {/* Decorative Element */}
-                  <div className="hidden lg:flex justify-end animate-fade-in">
+                  <div className="d-nonr">
                     <div className="w-32 h-32 border border-gray-200 rounded-full flex items-center justify-center hover:border-gray-400 transition-colors cursor-pointer group">
                       <div className="text-xs font-departure text-gray-400 text-center tracking-[0.2em] uppercase group-hover:text-gray-600 transition-colors">
-                        Creative<br/>Developer
+                        Creative<br />Developer
                       </div>
                     </div>
                   </div>
@@ -135,10 +127,9 @@ export const Hero = () => {
         
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-8 animate-fade-in pointer-events-auto">
-          <button 
-            className="flex items-center space-x-4 cursor-pointer group"
-            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-          >
+          <button className="flex items-center space-x-4 cursor-pointer group" onClick={() => document.getElementById('about')?.scrollIntoView({
+          behavior: 'smooth'
+        })}>
             <div className="flex flex-col items-center space-y-3">
               <div className="text-xs font-departure text-gray-400 tracking-[0.2em] uppercase">Scroll</div>
               <div className="w-px h-20 bg-gray-300 group-hover:bg-gray-600 transition-colors duration-300" />
@@ -160,6 +151,5 @@ export const Hero = () => {
         </div>
       </div>
 
-    </section>
-  );
+    </section>;
 };
