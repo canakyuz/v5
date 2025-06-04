@@ -170,9 +170,9 @@ function FilterButton({ active, onClick, icon, children }: {
     <motion.button
       whileTap={{ scale: 0.97 }}
       onClick={onClick}
-      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm transition-all duration-300 ${active ? 
-        'bg-accent/20 text-white border-[0.5px] border-accent shadow-sm shadow-accent/20' : 
-        'text-text-secondary bg-white/5 border-[0.5px] border-white/10 hover:border-white/20'}`}
+      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-sm transition-all duration-300 ${active ?
+        'bg-accent/20 text-[var(--text-primary)] border-[0.5px] border-accent shadow-sm shadow-accent/20' :
+        'text-[var(--text-secondary)] bg-white/5 border-[0.5px] border-white/10 hover:border-white/20'}`}
     >
       <span className="text-xs">{icon}</span>
       <span>{children}</span>
@@ -187,7 +187,7 @@ function TechBadge({ tech }: { tech: string }) {
       initial={{ opacity: 0, y: 5 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2 }}
-      className="bg-white/5 backdrop-blur-sm border-[0.5px] border-white/10 px-2 py-0.5 rounded-md text-[10px] font-medium text-white/70 inline-block"
+      className="bg-white/5 backdrop-blur-sm border-[0.5px] border-white/10 px-2 py-0.5 rounded-md text-[10px] font-medium text-[var(--text-secondary)] inline-block"
     >
       {tech}
     </motion.span>
@@ -256,15 +256,15 @@ export default function Work() {
                     <div className="flex-1 min-w-0">
                       <h3 className="text-base font-semibold truncate">{project.title}</h3>
                       <div className="flex items-center gap-2">
-                        <span className="text-xs text-white/70">{project.year}</span>
+                        <span className="text-xs text-[var(--text-secondary)]">{project.year}</span>
                         <span className="h-1 w-1 rounded-full bg-white/20"></span>
-                        <span className="text-xs text-white/70 capitalize">{project.category}</span>
+                        <span className="text-xs text-[var(--text-secondary)] capitalize">{project.category}</span>
                       </div>
                     </div>
                   </div>
                   
                   <div className="p-3 text-sm">
-                    <p className="text-white/70 line-clamp-3 text-xs leading-relaxed">
+                    <p className="text-[var(--text-secondary)] line-clamp-3 text-xs leading-relaxed">
                       {project.description}
                     </p>
                   </div>
@@ -275,7 +275,7 @@ export default function Work() {
                         <TechBadge key={idx} tech={tech} />
                       ))}
                       {project.tech.length > 3 && (
-                        <span className="text-xs text-white/60">+{project.tech.length - 3}</span>
+                        <span className="text-xs text-[var(--text-secondary)]">+{project.tech.length - 3}</span>
                       )}
                     </div>
                     

@@ -269,8 +269,8 @@ const SkillCard = ({ skill }: { skill: any }) => {
   };
 
   return (
-    <div 
-      className={`skill-card rounded-xl backdrop-blur-sm transition-all duration-300 shadow-md relative overflow-hidden group min-w-[180px] sm:min-w-[250px] flex flex-col justify-between bg-black/80 border-2 ${classes.border} border-opacity-80`}
+    <div
+      className={`skill-card rounded-xl backdrop-blur-sm transition-all duration-300 shadow-md relative overflow-hidden group min-w-[150px] sm:min-w-[220px] flex flex-col justify-between bg-black/80 border-2 ${classes.border} border-opacity-80`}
     >
       {/* Progress bar - yüzde kadar doldurulan arka plan */}
       <div 
@@ -288,23 +288,23 @@ const SkillCard = ({ skill }: { skill: any }) => {
       <div className="relative z-10 flex-1 px-2 py-1.5 sm:px-4 sm:py-2">
         <div className="flex justify-between items-start mb-1">
           <div>
-            <h3 className="font-semibold text-sm sm:text-base text-white">{skill.name}</h3>
+            <h3 className="font-semibold text-sm sm:text-base text-[var(--text-primary)]">{skill.name}</h3>
             <div className="flex items-center mt-1 mb-0.5">
-              <span 
-                className={`text-[8px] sm:text-[10px] font-medium px-1 py-0.5 sm:px-1.5 rounded ${classes.bg} text-white opacity-90`}
+              <span
+                className={`text-[8px] sm:text-[10px] font-medium px-1 py-0.5 sm:px-1.5 rounded ${classes.bg} text-[var(--text-primary)] opacity-90`}
               >
                 {getCategoryName(skill.category)}
               </span>
             </div>
           </div>
-          <span 
-            className={`text-[10px] sm:text-xs font-medium px-1.5 py-0.5 sm:px-2 rounded-lg ${classes.bg} text-white ${skill.proficiency >= 90 ? 'opacity-90' : 'opacity-75'}`}
+          <span
+            className={`text-[10px] sm:text-xs font-medium px-1.5 py-0.5 sm:px-2 rounded-lg ${classes.bg} text-[var(--text-primary)] ${skill.proficiency >= 90 ? 'opacity-90' : 'opacity-75'}`}
           >
             {skill.proficiency}%
           </span>
         </div>
         
-        <p className="text-[10px] sm:text-xs text-gray-300 opacity-90 mb-1 sm:mb-2 line-clamp-2">
+        <p className="text-[10px] sm:text-xs text-[var(--text-secondary)] opacity-90 mb-1 sm:mb-2 line-clamp-2">
           {skill.description}
         </p>
         
@@ -325,7 +325,7 @@ const SkillCard = ({ skill }: { skill: any }) => {
             </span>
           ))}
           {skill.category && (
-            <span className="inline-block px-2 py-0.5 bg-black/30 text-[10px] rounded-md border border-zinc-700">
+            <span className="inline-block px-2 py-0.5 bg-black/30 text-[10px] rounded-md border border-zinc-700 text-[var(--text-primary)]">
               {skill.category}
             </span>
           )}
