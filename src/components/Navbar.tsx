@@ -103,7 +103,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="text-lg font-medium text-white">
+            <Link href="/" className="text-lg font-medium text-[var(--text-primary)]">
               <Image
                 src="/logo.svg"
                 alt="Logo"
@@ -121,9 +121,9 @@ export default function Navbar() {
                   key={section}
                   href={`#${section}`}
                   onClick={handleNavLinkClick(section)}
-                  className={`px-2 py-2 text-sm font-medium ${activeSection === section 
-                    ? 'text-white border-b-2 border-primary' 
-                    : 'text-gray-300 hover:text-white'} transition-colors duration-200 ease-in-out`}
+                  className={`px-2 py-2 text-sm font-medium ${activeSection === section
+                    ? 'text-[var(--text-primary)] border-b-2 border-primary'
+                    : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'} transition-colors duration-200 ease-in-out`}
                 >
                   {t(`nav.${section}`)}
                 </Link>
@@ -138,7 +138,7 @@ export default function Navbar() {
               <button
                 onClick={toggleLanguage}
                 aria-label={t('aria.toggleLanguage')}
-                className="inline-flex items-center justify-center p-1.5 rounded-md text-gray-300 hover:text-white hover:bg-gray-800 focus:outline-none transition duration-150 ease-in-out"
+                className="inline-flex items-center justify-center p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-gray-800 focus:outline-none transition duration-150 ease-in-out"
               >
                 <span className="text-xs font-medium">{language === 'tr' ? 'EN' : 'TR'}</span>
               </button>
@@ -149,7 +149,7 @@ export default function Navbar() {
               <button
                 onClick={toggleTheme}
                 aria-label={t('aria.toggleTheme')}
-                className="inline-flex items-center justify-center p-1.5 rounded-md text-gray-300 hover:text-white hover:bg-gray-800 focus:outline-none transition duration-150 ease-in-out"
+                className="inline-flex items-center justify-center p-1.5 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-gray-800 focus:outline-none transition duration-150 ease-in-out"
               >
                 {theme === 'dark' ? (
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -168,7 +168,7 @@ export default function Navbar() {
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label={mobileMenuOpen ? t('aria.closeMenu') : t('aria.openMenu')}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-white hover:bg-gray-800 focus:outline-none transition duration-150 ease-in-out"
+                className="inline-flex items-center justify-center p-2 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-gray-800 focus:outline-none transition duration-150 ease-in-out"
               >
                 <svg 
                   className="h-6 w-6" 
@@ -213,9 +213,9 @@ export default function Navbar() {
               key={section}
               href={`#${section}`}
               onClick={handleNavLinkClick(section)}
-              className={`block px-3 py-2 rounded-md text-base font-medium ${activeSection === section 
-                ? 'text-white bg-gray-900' 
-                : 'text-gray-300 hover:text-white hover:bg-gray-800'} transition-colors duration-150 ease-in-out`}
+              className={`block px-3 py-2 rounded-md text-base font-medium ${activeSection === section
+                ? 'text-[var(--text-primary)] bg-gray-900'
+                : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-gray-800'} transition-colors duration-150 ease-in-out`}
             >
               {t(`nav.${section}`)}
             </Link>
@@ -224,14 +224,14 @@ export default function Navbar() {
           <div className="mt-4 pt-4 border-t border-gray-800 flex justify-between">
             <button
               onClick={toggleLanguage}
-              className="inline-flex items-center px-4 py-2 border border-gray-800 rounded-md text-sm font-medium text-gray-300 bg-transparent hover:bg-gray-800 transition-colors duration-150 ease-in-out"
+              className="inline-flex items-center px-4 py-2 border border-gray-800 rounded-md text-sm font-medium text-[var(--text-secondary)] bg-transparent hover:bg-gray-800 hover:text-[var(--text-primary)] transition-colors duration-150 ease-in-out"
             >
               {language === 'tr' ? t('language.en') : t('language.tr')}
             </button>
             
             <button
               onClick={toggleTheme}
-              className="inline-flex items-center px-4 py-2 border border-gray-800 rounded-md text-sm font-medium text-gray-300 bg-transparent hover:bg-gray-800 transition-colors duration-150 ease-in-out"
+              className="inline-flex items-center px-4 py-2 border border-gray-800 rounded-md text-sm font-medium text-[var(--text-secondary)] bg-transparent hover:bg-gray-800 hover:text-[var(--text-primary)] transition-colors duration-150 ease-in-out"
             >
               {theme === 'dark' ? t('theme.light') : t('theme.dark')}
             </button>

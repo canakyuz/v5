@@ -103,7 +103,7 @@ const createBlogItem = (article: typeof allArticles[0], index: number, customOpt
         }
         header={
           <div className="flex items-center justify-between text-xs">
-            <span className="text-white/60">{article.date}</span>
+            <span className="text-[var(--text-secondary)]">{article.date}</span>
             <span className={`font-medium px-2 py-0.5 rounded-md bg-white/10 ${categoryColor.text}`}>
               {article.category}
             </span>
@@ -111,7 +111,7 @@ const createBlogItem = (article: typeof allArticles[0], index: number, customOpt
         }
         footer={
           <div className="flex items-center justify-between">
-            <span className="text-[10px] text-white/50">{article.readTime}</span>
+            <span className="text-[10px] text-[var(--text-secondary)]">{article.readTime}</span>
             <span className="text-accent/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               →
             </span>
