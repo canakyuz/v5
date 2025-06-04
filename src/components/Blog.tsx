@@ -23,7 +23,7 @@ const allArticles = [
     readTime: "8 dk",
     date: "12 Mayıs 2023",
     category: "Mimari",
-    url: "#",
+    url: "/blog/modern-frontend-mimarisi",
     featured: true,
     size: "large" // large, medium, small
   },
@@ -34,7 +34,7 @@ const allArticles = [
     readTime: "6 dk",
     date: "25 Nisan 2023",
     category: "React",
-    url: "#",
+    url: "/blog/typescript-ile-daha-guvenli-react",
     featured: false,
     size: "medium"
   },
@@ -45,7 +45,7 @@ const allArticles = [
     readTime: "5 dk",
     date: "10 Nisan 2023",
     category: "CSS",
-    url: "#",
+    url: "/blog/css-grid-vs-flexbox",
     featured: false,
     size: "small"
   },
@@ -56,7 +56,7 @@ const allArticles = [
     readTime: "7 dk",
     date: "2 Nisan 2023",
     category: "Performans",
-    url: "#",
+    url: "/blog/web-performance-optimizasyonu",
     featured: false,
     size: "medium"
   },
@@ -67,7 +67,7 @@ const allArticles = [
     readTime: "4 dk",
     date: "15 Mart 2023",
     category: "JavaScript",
-    url: "#",
+    url: "/blog/javascript-yeni-ozellikler",
     featured: false,
     size: "small"
   }
