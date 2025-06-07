@@ -16,7 +16,7 @@ export const Posts = () => {
   }, []);
   
   return (
-    <section id="blog" className="relative bg-gray-950/95">
+    <section id="blog" className="relative bg-gray-950/95 dark:bg-gray-950/95 light:bg-gray-50/95">
       <div className={`relative z-10 ${spacing.section.padding} ${spacing.content.padding}`}>
         <div className={spacing.content.maxWidth}>
           <div className={grid.main}>
@@ -31,7 +31,7 @@ export const Posts = () => {
                 {postsContent.posts.map((post, index) => (
                   <article 
                     key={post.id} 
-                    className={`group relative bg-gray-900/30 border border-gray-800/60 rounded-xl p-6 hover:border-blue-500/40 hover:bg-gray-900/40 transition-all duration-300 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}
+                    className={`group relative bg-gray-900/30 dark:bg-gray-900/30 light:bg-white/50 border border-gray-800/60 dark:border-gray-800/60 light:border-gray-200 rounded-xl p-6 hover:border-blue-500/40 hover:bg-gray-900/40 dark:hover:bg-gray-900/40 light:hover:bg-white/80 transition-all duration-300 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}
                     style={{ animationDelay: `${0.4 + index * 0.1}s` }}
                   >
                     <div className="flex items-center justify-between mb-4">
@@ -41,13 +41,13 @@ export const Posts = () => {
                             {String(index + 1).padStart(2, '0')}
                           </span>
                         </div>
-                        <div className="bg-gray-800/50 border border-gray-700/50 px-2 py-1 rounded-md">
-                          <span className={`${fonts.mono} text-xs text-gray-400 uppercase`}>
+                        <div className="bg-gray-800/50 dark:bg-gray-800/50 light:bg-gray-100 border border-gray-700/50 dark:border-gray-700/50 light:border-gray-300 px-2 py-1 rounded-md">
+                          <span className={`${fonts.mono} text-xs text-gray-400 dark:text-gray-400 light:text-gray-600 uppercase`}>
                             {post.category}
                           </span>
                         </div>
                       </div>
-                      <div className="flex items-center space-x-3 text-xs text-gray-500">
+                      <div className="flex items-center space-x-3 text-xs text-gray-500 dark:text-gray-500 light:text-gray-600">
                         <div className="flex items-center space-x-1">
                           <Calendar size={12} />
                           <span>{post.date}</span>
@@ -59,26 +59,26 @@ export const Posts = () => {
                       </div>
                     </div>
                     
-                    <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white mb-3 leading-tight`}>
+                    <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-3 leading-tight`}>
                       {post.title}
                     </h3>
                     
-                    <p className={`${typography.post.excerpt} text-gray-400 leading-relaxed ${fonts.secondary} font-light mb-4`}>
+                    <p className={`${typography.post.excerpt} text-gray-400 dark:text-gray-400 light:text-gray-600 leading-relaxed ${fonts.secondary} font-light mb-4`}>
                       {post.excerpt}
                     </p>
                     
-                    <div className="flex items-center justify-between pt-3 border-t border-gray-800/50">
+                    <div className="flex items-center justify-between pt-3 border-t border-gray-800/50 dark:border-gray-800/50 light:border-gray-200">
                       <div className="flex flex-wrap gap-2">
                         {post.tags.slice(0, 2).map((tag) => (
                           <span 
                             key={tag} 
-                            className="px-2 py-1 bg-gray-800/40 text-gray-400 text-xs border border-gray-700/40 rounded-md"
+                            className="px-2 py-1 bg-gray-800/40 dark:bg-gray-800/40 light:bg-gray-100 text-gray-400 dark:text-gray-400 light:text-gray-600 text-xs border border-gray-700/40 dark:border-gray-700/40 light:border-gray-300 rounded-md"
                           >
                             {tag}
                           </span>
                         ))}
                         {post.tags.length > 2 && (
-                          <span className="px-2 py-1 text-gray-500 text-xs">
+                          <span className="px-2 py-1 text-gray-500 dark:text-gray-500 light:text-gray-600 text-xs">
                             +{post.tags.length - 2}
                           </span>
                         )}
