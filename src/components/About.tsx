@@ -5,50 +5,15 @@ import { Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export const About = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
-    
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / window.innerHeight) * 100,
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
-    <section id="about" className="relative bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950 overflow-hidden">
-      {/* Simplified Background Effects - Same as other sections */}
-      <div className="absolute inset-0">
-        {/* Dynamic Gradient Overlay */}
-        <div 
-          className="absolute inset-0 opacity-30 transition-all duration-1000"
-          style={{
-            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(59, 130, 246, 0.2) 0%, rgba(147, 51, 234, 0.1) 25%, rgba(79, 70, 229, 0.05) 50%, transparent 70%)`,
-          }}
-        />
-        
-        {/* Multi-layer Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/15 to-indigo-900/20" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-500/5 to-purple-500/10" />
-        
-        {/* Grid Pattern */}
-        <div 
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px',
-          }}
-        />
-      </div>
-
-      <div className={`relative z-10 ${stylesContent.spacing.section.padding} ${stylesContent.spacing.content.padding}`}>
+    <section id="about" className="bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950">
+      <div className={`${stylesContent.spacing.section.padding} ${stylesContent.spacing.content.padding}`}>
         <div className={stylesContent.spacing.content.maxWidth}>
           <div className={stylesContent.grid.main}>
             {/* Section Header */}
@@ -93,7 +58,7 @@ export const About = () => {
                 </div>
                 
                 {/* Skills - Simplified Design */}
-                <div className="space-y-12">
+                <div className="space-y-12 mt-12">
                   {/* Core Technologies */}
                   <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
                     <h3 className={`text-xl ${stylesContent.fonts.primary} font-light ${stylesContent.colors.primary.main} mb-6 tracking-wide`}>
@@ -103,14 +68,14 @@ export const About = () => {
                       {aboutContent.skills.frontend.items.map((skill, index) => (
                         <div 
                           key={skill.name} 
-                          className={`group bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-4 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 transition-all duration-300 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}
+                          className={`group border border-gray-700/60 rounded-xl p-4 hover:border-blue-500/50 transition-all duration-300 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}
                           style={{ animationDelay: `${0.6 + index * 0.1}s` }}
                         >
                           <div className="flex items-center justify-between mb-2">
                             <div className={`${stylesContent.colors.primary.main} ${stylesContent.fonts.secondary} font-medium text-sm`}>
                               {skill.name}
                             </div>
-                            <span className={`text-[10px] ${stylesContent.fonts.mono} text-blue-400 px-2 py-1 rounded-full border border-blue-500/30 bg-blue-500/10`}>
+                            <span className={`text-[10px] ${stylesContent.fonts.mono} text-blue-400 px-2 py-1 rounded-full border border-blue-500/30`}>
                               {skill.level}
                             </span>
                           </div>
@@ -131,14 +96,14 @@ export const About = () => {
                       {aboutContent.skills.tools.items.map((skill, index) => (
                         <div 
                           key={skill.name} 
-                          className={`group bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-4 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10 transition-all duration-300 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}
+                          className={`group border border-gray-700/60 rounded-xl p-4 hover:border-purple-500/50 transition-all duration-300 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}
                           style={{ animationDelay: `${0.8 + index * 0.1}s` }}
                         >
                           <div className="flex items-center justify-between mb-2">
                             <div className={`${stylesContent.colors.primary.main} ${stylesContent.fonts.secondary} font-medium text-sm`}>
                               {skill.name}
                             </div>
-                            <span className={`text-[10px] ${stylesContent.fonts.mono} text-purple-400 px-2 py-1 rounded-full border border-purple-500/30 bg-purple-500/10`}>
+                            <span className={`text-[10px] ${stylesContent.fonts.mono} text-purple-400 px-2 py-1 rounded-full border border-purple-500/30`}>
                               {skill.level}
                             </span>
                           </div>
@@ -159,14 +124,14 @@ export const About = () => {
                       {aboutContent.skills.architecture.items.map((skill, index) => (
                         <div 
                           key={skill.name} 
-                          className={`group bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-xl p-4 hover:border-indigo-500/50 hover:shadow-lg hover:shadow-indigo-500/10 transition-all duration-300 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}
+                          className={`group border border-gray-700/60 rounded-xl p-4 hover:border-indigo-500/50 transition-all duration-300 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}
                           style={{ animationDelay: `${1.0 + index * 0.1}s` }}
                         >
                           <div className="flex items-center justify-between mb-2">
                             <div className={`${stylesContent.colors.primary.main} ${stylesContent.fonts.secondary} font-medium text-sm`}>
                               {skill.name}
                             </div>
-                            <span className={`text-[10px] ${stylesContent.fonts.mono} text-indigo-400 px-2 py-1 rounded-full border border-indigo-500/30 bg-indigo-500/10`}>
+                            <span className={`text-[10px] ${stylesContent.fonts.mono} text-indigo-400 px-2 py-1 rounded-full border border-indigo-500/30`}>
                               {skill.level}
                             </span>
                           </div>
