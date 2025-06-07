@@ -2,67 +2,18 @@
 import { heroContent } from "@/content/hero";
 import { stylesContent } from "@/content/styles";
 import { ArrowDown, ArrowRight, Sparkles } from "lucide-react";
-import { AnimatedBackground } from "./AnimatedBackground";
 import { GradientText } from "./GradientText";
-import { FloatingElements } from "./FloatingElements";
 import { useEffect, useState } from "react";
 
 export const Hero = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
-    
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / window.innerHeight) * 100,
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950 overflow-hidden">
-      {/* Enhanced Animated Background */}
-      <div className="absolute inset-0">
-        <AnimatedBackground />
-        <FloatingElements />
-        
-        {/* Dynamic Gradient Overlays */}
-        <div 
-          className="absolute inset-0 opacity-40 transition-all duration-1000"
-          style={{
-            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(59, 130, 246, 0.25) 0%, rgba(147, 51, 234, 0.15) 25%, rgba(79, 70, 229, 0.1) 50%, transparent 70%)`,
-          }}
-        />
-        
-        {/* Multi-layer Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-purple-900/25 to-indigo-900/30" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-500/5 to-purple-500/10" />
-        
-        {/* Animated Mesh Gradient */}
-        <div 
-          className="absolute inset-0 opacity-20 animate-gradient"
-          style={{
-            background: `conic-gradient(from ${mousePosition.x * 3.6}deg at 50% 50%, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1), rgba(79, 70, 229, 0.1), rgba(59, 130, 246, 0.1))`,
-          }}
-        />
-      </div>
-
-      {/* Enhanced Grid Pattern */}
-      <div 
-        className="absolute inset-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
-          animation: 'float 20s ease-in-out infinite'
-        }}
-      />
-
+    <section id="hero" className="relative min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950">
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex items-center">
         <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 w-full">

@@ -6,48 +6,13 @@ import { useState, useEffect } from "react";
 
 export const About = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     setIsLoaded(true);
-    
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / window.innerHeight) * 100,
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
-    <section id="about" className="relative bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950 overflow-hidden">
-      {/* Enhanced Background Effects */}
-      <div className="absolute inset-0">
-        {/* Dynamic Gradient Overlay */}
-        <div 
-          className="absolute inset-0 opacity-20 transition-all duration-1000"
-          style={{
-            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.1) 30%, rgba(79, 70, 229, 0.05) 60%, transparent 80%)`,
-          }}
-        />
-        
-        {/* Multi-layer Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/5 to-indigo-900/10" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-500/5 to-purple-500/10" />
-        
-        {/* Grid Pattern */}
-        <div 
-          className="absolute inset-0 opacity-[0.015]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)`,
-            backgroundSize: '50px 50px',
-          }}
-        />
-      </div>
-
+    <section id="about" className="relative bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950">
       <div className={`relative z-10 ${stylesContent.spacing.section.padding} ${stylesContent.spacing.content.padding}`}>
         <div className={stylesContent.spacing.content.maxWidth}>
           <div className={stylesContent.grid.main}>

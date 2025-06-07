@@ -1,4 +1,3 @@
-
 import { useParams, useNavigate } from "react-router-dom";
 import { postsContent } from "@/content/posts";
 import { stylesContent } from "@/content/styles";
@@ -46,25 +45,7 @@ export const PostDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950 relative overflow-hidden">
-      {/* Enhanced Background Effects */}
-      <div className="absolute inset-0">
-        <div 
-          className="absolute inset-0 opacity-20 transition-all duration-1000"
-          style={{
-            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.1) 30%, rgba(79, 70, 229, 0.05) 60%, transparent 80%)`,
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/5 to-indigo-900/10" />
-        <div 
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px',
-          }}
-        />
-      </div>
-
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950 relative">
       <div className={`relative z-10 ${spacing.section.padding} ${spacing.content.padding}`}>
         <div className={spacing.content.maxWidth}>
           {/* Back Button */}
