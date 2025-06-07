@@ -1,7 +1,8 @@
+
 import { useParams, useNavigate } from "react-router-dom";
 import { portfolioContent } from "@/content/portfolio";
 import { stylesContent } from "@/content/styles";
-import { ArrowLeft, ExternalLink, Calendar, Tag, Eye } from "lucide-react";
+import { ArrowLeft, ExternalLink, Calendar, Tag } from "lucide-react";
 import { useState, useEffect } from "react";
 
 export const ProjectDetail = () => {
@@ -9,35 +10,24 @@ export const ProjectDetail = () => {
   const navigate = useNavigate();
   const { fonts, colors, typography, spacing } = stylesContent;
   const [isLoaded, setIsLoaded] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const project = portfolioContent.projects.find(p => p.id === parseInt(id || "0"));
 
   useEffect(() => {
     setIsLoaded(true);
-    
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({
-        x: (e.clientX / window.innerWidth) * 100,
-        y: (e.clientY / window.innerHeight) * 100,
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-950 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Proje Bulunamadı</h1>
           <button 
             onClick={() => navigate('/')}
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 hover:border-blue-500/50 px-6 py-3 rounded-xl transition-all duration-300"
+            className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-lg"
           >
             <ArrowLeft size={16} />
-            <span className="text-blue-300">Ana Sayfaya Dön</span>
+            <span className="text-blue-400">Ana Sayfaya Dön</span>
           </button>
         </div>
       </div>
@@ -45,71 +35,60 @@ export const ProjectDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950 relative">
-      <div className={`relative z-10 ${spacing.section.padding} ${spacing.content.padding}`}>
+    <div className="min-h-screen bg-gray-950">
+      <div className={`${spacing.section.padding} ${spacing.content.padding}`}>
         <div className={spacing.content.maxWidth}>
-          {/* Back Button */}
-          <div className={`mb-12 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
+          <div className={`mb-8 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
             <button 
               onClick={() => navigate('/')}
-              className="inline-flex items-center space-x-3 group bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 hover:border-blue-500/50 px-6 py-3 rounded-xl transition-all duration-300 hover:transform hover:translate-y-[-2px]"
+              className="inline-flex items-center space-x-2 bg-gray-900/40 border border-gray-800/60 hover:border-blue-500/40 px-4 py-2 rounded-lg transition-all duration-300"
             >
-              <ArrowLeft size={16} className="text-blue-400 group-hover:text-white group-hover:transform group-hover:translate-x-[-2px] transition-all duration-300" />
-              <span className="text-blue-300 group-hover:text-white transition-colors duration-300">Geri Dön</span>
+              <ArrowLeft size={16} className="text-blue-400" />
+              <span className="text-gray-400">Geri Dön</span>
             </button>
           </div>
 
-          {/* Project Header */}
-          <div className={`mb-16 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="w-12 h-px bg-gradient-to-r from-blue-500 to-purple-500" />
-              <div className="bg-blue-500/20 backdrop-blur-md border border-blue-500/30 px-4 py-2 rounded-full">
-                <span className={`${fonts.mono} text-sm text-blue-300 tracking-[0.2em] uppercase font-medium`}>
+          <div className={`mb-12 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-8 h-px bg-blue-500/60" />
+              <div className="bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-md">
+                <span className={`${fonts.mono} text-sm text-blue-400 tracking-wide uppercase`}>
                   Proje Detayı
                 </span>
               </div>
             </div>
             
-            <h1 className={`${typography.hero.subtitle} ${fonts.primary} font-light text-gradient-elegant leading-[0.9] mb-6`}>
+            <h1 className={`${typography.hero.subtitle} ${fonts.primary} font-light text-white leading-[0.9] mb-6`}>
               {project.title}
             </h1>
             
-            <p className={`${typography.section.description} ${fonts.secondary} font-light text-gray-300 leading-relaxed max-w-3xl mb-8`}>
+            <p className={`${typography.section.description} ${fonts.secondary} font-light text-gray-400 leading-relaxed max-w-3xl mb-6`}>
               {project.description}
             </p>
 
-            {/* Project Meta Information */}
-            <div className="flex flex-wrap gap-6 text-sm text-gray-400">
+            <div className="flex flex-wrap gap-4 text-sm text-gray-500">
               <div className="flex items-center space-x-2">
                 <Calendar size={16} className="text-blue-400" />
                 <span>{project.year}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Tag size={16} className="text-purple-400" />
+                <Tag size={16} className="text-blue-400" />
                 <span>{project.category}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Eye size={16} className="text-blue-400" />
-                <span>Proje Detayları</span>
               </div>
             </div>
           </div>
 
-          {/* Project Image */}
-          <div className={`mb-16 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-            <div className="relative group rounded-2xl overflow-hidden bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 hover:border-blue-500/50 transition-all duration-500">
+          <div className={`mb-12 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
+            <div className="relative rounded-xl overflow-hidden bg-gray-900/30 border border-gray-800/60">
               <img 
                 src={`https://images.unsplash.com/${project.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80`}
                 alt={project.title}
-                className="w-full h-[60vh] object-cover transition-all duration-700 group-hover:scale-105"
+                className="w-full h-[60vh] object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent group-hover:from-black/40 transition-all duration-500"></div>
-              
-              {/* Floating Elements */}
-              <div className="absolute top-6 right-6">
-                <div className="bg-blue-500/20 backdrop-blur-md border border-blue-500/30 px-4 py-2 rounded-full">
-                  <span className={`${fonts.mono} text-sm text-blue-300 tracking-[0.1em] uppercase`}>
+              <div className="absolute top-4 right-4">
+                <div className="bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-md">
+                  <span className={`${fonts.mono} text-sm text-blue-400 uppercase`}>
                     {project.category}
                   </span>
                 </div>
@@ -117,82 +96,69 @@ export const ProjectDetail = () => {
             </div>
           </div>
 
-          {/* Project Details Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
-            {/* Technologies */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
-              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white mb-6`}>
-                Kullanılan Teknolojiler
+              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white mb-4`}>
+                Teknolojiler
               </h3>
-              <div className="space-y-3">
-                {project.technologies.map((tech, index) => (
+              <div className="space-y-2">
+                {project.technologies.map((tech) => (
                   <div 
                     key={tech}
-                    className="flex items-center space-x-3 p-4 bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-xl hover:border-purple-500/50 transition-all duration-300"
-                  >
-                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                    <span className="text-gray-300 font-medium">{tech}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Project Features */}
-            <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.7s' }}>
-              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white mb-6`}>
-                Özellikler
-              </h3>
-              <div className="space-y-3">
-                {["Modern UI/UX Tasarım", "Responsive Design", "Performance Optimizasyonu", "SEO Uyumlu"].map((feature, index) => (
-                  <div 
-                    key={feature}
-                    className="flex items-center space-x-3 p-4 bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-xl hover:border-blue-500/50 transition-all duration-300"
+                    className="flex items-center space-x-2 p-3 bg-gray-900/30 border border-gray-800/60 rounded-lg"
                   >
                     <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <span className="text-gray-300 font-medium">{feature}</span>
+                    <span className="text-gray-400">{tech}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Project Stats */}
-            <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
-              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white mb-6`}>
-                Proje İstatistikleri
+            <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.7s' }}>
+              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white mb-4`}>
+                Özellikler
               </h3>
-              <div className="space-y-4">
-                <div className="p-4 bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-xl">
-                  <div className="text-2xl font-bold text-gradient-elegant mb-1">100%</div>
-                  <div className="text-sm text-gray-400">Tamamlanma Oranı</div>
+              <div className="space-y-2">
+                {["Modern UI/UX", "Responsive", "Performance", "SEO"].map((feature) => (
+                  <div 
+                    key={feature}
+                    className="flex items-center space-x-2 p-3 bg-gray-900/30 border border-gray-800/60 rounded-lg"
+                  >
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <span className="text-gray-400">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
+              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white mb-4`}>
+                İstatistikler
+              </h3>
+              <div className="space-y-3">
+                <div className="p-3 bg-gray-900/30 border border-gray-800/60 rounded-lg">
+                  <div className="text-xl font-bold text-blue-400 mb-1">100%</div>
+                  <div className="text-sm text-gray-500">Tamamlandı</div>
                 </div>
-                <div className="p-4 bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-xl">
-                  <div className="text-2xl font-bold text-gradient-elegant mb-1">{project.year}</div>
-                  <div className="text-sm text-gray-400">Proje Yılı</div>
-                </div>
-                <div className="p-4 bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-xl">
-                  <div className="text-2xl font-bold text-gradient-elegant mb-1">A+</div>
-                  <div className="text-sm text-gray-400">Kalite Puanı</div>
+                <div className="p-3 bg-gray-900/30 border border-gray-800/60 rounded-lg">
+                  <div className="text-xl font-bold text-blue-400 mb-1">{project.year}</div>
+                  <div className="text-sm text-gray-500">Proje Yılı</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Project Description */}
-          <div className={`mb-16 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.9s' }}>
-            <div className="bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-2xl p-8">
-              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white mb-6`}>
+          <div className={`mb-12 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.9s' }}>
+            <div className="bg-gray-900/30 border border-gray-800/60 rounded-xl p-6">
+              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white mb-4`}>
                 Proje Hakkında
               </h3>
               <div className="prose prose-invert max-w-none">
-                <p className="text-gray-300 leading-relaxed mb-4">
+                <p className="text-gray-400 leading-relaxed mb-4">
                   Bu proje, modern web teknolojileri kullanılarak geliştirilmiş kapsamlı bir web uygulamasıdır. 
                   Kullanıcı deneyimini ön planda tutarak, hem görsel hem de fonksiyonel açıdan mükemmel bir sonuç elde edilmiştir.
                 </p>
-                <p className="text-gray-300 leading-relaxed mb-4">
-                  Projenin geliştirilmesi sürecinde, en güncel teknolojiler ve best practice'ler kullanılmıştır. 
-                  Responsive tasarım prensiplerine uygun olarak geliştirilmiş olup, tüm cihazlarda sorunsuz çalışmaktadır.
-                </p>
-                <p className="text-gray-300 leading-relaxed">
+                <p className="text-gray-400 leading-relaxed">
                   Performance optimizasyonu ve SEO uyumluluğu göz önünde bulundurularak geliştirilmiş bu proje, 
                   modern web standartlarını karşılamaktadır.
                 </p>
@@ -200,21 +166,17 @@ export const ProjectDetail = () => {
             </div>
           </div>
 
-          {/* CTA Section */}
           <div className={`text-center ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '1s' }}>
             <a 
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-3 group bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 hover:border-blue-500/50 px-8 py-4 rounded-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:transform hover:translate-y-[-4px]"
+              className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 hover:border-blue-500/40 px-6 py-3 rounded-lg transition-all duration-300"
             >
-              <span className="text-lg font-medium text-gradient-elegant">
+              <span className="text-blue-400">
                 Projeyi İncele
               </span>
-              <ExternalLink 
-                size={20} 
-                className="text-blue-400 group-hover:text-white group-hover:transform group-hover:translate-x-1 group-hover:translate-y-[-1px] transition-all duration-300"
-              />
+              <ExternalLink size={16} className="text-blue-400" />
             </a>
           </div>
         </div>
