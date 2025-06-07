@@ -19,9 +19,9 @@ export const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-gray-950 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-950 dark:bg-gray-950 light:bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">Proje Bulunamadı</h1>
+          <h1 className="text-4xl font-bold text-white dark:text-white light:text-gray-900 mb-4">Proje Bulunamadı</h1>
           <button 
             onClick={() => navigate('/')}
             className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-lg"
@@ -35,16 +35,16 @@ export const ProjectDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div className="min-h-screen bg-gray-950 dark:bg-gray-950 light:bg-gray-50">
       <div className={`${spacing.section.padding} ${spacing.content.padding}`}>
         <div className={spacing.content.maxWidth}>
           <div className={`mb-8 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
             <button 
               onClick={() => navigate('/')}
-              className="inline-flex items-center space-x-2 bg-gray-900/40 border border-gray-800/60 hover:border-blue-500/40 px-4 py-2 rounded-lg transition-all duration-300"
+              className="inline-flex items-center space-x-2 bg-gray-900/40 dark:bg-gray-900/40 light:bg-white/50 border border-gray-800/60 dark:border-gray-800/60 light:border-gray-200 hover:border-blue-500/40 px-4 py-2 rounded-lg transition-all duration-300"
             >
               <ArrowLeft size={16} className="text-blue-400" />
-              <span className="text-gray-400">Geri Dön</span>
+              <span className="text-gray-400 dark:text-gray-400 light:text-gray-600">Geri Dön</span>
             </button>
           </div>
 
@@ -58,15 +58,15 @@ export const ProjectDetail = () => {
               </div>
             </div>
             
-            <h1 className={`${typography.hero.subtitle} ${fonts.primary} font-light text-white leading-[0.9] mb-6`}>
+            <h1 className={`${typography.hero.subtitle} ${fonts.primary} font-light text-white dark:text-white light:text-gray-900 leading-[0.9] mb-6`}>
               {project.title}
             </h1>
             
-            <p className={`${typography.section.description} ${fonts.secondary} font-light text-gray-400 leading-relaxed max-w-3xl mb-6`}>
+            <p className={`${typography.section.description} ${fonts.secondary} font-light text-gray-400 dark:text-gray-400 light:text-gray-600 leading-relaxed max-w-3xl mb-6`}>
               {project.description}
             </p>
 
-            <div className="flex flex-wrap gap-4 text-sm text-gray-500">
+            <div className="flex flex-wrap gap-4 text-sm text-gray-500 dark:text-gray-500 light:text-gray-600">
               <div className="flex items-center space-x-2">
                 <Calendar size={16} className="text-blue-400" />
                 <span>{project.year}</span>
@@ -79,7 +79,7 @@ export const ProjectDetail = () => {
           </div>
 
           <div className={`mb-12 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-            <div className="relative rounded-xl overflow-hidden bg-gray-900/30 border border-gray-800/60">
+            <div className="relative rounded-xl overflow-hidden bg-gray-900/30 dark:bg-gray-900/30 light:bg-white/50 border border-gray-800/60 dark:border-gray-800/60 light:border-gray-200">
               <img 
                 src={`https://images.unsplash.com/${project.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80`}
                 alt={project.title}
@@ -98,67 +98,67 @@ export const ProjectDetail = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
-              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white mb-4`}>
+              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-4`}>
                 Teknolojiler
               </h3>
               <div className="space-y-2">
                 {project.technologies.map((tech) => (
                   <div 
                     key={tech}
-                    className="flex items-center space-x-2 p-3 bg-gray-900/30 border border-gray-800/60 rounded-lg"
+                    className="flex items-center space-x-2 p-3 bg-gray-900/30 dark:bg-gray-900/30 light:bg-white/50 border border-gray-800/60 dark:border-gray-800/60 light:border-gray-200 rounded-lg"
                   >
                     <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <span className="text-gray-400">{tech}</span>
+                    <span className="text-gray-400 dark:text-gray-400 light:text-gray-600">{tech}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.7s' }}>
-              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white mb-4`}>
+              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-4`}>
                 Özellikler
               </h3>
               <div className="space-y-2">
                 {["Modern UI/UX", "Responsive", "Performance", "SEO"].map((feature) => (
                   <div 
                     key={feature}
-                    className="flex items-center space-x-2 p-3 bg-gray-900/30 border border-gray-800/60 rounded-lg"
+                    className="flex items-center space-x-2 p-3 bg-gray-900/30 dark:bg-gray-900/30 light:bg-white/50 border border-gray-800/60 dark:border-gray-800/60 light:border-gray-200 rounded-lg"
                   >
                     <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                    <span className="text-gray-400">{feature}</span>
+                    <span className="text-gray-400 dark:text-gray-400 light:text-gray-600">{feature}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
-              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white mb-4`}>
+              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-4`}>
                 İstatistikler
               </h3>
               <div className="space-y-3">
-                <div className="p-3 bg-gray-900/30 border border-gray-800/60 rounded-lg">
+                <div className="p-3 bg-gray-900/30 dark:bg-gray-900/30 light:bg-white/50 border border-gray-800/60 dark:border-gray-800/60 light:border-gray-200 rounded-lg">
                   <div className="text-xl font-bold text-blue-400 mb-1">100%</div>
-                  <div className="text-sm text-gray-500">Tamamlandı</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-500 light:text-gray-600">Tamamlandı</div>
                 </div>
-                <div className="p-3 bg-gray-900/30 border border-gray-800/60 rounded-lg">
+                <div className="p-3 bg-gray-900/30 dark:bg-gray-900/30 light:bg-white/50 border border-gray-800/60 dark:border-gray-800/60 light:border-gray-200 rounded-lg">
                   <div className="text-xl font-bold text-blue-400 mb-1">{project.year}</div>
-                  <div className="text-sm text-gray-500">Proje Yılı</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-500 light:text-gray-600">Proje Yılı</div>
                 </div>
               </div>
             </div>
           </div>
 
           <div className={`mb-12 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.9s' }}>
-            <div className="bg-gray-900/30 border border-gray-800/60 rounded-xl p-6">
-              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white mb-4`}>
+            <div className="bg-gray-900/30 dark:bg-gray-900/30 light:bg-white/50 border border-gray-800/60 dark:border-gray-800/60 light:border-gray-200 rounded-xl p-6">
+              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-4`}>
                 Proje Hakkında
               </h3>
-              <div className="prose prose-invert max-w-none">
-                <p className="text-gray-400 leading-relaxed mb-4">
+              <div className="prose prose-invert dark:prose-invert light:prose max-w-none">
+                <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 leading-relaxed mb-4">
                   Bu proje, modern web teknolojileri kullanılarak geliştirilmiş kapsamlı bir web uygulamasıdır. 
                   Kullanıcı deneyimini ön planda tutarak, hem görsel hem de fonksiyonel açıdan mükemmel bir sonuç elde edilmiştir.
                 </p>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 leading-relaxed">
                   Performance optimizasyonu ve SEO uyumluluğu göz önünde bulundurularak geliştirilmiş bu proje, 
                   modern web standartlarını karşılamaktadır.
                 </p>

@@ -38,7 +38,7 @@ export const SectionHeader = ({ sectionNumber, title, description, className = "
         </div>
 
         <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
-          <h2 className={`${typography.section.title} ${fonts.primary} font-light text-white leading-[0.85] mb-4`}>
+          <h2 className={`${typography.section.title} ${fonts.primary} font-light text-white dark:text-white light:text-gray-900 leading-[0.85] mb-4`}>
             {title.main}
             {title.accent && (
               <>
@@ -50,7 +50,7 @@ export const SectionHeader = ({ sectionNumber, title, description, className = "
             )}
           </h2>
           {description && (
-            <p className={`${fonts.secondary} text-gray-400 ${typography.section.description} font-light leading-relaxed max-w-sm mb-4`}>
+            <p className={`${fonts.secondary} text-gray-400 dark:text-gray-400 light:text-gray-600 ${typography.section.description} font-light leading-relaxed max-w-sm mb-4`}>
               {description}
             </p>
           )}
