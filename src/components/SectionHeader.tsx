@@ -14,7 +14,7 @@ interface SectionHeaderProps {
 }
 
 export const SectionHeader = ({ sectionNumber, title, description, className = "" }: SectionHeaderProps) => {
-  const { fonts, colors, typography, spacing } = stylesContent;
+  const { fonts, colors, typography, spacing, grid } = stylesContent;
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -22,8 +22,8 @@ export const SectionHeader = ({ sectionNumber, title, description, className = "
   }, []);
 
   return (
-    <div className={`${spacing.grid.sidebar} ${className}`}>
-      <div className={spacing.grid.sticky}>
+    <div className={`${grid.sidebar} ${className}`}>
+      <div className={grid.sticky}>
         {/* Header Badge */}
         <div className={`mb-6 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
           <div className="flex items-center space-x-3">
