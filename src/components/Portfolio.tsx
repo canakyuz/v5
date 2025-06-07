@@ -1,13 +1,15 @@
 
 import { portfolioContent } from "@/content/portfolio";
 import { stylesContent } from "@/content/styles";
-import { ArrowUpRight, ExternalLink, Sparkles } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Sparkles, Eye } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Portfolio = () => {
   const { fonts, colors, typography, spacing, animations, buttons, grid, cards } = stylesContent;
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsLoaded(true);
@@ -30,26 +32,26 @@ export const Portfolio = () => {
   };
   
   return (
-    <section id="portfolio" className="relative bg-black overflow-hidden">
-      {/* Enhanced Background Effects */}
+    <section id="portfolio" className="relative bg-gradient-to-br from-gray-950 via-gray-900 to-slate-900 overflow-hidden">
+      {/* Enhanced Background Effects with Elegant Colors */}
       <div className="absolute inset-0">
         {/* Dynamic Gradient Overlay */}
         <div 
-          className="absolute inset-0 opacity-30 transition-all duration-1000"
+          className="absolute inset-0 opacity-25 transition-all duration-1000"
           style={{
-            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(147, 51, 234, 0.15) 0%, rgba(79, 70, 229, 0.1) 30%, transparent 60%)`,
+            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(234, 179, 8, 0.15) 0%, rgba(244, 63, 94, 0.1) 30%, rgba(34, 197, 94, 0.05) 60%, transparent 80%)`,
           }}
         />
         
         {/* Multi-layer Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-indigo-900/15 to-blue-900/20" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-purple-500/5 to-indigo-500/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/10 via-rose-900/5 to-emerald-900/10" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-yellow-500/5 to-rose-500/10" />
         
         {/* Grid Pattern */}
         <div 
           className="absolute inset-0 opacity-[0.015]"
           style={{
-            backgroundImage: `linear-gradient(rgba(147, 51, 234, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(147, 51, 234, 0.3) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(234, 179, 8, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(234, 179, 8, 0.3) 1px, transparent 1px)`,
             backgroundSize: '50px 50px',
           }}
         />
@@ -58,16 +60,16 @@ export const Portfolio = () => {
       <div className={`relative z-10 ${spacing.section.padding} ${spacing.content.padding}`}>
         <div className={spacing.content.maxWidth}>
           <div className={grid.main}>
-            {/* Enhanced Section Header */}
+            {/* Enhanced Section Header with Elegant Colors */}
             <div className={grid.sidebar}>
               <div className={grid.sticky}>
                 {/* Header Badge */}
                 <div className={`mb-8 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
                   <div className="flex items-center space-x-4">
-                    <div className="w-8 md:w-12 h-px bg-gradient-to-r from-purple-500 to-indigo-500" />
+                    <div className="w-8 md:w-12 h-px bg-gradient-to-r from-yellow-500 to-rose-500" />
                     <div className="flex items-center space-x-2">
-                      <Sparkles className="w-3 md:w-4 h-3 md:h-4 text-purple-400 animate-pulse" />
-                      <span className="text-[10px] md:text-xs font-mono text-purple-400 tracking-[0.3em] md:tracking-[0.4em] uppercase font-medium">
+                      <Sparkles className="w-3 md:w-4 h-3 md:h-4 text-yellow-400 animate-pulse" />
+                      <span className="text-[10px] md:text-xs font-mono text-yellow-400 tracking-[0.3em] md:tracking-[0.4em] uppercase font-medium">
                         {portfolioContent.sectionNumber}
                       </span>
                     </div>
@@ -78,14 +80,14 @@ export const Portfolio = () => {
                   <h2 className={`${typography.section.title} ${fonts.primary} font-light ${colors.primary.main} leading-[0.85] mb-6`}>
                     {portfolioContent.title.main}
                     <br />
-                    <span className={`italic ${colors.primary.light} bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent`}>
+                    <span className="italic text-gradient-elegant">
                       {portfolioContent.title.accent}
                     </span>
                   </h2>
                   <p className={`${fonts.secondary} ${colors.primary.accent} ${typography.section.description} font-light leading-relaxed max-w-sm`}>
                     {portfolioContent.description}
                   </p>
-                  <div className="w-20 h-px bg-gradient-to-r from-purple-500 to-transparent mt-6"></div>
+                  <div className="w-20 h-px bg-gradient-to-r from-yellow-500 to-transparent mt-6"></div>
                 </div>
               </div>
             </div>
@@ -96,7 +98,7 @@ export const Portfolio = () => {
                 {portfolioContent.projects.map((project, index) => (
                   <article 
                     key={project.id} 
-                    className={`group relative bg-gray-900/40 backdrop-blur-sm border border-gray-800/60 rounded-2xl overflow-hidden hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:transform hover:translate-y-[-4px] grid grid-cols-1 md:grid-cols-5 gap-0 h-[480px] md:h-[360px] ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}
+                    className={`group relative bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-2xl overflow-hidden hover:border-yellow-500/50 hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-500 hover:transform hover:translate-y-[-4px] grid grid-cols-1 md:grid-cols-5 gap-0 h-[480px] md:h-[360px] ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}
                     style={{ animationDelay: `${0.4 + index * 0.1}s` }}
                   >
                     
@@ -121,8 +123,8 @@ export const Portfolio = () => {
                       
                       {/* Enhanced Category Badge */}
                       <div className="absolute top-4 right-4">
-                        <div className="bg-purple-500/20 backdrop-blur-md border border-purple-500/30 px-3 py-1 rounded-full">
-                          <span className={`${fonts.mono} text-xs text-purple-300 tracking-[0.1em] uppercase`}>
+                        <div className="bg-yellow-500/20 backdrop-blur-md border border-yellow-500/30 px-3 py-1 rounded-full">
+                          <span className={`${fonts.mono} text-xs text-yellow-300 tracking-[0.1em] uppercase`}>
                             {project.category}
                           </span>
                         </div>
@@ -130,19 +132,19 @@ export const Portfolio = () => {
 
                       {/* Floating Elements */}
                       <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                        <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                        <div className="w-2 h-2 bg-rose-400 rounded-full animate-pulse"></div>
                       </div>
                     </div>
                     
                     {/* Enhanced Project Content */}
                     <div className="p-6 md:col-span-3 flex flex-col justify-between h-full min-h-0 relative">
                       {/* Decorative Elements */}
-                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-purple-500/10 to-transparent rounded-bl-2xl"></div>
+                      <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-yellow-500/10 to-transparent rounded-bl-2xl"></div>
                       
                       <div className="flex-1 space-y-4 overflow-hidden relative z-10">
                         {/* Enhanced Title and Subtitle */}
                         <div className="space-y-2">
-                          <h3 className={`${typography.post.title} ${fonts.primary} font-medium ${colors.primary.main} hover:text-purple-300 transition-colors duration-300 line-clamp-2`}>
+                          <h3 className={`${typography.post.title} ${fonts.primary} font-medium ${colors.primary.main} hover:text-gradient-elegant transition-colors duration-300 line-clamp-2`}>
                             {truncateText(project.title, 50)}
                           </h3>
                           <p className={`${typography.post.excerpt} ${fonts.primary} font-light italic text-gray-400 line-clamp-1`}>
@@ -160,7 +162,7 @@ export const Portfolio = () => {
                           {project.technologies.slice(0, 4).map((tech) => (
                             <span 
                               key={tech} 
-                              className="px-3 py-1 bg-gray-800/60 text-gray-300 text-xs font-medium border border-gray-700/60 rounded-full hover:border-purple-500/50 hover:bg-purple-500/10 transition-all duration-300"
+                              className="px-3 py-1 bg-gray-800/60 text-gray-300 text-xs font-medium border border-gray-700/60 rounded-full hover:border-rose-500/50 hover:bg-rose-500/10 transition-all duration-300"
                             >
                               {tech}
                             </span>
@@ -173,20 +175,33 @@ export const Portfolio = () => {
                         </div>
                       </div>
                       
-                      {/* Enhanced Project Link */}
+                      {/* Enhanced Project Links */}
                       <div className="flex items-center justify-between pt-4 border-t border-gray-700/50 mt-auto relative z-10">
                         <div className={`${fonts.mono} text-xs text-gray-400 tracking-[0.1em] uppercase`}>
                           {project.year}
                         </div>
-                        <a 
-                          href={project.link}
-                          className="inline-flex items-center space-x-2 group/link bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 hover:border-purple-500/50 px-4 py-2 rounded-lg transition-all duration-300"
-                        >
-                          <span className="text-sm font-medium text-purple-300 group-hover/link:text-white transition-colors duration-300">
-                            View Project
-                          </span>
-                          <ExternalLink className="w-3 h-3 text-purple-400 group-hover/link:text-white group-hover/link:translate-x-1 group-hover/link:translate-y-[-1px] transition-all duration-300" />
-                        </a>
+                        <div className="flex items-center space-x-2">
+                          <button 
+                            onClick={() => navigate(`/project/${project.id}`)}
+                            className="inline-flex items-center space-x-2 group/detail bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 hover:border-emerald-500/50 px-3 py-2 rounded-lg transition-all duration-300"
+                          >
+                            <Eye className="w-3 h-3 text-emerald-400 group-hover/detail:text-white transition-colors duration-300" />
+                            <span className="text-xs font-medium text-emerald-300 group-hover/detail:text-white transition-colors duration-300">
+                              Detay
+                            </span>
+                          </button>
+                          <a 
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center space-x-2 group/link bg-yellow-500/10 hover:bg-yellow-500/20 border border-yellow-500/30 hover:border-yellow-500/50 px-3 py-2 rounded-lg transition-all duration-300"
+                          >
+                            <ExternalLink className="w-3 h-3 text-yellow-400 group-hover/link:text-white group-hover/link:translate-x-1 group-hover/link:translate-y-[-1px] transition-all duration-300" />
+                            <span className="text-xs font-medium text-yellow-300 group-hover/link:text-white transition-colors duration-300">
+                              Görüntüle
+                            </span>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </article>
@@ -196,14 +211,14 @@ export const Portfolio = () => {
                 <div className={`text-center pt-12 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
                   <a 
                     href="#" 
-                    className="inline-flex items-center space-x-3 group/more bg-gradient-to-r from-purple-600/20 to-indigo-600/20 border border-purple-500/30 hover:border-purple-500/50 px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:transform hover:translate-y-[-2px]"
+                    className="inline-flex items-center space-x-3 group/more bg-gradient-to-r from-yellow-600/20 to-rose-600/20 border border-yellow-500/30 hover:border-yellow-500/50 px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300 hover:transform hover:translate-y-[-2px]"
                   >
-                    <span className="text-base font-medium text-purple-300 group-hover/more:text-white transition-colors duration-300">
-                      More Projects
+                    <span className="text-base font-medium text-gradient-elegant group-hover/more:text-white transition-colors duration-300">
+                      Tüm Projeler
                     </span>
                     <ArrowUpRight 
                       size={16} 
-                      className="text-purple-400 group-hover/more:text-white group-hover/more:transform group-hover/more:translate-x-1 group-hover/more:translate-y-[-1px] transition-all duration-300"
+                      className="text-yellow-400 group-hover/more:text-white group-hover/more:transform group-hover/more:translate-x-1 group-hover/more:translate-y-[-1px] transition-all duration-300"
                     />
                   </a>
                 </div>

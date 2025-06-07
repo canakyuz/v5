@@ -24,26 +24,26 @@ export const Posts = () => {
   }, []);
   
   return (
-    <section id="blog" className="relative bg-gray-900 overflow-hidden">
-      {/* Enhanced Background Effects */}
+    <section id="blog" className="relative bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950 overflow-hidden">
+      {/* Enhanced Background Effects with Elegant Colors */}
       <div className="absolute inset-0">
         {/* Dynamic Gradient Overlay */}
         <div 
-          className="absolute inset-0 opacity-25 transition-all duration-1000"
+          className="absolute inset-0 opacity-20 transition-all duration-1000"
           style={{
-            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(59, 130, 246, 0.15) 0%, rgba(99, 102, 241, 0.1) 30%, transparent 60%)`,
+            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(34, 197, 94, 0.15) 0%, rgba(244, 63, 94, 0.1) 30%, rgba(234, 179, 8, 0.05) 60%, transparent 80%)`,
           }}
         />
         
         {/* Multi-layer Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-indigo-900/15 to-purple-900/20" />
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-500/5 to-indigo-500/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/10 via-rose-900/5 to-yellow-900/10" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-emerald-500/5 to-rose-500/10" />
         
         {/* Grid Pattern */}
         <div 
           className="absolute inset-0 opacity-[0.015]"
           style={{
-            backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(34, 197, 94, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(34, 197, 94, 0.3) 1px, transparent 1px)`,
             backgroundSize: '50px 50px',
           }}
         />
@@ -52,16 +52,16 @@ export const Posts = () => {
       <div className={`relative z-10 ${spacing.section.padding} ${spacing.content.padding}`}>
         <div className={spacing.content.maxWidth}>
           <div className={grid.main}>
-            {/* Enhanced Section Header */}
+            {/* Enhanced Section Header with Elegant Colors */}
             <div className={grid.sidebar}>
               <div className={grid.sticky}>
                 {/* Header Badge */}
                 <div className={`mb-8 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
                   <div className="flex items-center space-x-4">
-                    <div className="w-8 md:w-12 h-px bg-gradient-to-r from-blue-500 to-indigo-500" />
+                    <div className="w-8 md:w-12 h-px bg-gradient-to-r from-emerald-500 to-rose-500" />
                     <div className="flex items-center space-x-2">
-                      <Sparkles className="w-3 md:w-4 h-3 md:h-4 text-blue-400 animate-pulse" />
-                      <span className="text-[10px] md:text-xs font-mono text-blue-400 tracking-[0.3em] md:tracking-[0.4em] uppercase font-medium">
+                      <Sparkles className="w-3 md:w-4 h-3 md:h-4 text-emerald-400 animate-pulse" />
+                      <span className="text-[10px] md:text-xs font-mono text-emerald-400 tracking-[0.3em] md:tracking-[0.4em] uppercase font-medium">
                         {postsContent.sectionNumber}
                       </span>
                     </div>
@@ -72,14 +72,14 @@ export const Posts = () => {
                   <h2 className={`${typography.section.title} ${fonts.primary} font-light ${colors.primary.main} leading-[0.85] mb-6`}>
                     {postsContent.title.main}
                     <br />
-                    <span className={`italic ${colors.primary.light} bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent`}>
+                    <span className="italic text-gradient-elegant">
                       {postsContent.title.accent}
                     </span>
                   </h2>
                   <p className={`${fonts.secondary} ${colors.primary.accent} ${typography.section.description} font-light leading-relaxed max-w-sm`}>
                     {postsContent.description}
                   </p>
-                  <div className="w-20 h-px bg-gradient-to-r from-blue-500 to-transparent mt-6"></div>
+                  <div className="w-20 h-px bg-gradient-to-r from-emerald-500 to-transparent mt-6"></div>
                 </div>
               </div>
             </div>
@@ -90,18 +90,18 @@ export const Posts = () => {
                 {postsContent.posts.map((post, index) => (
                   <article 
                     key={post.id} 
-                    className={`group relative bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-2xl p-8 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:transform hover:translate-y-[-4px] ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}
+                    className={`group relative bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-2xl p-8 hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 hover:transform hover:translate-y-[-4px] ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}
                     style={{ animationDelay: `${0.4 + index * 0.1}s` }}
                   >
                     {/* Decorative Elements */}
-                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-blue-500/10 to-transparent rounded-bl-2xl"></div>
-                    <div className="absolute bottom-0 left-0 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-[-4px] group-hover:translate-x-4"></div>
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-emerald-500/10 to-transparent rounded-bl-2xl"></div>
+                    <div className="absolute bottom-0 left-0 w-2 h-2 bg-rose-400 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-[-4px] group-hover:translate-x-4"></div>
                     
                     {/* Enhanced Post Header */}
                     <div className="flex items-center justify-between mb-6 relative z-10">
                       <div className="flex items-center space-x-4">
-                        <div className="bg-blue-500/20 backdrop-blur-md border border-blue-500/30 px-3 py-1 rounded-full">
-                          <span className={`${fonts.mono} text-xs text-blue-300 tracking-[0.2em] font-medium`}>
+                        <div className="bg-emerald-500/20 backdrop-blur-md border border-emerald-500/30 px-3 py-1 rounded-full">
+                          <span className={`${fonts.mono} text-xs text-emerald-300 tracking-[0.2em] font-medium`}>
                             {String(index + 1).padStart(2, '0')}
                           </span>
                         </div>
@@ -124,7 +124,7 @@ export const Posts = () => {
                     </div>
                     
                     {/* Enhanced Post Title */}
-                    <h3 className={`${typography.post.title} ${fonts.primary} font-medium ${colors.primary.main} mb-4 leading-tight hover:text-blue-300 transition-colors duration-300 relative z-10`}>
+                    <h3 className={`${typography.post.title} ${fonts.primary} font-medium ${colors.primary.main} mb-4 leading-tight hover:text-gradient-elegant transition-colors duration-300 relative z-10`}>
                       {post.title}
                     </h3>
                     
@@ -139,7 +139,7 @@ export const Posts = () => {
                         {post.tags.slice(0, 2).map((tag) => (
                           <span 
                             key={tag} 
-                            className="px-3 py-1 bg-gray-800/60 text-gray-300 text-xs font-medium border border-gray-700/60 rounded-full hover:border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300"
+                            className="px-3 py-1 bg-gray-800/60 text-gray-300 text-xs font-medium border border-gray-700/60 rounded-full hover:border-rose-500/50 hover:bg-rose-500/10 transition-all duration-300"
                           >
                             {tag}
                           </span>
@@ -153,12 +153,12 @@ export const Posts = () => {
                       
                       <a 
                         href={post.link}
-                        className="inline-flex items-center space-x-2 group/link bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 hover:border-blue-500/50 px-4 py-2 rounded-lg transition-all duration-300"
+                        className="inline-flex items-center space-x-2 group/link bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 hover:border-emerald-500/50 px-4 py-2 rounded-lg transition-all duration-300"
                       >
-                        <span className="text-sm font-medium text-blue-300 group-hover/link:text-white transition-colors duration-300">
-                          Read More
+                        <span className="text-sm font-medium text-emerald-300 group-hover/link:text-white transition-colors duration-300">
+                          Devamını Oku
                         </span>
-                        <ArrowRight className="w-3 h-3 text-blue-400 group-hover/link:text-white group-hover/link:translate-x-1 transition-all duration-300" />
+                        <ArrowRight className="w-3 h-3 text-emerald-400 group-hover/link:text-white group-hover/link:translate-x-1 transition-all duration-300" />
                       </a>
                     </div>
                   </article>
@@ -168,14 +168,14 @@ export const Posts = () => {
                 <div className={`text-center pt-12 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
                   <a 
                     href="#" 
-                    className="inline-flex items-center space-x-3 group/more bg-gradient-to-r from-blue-600/20 to-indigo-600/20 border border-blue-500/30 hover:border-blue-500/50 px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 hover:transform hover:translate-y-[-2px]"
+                    className="inline-flex items-center space-x-3 group/more bg-gradient-to-r from-emerald-600/20 to-rose-600/20 border border-emerald-500/30 hover:border-emerald-500/50 px-6 py-3 rounded-xl hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 hover:transform hover:translate-y-[-2px]"
                   >
-                    <span className="text-base font-medium text-blue-300 group-hover/more:text-white transition-colors duration-300">
-                      All Posts
+                    <span className="text-base font-medium text-gradient-elegant group-hover/more:text-white transition-colors duration-300">
+                      Tüm Yazılar
                     </span>
                     <ArrowUpRight 
                       size={16} 
-                      className="text-blue-400 group-hover/more:text-white group-hover/more:transform group-hover/more:translate-x-1 group-hover/more:translate-y-[-1px] transition-all duration-300"
+                      className="text-emerald-400 group-hover/more:text-white group-hover/more:transform group-hover/more:translate-x-1 group-hover/more:translate-y-[-1px] transition-all duration-300"
                     />
                   </a>
                 </div>
