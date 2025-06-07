@@ -1,8 +1,8 @@
 
 export const portfolioContent = {
-  sectionNumber: "03 — Selected Projects",
+  sectionNumber: "02",
   title: {
-    main: "Featured",
+    main: "Selected",
     accent: "Projects"
   },
   description: "Showcasing my expertise in frontend development through innovative web applications and user-centric solutions.",
