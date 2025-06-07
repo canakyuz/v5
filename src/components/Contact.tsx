@@ -47,7 +47,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className={`${stylesContent.spacing.section.padding} ${stylesContent.spacing.content.padding} ${stylesContent.colors.background.main}`}>
+    <section id="contact" className={`${stylesContent.spacing.section.padding} ${stylesContent.spacing.content.padding} bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950`}>
       <div className={stylesContent.spacing.content.maxWidth}>
         <div className={stylesContent.grid.main}>
           {/* Left side - Header & Info */}

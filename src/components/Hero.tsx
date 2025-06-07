@@ -26,7 +26,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative min-h-screen bg-black overflow-hidden">
+    <section id="hero" className="relative min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950 overflow-hidden">
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0">
         <AnimatedBackground />
