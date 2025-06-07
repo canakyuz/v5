@@ -30,15 +30,15 @@ export const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-slate-900 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Proje Bulunamadı</h1>
           <button 
             onClick={() => navigate('/')}
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-yellow-600/20 to-rose-600/20 border border-yellow-500/30 hover:border-yellow-500/50 px-6 py-3 rounded-xl transition-all duration-300"
+            className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 hover:border-blue-500/50 px-6 py-3 rounded-xl transition-all duration-300"
           >
             <ArrowLeft size={16} />
-            <span className="text-yellow-300">Ana Sayfaya Dön</span>
+            <span className="text-blue-300">Ana Sayfaya Dön</span>
           </button>
         </div>
       </div>
@@ -46,20 +46,20 @@ export const ProjectDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-slate-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-gray-900 to-gray-950 relative overflow-hidden">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0">
         <div 
           className="absolute inset-0 opacity-20 transition-all duration-1000"
           style={{
-            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(234, 179, 8, 0.15) 0%, rgba(244, 63, 94, 0.1) 30%, rgba(34, 197, 94, 0.05) 60%, transparent 80%)`,
+            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.1) 30%, rgba(79, 70, 229, 0.05) 60%, transparent 80%)`,
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/10 via-rose-900/5 to-emerald-900/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/5 to-indigo-900/10" />
         <div 
           className="absolute inset-0 opacity-[0.02]"
           style={{
-            backgroundImage: `linear-gradient(rgba(234, 179, 8, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(234, 179, 8, 0.3) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)`,
             backgroundSize: '60px 60px',
           }}
         />
@@ -71,19 +71,19 @@ export const ProjectDetail = () => {
           <div className={`mb-12 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
             <button 
               onClick={() => navigate('/')}
-              className="inline-flex items-center space-x-3 group bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 hover:border-yellow-500/50 px-6 py-3 rounded-xl transition-all duration-300 hover:transform hover:translate-y-[-2px]"
+              className="inline-flex items-center space-x-3 group bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 hover:border-blue-500/50 px-6 py-3 rounded-xl transition-all duration-300 hover:transform hover:translate-y-[-2px]"
             >
-              <ArrowLeft size={16} className="text-yellow-400 group-hover:text-white group-hover:transform group-hover:translate-x-[-2px] transition-all duration-300" />
-              <span className="text-yellow-300 group-hover:text-white transition-colors duration-300">Geri Dön</span>
+              <ArrowLeft size={16} className="text-blue-400 group-hover:text-white group-hover:transform group-hover:translate-x-[-2px] transition-all duration-300" />
+              <span className="text-blue-300 group-hover:text-white transition-colors duration-300">Geri Dön</span>
             </button>
           </div>
 
           {/* Project Header */}
           <div className={`mb-16 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
             <div className="flex items-center space-x-4 mb-6">
-              <div className="w-12 h-px bg-gradient-to-r from-yellow-500 to-rose-500" />
-              <div className="bg-yellow-500/20 backdrop-blur-md border border-yellow-500/30 px-4 py-2 rounded-full">
-                <span className={`${fonts.mono} text-sm text-yellow-300 tracking-[0.2em] uppercase font-medium`}>
+              <div className="w-12 h-px bg-gradient-to-r from-blue-500 to-purple-500" />
+              <div className="bg-blue-500/20 backdrop-blur-md border border-blue-500/30 px-4 py-2 rounded-full">
+                <span className={`${fonts.mono} text-sm text-blue-300 tracking-[0.2em] uppercase font-medium`}>
                   Proje Detayı
                 </span>
               </div>
@@ -100,15 +100,15 @@ export const ProjectDetail = () => {
             {/* Project Meta Information */}
             <div className="flex flex-wrap gap-6 text-sm text-gray-400">
               <div className="flex items-center space-x-2">
-                <Calendar size={16} className="text-yellow-400" />
+                <Calendar size={16} className="text-blue-400" />
                 <span>{project.year}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Tag size={16} className="text-rose-400" />
+                <Tag size={16} className="text-purple-400" />
                 <span>{project.category}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Eye size={16} className="text-emerald-400" />
+                <Eye size={16} className="text-blue-400" />
                 <span>Proje Detayları</span>
               </div>
             </div>
@@ -116,7 +116,7 @@ export const ProjectDetail = () => {
 
           {/* Project Image */}
           <div className={`mb-16 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
-            <div className="relative group rounded-2xl overflow-hidden bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 hover:border-yellow-500/50 transition-all duration-500">
+            <div className="relative group rounded-2xl overflow-hidden bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 hover:border-blue-500/50 transition-all duration-500">
               <img 
                 src={`https://images.unsplash.com/${project.image}?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80`}
                 alt={project.title}
@@ -127,8 +127,8 @@ export const ProjectDetail = () => {
               
               {/* Floating Elements */}
               <div className="absolute top-6 right-6">
-                <div className="bg-yellow-500/20 backdrop-blur-md border border-yellow-500/30 px-4 py-2 rounded-full">
-                  <span className={`${fonts.mono} text-sm text-yellow-300 tracking-[0.1em] uppercase`}>
+                <div className="bg-blue-500/20 backdrop-blur-md border border-blue-500/30 px-4 py-2 rounded-full">
+                  <span className={`${fonts.mono} text-sm text-blue-300 tracking-[0.1em] uppercase`}>
                     {project.category}
                   </span>
                 </div>
@@ -147,9 +147,9 @@ export const ProjectDetail = () => {
                 {project.technologies.map((tech, index) => (
                   <div 
                     key={tech}
-                    className="flex items-center space-x-3 p-4 bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-xl hover:border-rose-500/50 transition-all duration-300"
+                    className="flex items-center space-x-3 p-4 bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-xl hover:border-purple-500/50 transition-all duration-300"
                   >
-                    <div className="w-2 h-2 bg-rose-400 rounded-full"></div>
+                    <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
                     <span className="text-gray-300 font-medium">{tech}</span>
                   </div>
                 ))}
@@ -165,9 +165,9 @@ export const ProjectDetail = () => {
                 {["Modern UI/UX Tasarım", "Responsive Design", "Performance Optimizasyonu", "SEO Uyumlu"].map((feature, index) => (
                   <div 
                     key={feature}
-                    className="flex items-center space-x-3 p-4 bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-xl hover:border-emerald-500/50 transition-all duration-300"
+                    className="flex items-center space-x-3 p-4 bg-gray-800/40 backdrop-blur-sm border border-gray-700/60 rounded-xl hover:border-blue-500/50 transition-all duration-300"
                   >
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
                     <span className="text-gray-300 font-medium">{feature}</span>
                   </div>
                 ))}
@@ -225,14 +225,14 @@ export const ProjectDetail = () => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-3 group bg-gradient-to-r from-yellow-600/20 to-rose-600/20 border border-yellow-500/30 hover:border-yellow-500/50 px-8 py-4 rounded-xl hover:shadow-2xl hover:shadow-yellow-500/20 transition-all duration-300 hover:transform hover:translate-y-[-4px]"
+              className="inline-flex items-center space-x-3 group bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 hover:border-blue-500/50 px-8 py-4 rounded-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:transform hover:translate-y-[-4px]"
             >
               <span className="text-lg font-medium text-gradient-elegant">
                 Projeyi İncele
               </span>
               <ExternalLink 
                 size={20} 
-                className="text-yellow-400 group-hover:text-white group-hover:transform group-hover:translate-x-1 group-hover:translate-y-[-1px] transition-all duration-300"
+                className="text-blue-400 group-hover:text-white group-hover:transform group-hover:translate-x-1 group-hover:translate-y-[-1px] transition-all duration-300"
               />
             </a>
           </div>
