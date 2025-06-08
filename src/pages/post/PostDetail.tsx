@@ -70,7 +70,7 @@ export const PostDetail = () => {
               <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 dark:text-gray-500 light:text-gray-600 mb-6">
                 <div className="flex items-center space-x-2">
                   <User size={16} className="text-blue-400" />
-                  <span>Bekircan Akyüz</span>
+                  <span>Can Akyüz</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Calendar size={16} className="text-blue-400" />

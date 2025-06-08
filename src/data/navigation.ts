@@ -1,6 +1,6 @@
 
 export const navigationContent = {
-  brand: "Bekircan Akyüz",
+  brand: "Can Akyüz",
   menu: {
     home: "Home",
     about: "About",

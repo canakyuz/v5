@@ -27,6 +27,9 @@ export default {
 				'display': ['Inter', 'system-ui', 'sans-serif'], // For large headings
 				'playfair': ['"Playfair Display"', 'serif'],
 				'space-grotesk': ['"Space Grotesk"', 'sans-serif'],
+				'montserrat': ['Montserrat', 'system-ui', 'sans-serif'],
+				'primary': ['Inter', 'system-ui', 'sans-serif'], // Main modern font
+				'heading': ['Montserrat', 'system-ui', 'sans-serif'], // Modern heading font
 			},
 			colors: {
 				border: 'hsl(var(--border))',
