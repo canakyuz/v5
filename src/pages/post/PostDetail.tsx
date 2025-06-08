@@ -1,9 +1,13 @@
-
 import { useParams, useNavigate } from "react-router-dom";
 import { postsContent } from "@/content/posts";
 import { stylesContent } from "@/content/styles";
 import { ArrowLeft, Calendar, Clock, Tag, User } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 export const PostDetail = () => {
   const { id } = useParams();
@@ -164,3 +168,5 @@ export const PostDetail = () => {
     </div>
   );
 };
+
+export default PostDetail;

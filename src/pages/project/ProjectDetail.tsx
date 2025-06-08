@@ -1,9 +1,12 @@
-
 import { useParams, useNavigate } from "react-router-dom";
 import { portfolioContent } from "@/content/portfolio";
 import { stylesContent } from "@/content/styles";
 import { ArrowLeft, ExternalLink, Calendar, Tag } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 export const ProjectDetail = () => {
   const { id } = useParams();
@@ -184,3 +187,5 @@ export const ProjectDetail = () => {
     </div>
   );
 };
+
+export default ProjectDetail;

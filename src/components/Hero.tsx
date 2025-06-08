@@ -1,6 +1,5 @@
-
+import React from "react";
 import { heroContent } from "@/content/hero";
-import { stylesContent } from "@/content/styles";
 import { ArrowDown, ArrowRight, Sparkles } from "lucide-react";
 import { GradientText } from "./GradientText";
 import { useEffect, useState } from "react";

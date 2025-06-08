@@ -1,3 +1,4 @@
+
 export const stylesContent = {
   // Modern font ailesi tanımları
   fonts: {
@@ -6,25 +7,25 @@ export const stylesContent = {
     mono: "font-mono", // Monospace metinler için JetBrains Mono
   },
   
-  // Modern renk paleti - Tema desteği
+  // Modern renk paleti - Dark theme
   colors: {
     primary: {
-      main: "text-gray-900 dark:text-white",
-      light: "text-gray-600 dark:text-gray-300",
-      lighter: "text-gray-500 dark:text-gray-400",
-      accent: "text-gray-600 dark:text-gray-500"
+      main: "text-white",
+      light: "text-gray-300",
+      lighter: "text-gray-400",
+      accent: "text-gray-500"
     },
     background: {
-      main: "bg-white dark:bg-black",
-      light: "bg-gray-100 dark:bg-gray-900",
-      lighter: "bg-gray-200/50 dark:bg-gray-800/50",
-      card: "bg-white/70 dark:bg-gray-900/50",
-      cardHover: "bg-gray-100/70 dark:bg-gray-800/70"
+      main: "bg-black",
+      light: "bg-gray-900",
+      lighter: "bg-gray-800/50",
+      card: "bg-gray-900/50",
+      cardHover: "bg-gray-800/70"
     },
     border: {
-      light: "border-gray-200 dark:border-gray-800",
-      medium: "border-gray-300 dark:border-gray-700",
-      dark: "border-gray-400 dark:border-gray-600"
+      light: "border-gray-800",
+      medium: "border-gray-700",
+      dark: "border-gray-600"
     }
   },
   
@@ -36,7 +37,7 @@ export const stylesContent = {
       description: "text-xl md:text-2xl lg:text-3xl"
     },
     section: {
-      title: "text-4xl md:text-6xl lg:text-6xl",
+      title: "text-4xl md:text-6xl lg:text-8xl",
       subtitle: "text-2xl md:text-4xl",
       description: "text-base md:text-lg",
       small: "text-xs"
@@ -51,8 +52,8 @@ export const stylesContent = {
   // Enhanced spacing değerleri
   spacing: {
     section: {
-      padding: "py-8 md:py-16",
-      margin: "space-y-6 md:space-y-12"
+      padding: "py-20 md:py-32",
+      margin: "space-y-12 md:space-y-20"
     },
     content: {
       padding: "px-6 md:px-8",
@@ -72,7 +73,7 @@ export const stylesContent = {
     hover: {
       scale: "hover:scale-105",
       translate: "hover:transform hover:translate-y-[-4px]",
-      color: "hover:text-blue-600 dark:hover:text-white",
+      color: "hover:text-white",
       shadow: "hover:shadow-2xl hover:shadow-blue-500/25"
     },
     transition: {
@@ -85,8 +86,8 @@ export const stylesContent = {
   // Modern button stilleri
   buttons: {
     primary: "bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 hover:scale-105",
-    secondary: "border border-gray-300 dark:border-gray-600 rounded-xl hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300",
-    icon: "w-10 h-10 border border-gray-300 dark:border-gray-600 rounded-xl flex items-center justify-center hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300"
+    secondary: "border border-gray-600 rounded-xl hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300",
+    icon: "w-10 h-10 border border-gray-600 rounded-xl flex items-center justify-center hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300"
   },
   
   // Enhanced grid sistemi
@@ -99,9 +100,9 @@ export const stylesContent = {
   
   // Modern card stilleri
   cards: {
-    post: "group relative bg-white/70 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-800 rounded-2xl p-8 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 hover:transform hover:translate-y-[-4px]",
-    project: "group relative bg-white/70 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:transform hover:translate-y-[-4px] grid grid-cols-1 md:grid-cols-5 gap-0 h-[480px] md:h-[360px]",
-    projectImage: "relative md:col-span-2 overflow-hidden bg-gray-100 dark:bg-gray-800 h-full w-full",
+    post: "group relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 hover:transform hover:translate-y-[-4px]",
+    project: "group relative bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl overflow-hidden hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:transform hover:translate-y-[-4px] grid grid-cols-1 md:grid-cols-5 gap-0 h-[480px] md:h-[360px]",
+    projectImage: "relative md:col-span-2 overflow-hidden bg-gray-800 h-full w-full",
     projectContent: "p-8 space-y-6 md:col-span-3 flex flex-col justify-between h-full min-h-0"
   },
 

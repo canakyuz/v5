@@ -1,4 +1,51 @@
-# Welcome to your Lovable project
+# Online Style Studio
+
+## Proje Yapısı
+
+```
+src/
+├── assets/           # Resimler, ikonlar ve diğer medya dosyaları
+│   ├── images/       # Projede kullanılan görsel dosyalar
+│   └── icons/        # Özel ikonlar
+├── components/       # Yeniden kullanılabilir UI bileşenleri
+│   ├── ui/           # Shadcn UI bileşenleri
+│   └── common/       # Genel kullanım için özel bileşenler
+├── contexts/         # React context'leri
+├── data/             # Statik veri ve içerik dosyaları
+├── features/         # Özellik odaklı bileşenler
+│   ├── about/        # Hakkında bölümü ile ilgili bileşenler
+│   ├── contact/      # İletişim bölümü ile ilgili bileşenler
+│   ├── hero/         # Ana sayfa hero bölümü ile ilgili bileşenler
+│   ├── portfolio/    # Portfolyo bölümü ile ilgili bileşenler
+│   └── posts/        # Blog yazıları ile ilgili bileşenler
+├── hooks/            # Özel React hook'ları
+├── layouts/          # Sayfa düzenleri ve yapısal bileşenler
+│   ├── navigation/   # Navigasyon ile ilgili bileşenler
+│   └── footer/       # Footer ile ilgili bileşenler
+├── pages/            # Sayfalar
+│   ├── post/         # Blog yazısı detay sayfası
+│   └── project/      # Proje detay sayfası
+├── services/         # API istekleri ve harici servisler
+├── types/            # TypeScript tip tanımlamaları
+└── utils/            # Yardımcı fonksiyonlar ve araçlar
+```
+
+## Kurulum
+
+```bash
+npm install
+npm run dev
+```
+
+## Kullanılan Teknolojiler
+
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- Shadcn UI
+- React Router
+- React Query
 
 ## Project info
 
