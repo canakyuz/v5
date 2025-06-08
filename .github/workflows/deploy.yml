@@ -32,11 +32,12 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ZemaM-AC2dWX-z7rNnG
-          accountId: 865875349ebed4d48445e79e01c9ba0
-          projectName: v5 # Cloudflare Pages proje adınızı burada güncelleyin
-          directory: dist # Vite projesi için build çıktı klasörü
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }} 
+      - name: Install Wrangler
+        run: npm install -g wrangler
+
+      - name: Deploy to Cloudflare Pages with Wrangler
+        env:
+          CLOUDFLARE_API_TOKEN: ZemaM-AC2dWX-z7rNnG
+        run: |
+          # Direct upload to Cloudflare Pages
+          wrangler pages deploy dist --project-name=canakyuz-portfolio --commit-message="Deploy from GitHub Actions" --branch=main 
