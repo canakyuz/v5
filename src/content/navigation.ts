@@ -1,7 +1,7 @@
 
 export const navigationContent = {
   brand: "",
-  brandLogo: "../../../public/logo.svg",
+  brandLogo: "/logo.svg",
   menu: {
     home: "Home",
     about: "About",
