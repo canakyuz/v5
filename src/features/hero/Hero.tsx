@@ -209,7 +209,7 @@ export const Hero = () => {
 
               <div>
                 <span className="font-space-grotesk text-xs font-mono text-gray-600 dark:text-gray-400 tracking-wider uppercase">
-                  2024
+                  2025
                 </span>
               </div>
             </div>

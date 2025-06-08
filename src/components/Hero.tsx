@@ -152,7 +152,7 @@ export const Hero = () => {
 
             <div className="hidden md:block">
               <span className="text-xs font-mono text-gray-400 tracking-[0.3em] uppercase">
-                2024
+                2025
               </span>
             </div>
           </div>

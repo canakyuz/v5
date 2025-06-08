@@ -16,5 +16,5 @@ export const heroContent = {
       label: "CONTACT"
     }
   },
-  sideText: "PORTFOLIO — 2024"
+  sideText: "PORTFOLIO — 2025"
 };

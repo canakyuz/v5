@@ -14,7 +14,7 @@ export const portfolioContent = {
       description: "A web application where I perform API integrations using Next.js and Tailwind CSS and monitor the database with Prisma. Built with modern technologies for seamless user experience.",
       image: "photo-1721322800607-8c38375eef04",
       technologies: ["Next.js", "Tailwind CSS", "Prisma", "TypeScript"],
-      year: "2024",
+      year: "2025",
       category: "SaaS",
       link: "#"
     },
@@ -25,7 +25,7 @@ export const portfolioContent = {
       description: "An end-to-end full-stack application with a convenient concept style editor, cover images, nested documents, public publishing of documents, real-time database and more.",
       image: "photo-1649972904349-6e44c42644a7",
       technologies: ["React", "Node.js", "Real-time DB", "TypeScript"],
-      year: "2024",
+      year: "2025",
       category: "Productivity",
       link: "#"
     },
@@ -36,7 +36,7 @@ export const portfolioContent = {
       description: "Developed integrated web applications using Vue.js and modern PHP technologies. Created comprehensive user management systems by implementing TypeScript for code security.",
       image: "photo-1605810230434-7631ac76ec81",
       technologies: ["Vue.js", "PHP", "TypeScript", "SCSS"],
-      year: "2024",
+      year: "2025",
       category: "Enterprise",
       link: "#"
     }
