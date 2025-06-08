@@ -24,13 +24,13 @@ export const ProjectDetail = () => {
     return (
       <div className="min-h-screen bg-gray-950 dark:bg-gray-950 light:bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-white dark:text-white light:text-gray-900 mb-4">Proje Bulunamadı</h1>
+          <h1 className="text-4xl font-bold text-white dark:text-white light:text-gray-900 mb-4">Project Not Found</h1>
           <button 
             onClick={() => navigate('/')}
             className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-lg"
           >
             <ArrowLeft size={16} />
-            <span className="text-blue-400">Ana Sayfaya Dön</span>
+            <span className="text-blue-400">Return to Home</span>
           </button>
         </div>
       </div>
@@ -41,13 +41,13 @@ export const ProjectDetail = () => {
     <div className="min-h-screen bg-gray-950 dark:bg-gray-950 light:bg-gray-50">
       <div className={`${spacing.section.padding} ${spacing.content.padding}`}>
         <div className={spacing.content.maxWidth}>
-          <div className={`mb-8 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
+          <div className={`mb-8 mt-16 relative z-10 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
             <button 
               onClick={() => navigate('/')}
               className="inline-flex items-center space-x-2 bg-gray-900/40 dark:bg-gray-900/40 light:bg-white/50 border border-gray-800/60 dark:border-gray-800/60 light:border-gray-200 hover:border-blue-500/40 px-4 py-2 rounded-lg transition-all duration-300"
             >
               <ArrowLeft size={16} className="text-blue-400" />
-              <span className="text-gray-400 dark:text-gray-400 light:text-gray-600">Geri Dön</span>
+              <span className="text-gray-400 dark:text-gray-400 light:text-gray-600">Go Back</span>
             </button>
           </div>
 
@@ -56,14 +56,14 @@ export const ProjectDetail = () => {
               <div className="w-8 h-px bg-blue-500/60" />
               <div className="bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-md">
                 <span className={`${fonts.mono} text-sm text-blue-400 tracking-wide uppercase`}>
-                  Proje Detayı
+                  Project Details
                 </span>
               </div>
             </div>
             
-            <h1 className={`${typography.hero.subtitle} ${fonts.primary} font-light text-white dark:text-white light:text-gray-900 leading-[0.9] mb-6`}>
+            <h4 className={`${typography.section.title} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 leading-tight mb-6`}>
               {project.title}
-            </h1>
+            </h4>
             
             <p className={`${typography.section.description} ${fonts.secondary} font-light text-gray-400 dark:text-gray-400 light:text-gray-600 leading-relaxed max-w-3xl mb-6`}>
               {project.description}
@@ -101,8 +101,8 @@ export const ProjectDetail = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
-              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-4`}>
-                Teknolojiler
+              <h3 className={`${typography.section.subtitle} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-4`}>
+                Technologies
               </h3>
               <div className="space-y-2">
                 {project.technologies.map((tech) => (
@@ -118,8 +118,8 @@ export const ProjectDetail = () => {
             </div>
 
             <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.7s' }}>
-              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-4`}>
-                Özellikler
+              <h3 className={`${typography.section.subtitle} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-4`}>
+                Features
               </h3>
               <div className="space-y-2">
                 {["Modern UI/UX", "Responsive", "Performance", "SEO"].map((feature) => (
@@ -135,17 +135,17 @@ export const ProjectDetail = () => {
             </div>
 
             <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.8s' }}>
-              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-4`}>
-                İstatistikler
+              <h3 className={`${typography.section.subtitle} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-4`}>
+                Statistics
               </h3>
               <div className="space-y-3">
                 <div className="p-3 bg-gray-900/30 dark:bg-gray-900/30 light:bg-white/50 border border-gray-800/60 dark:border-gray-800/60 light:border-gray-200 rounded-lg">
                   <div className="text-xl font-bold text-blue-400 mb-1">100%</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-500 light:text-gray-600">Tamamlandı</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-500 light:text-gray-600">Completed</div>
                 </div>
                 <div className="p-3 bg-gray-900/30 dark:bg-gray-900/30 light:bg-white/50 border border-gray-800/60 dark:border-gray-800/60 light:border-gray-200 rounded-lg">
                   <div className="text-xl font-bold text-blue-400 mb-1">{project.year}</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-500 light:text-gray-600">Proje Yılı</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-500 light:text-gray-600">Project Year</div>
                 </div>
               </div>
             </div>
@@ -153,17 +153,17 @@ export const ProjectDetail = () => {
 
           <div className={`mb-12 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.9s' }}>
             <div className="bg-gray-900/30 dark:bg-gray-900/30 light:bg-white/50 border border-gray-800/60 dark:border-gray-800/60 light:border-gray-200 rounded-xl p-6">
-              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-4`}>
-                Proje Hakkında
+              <h3 className={`${typography.section.subtitle} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-4`}>
+                About the Project
               </h3>
               <div className="prose prose-invert dark:prose-invert light:prose max-w-none">
                 <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 leading-relaxed mb-4">
-                  Bu proje, modern web teknolojileri kullanılarak geliştirilmiş kapsamlı bir web uygulamasıdır. 
-                  Kullanıcı deneyimini ön planda tutarak, hem görsel hem de fonksiyonel açıdan mükemmel bir sonuç elde edilmiştir.
+                  This project is a comprehensive web application developed using modern web technologies.
+                  With a focus on user experience, an excellent result has been achieved both visually and functionally.
                 </p>
                 <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 leading-relaxed">
-                  Performance optimizasyonu ve SEO uyumluluğu göz önünde bulundurularak geliştirilmiş bu proje, 
-                  modern web standartlarını karşılamaktadır.
+                  Developed with performance optimization and SEO compatibility in mind, this project
+                  meets modern web standards.
                 </p>
               </div>
             </div>
@@ -177,7 +177,7 @@ export const ProjectDetail = () => {
               className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 hover:border-blue-500/40 px-6 py-3 rounded-lg transition-all duration-300"
             >
               <span className="text-blue-400">
-                Projeyi İncele
+                View Project
               </span>
               <ExternalLink size={16} className="text-blue-400" />
             </a>

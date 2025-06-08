@@ -25,13 +25,13 @@ export const PostDetail = () => {
     return (
       <div className="min-h-screen bg-gray-950 dark:bg-gray-950 light:bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-white dark:text-white light:text-gray-900 mb-4">Yazı Bulunamadı</h1>
+          <h1 className="text-4xl font-bold text-white dark:text-white light:text-gray-900 mb-4">Post Not Found</h1>
           <button 
             onClick={() => navigate('/')}
             className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-lg"
           >
             <ArrowLeft size={16} />
-            <span className="text-blue-400">Ana Sayfaya Dön</span>
+            <span className="text-blue-400">Return to Home</span>
           </button>
         </div>
       </div>
@@ -42,13 +42,13 @@ export const PostDetail = () => {
     <div className="min-h-screen bg-gray-950 dark:bg-gray-950 light:bg-gray-50">
       <div className={`${spacing.section.padding} ${spacing.content.padding}`}>
         <div className={spacing.content.maxWidth}>
-          <div className={`mb-8 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
+          <div className={`mb-8 mt-16 relative z-10 ${isLoaded ? 'animate-fade-in' : 'opacity-0'}`}>
             <button 
               onClick={() => navigate('/')}
               className="inline-flex items-center space-x-2 bg-gray-900/40 dark:bg-gray-900/40 light:bg-white/50 border border-gray-800/60 dark:border-gray-800/60 light:border-gray-200 hover:border-blue-500/40 px-4 py-2 rounded-lg transition-all duration-300"
             >
               <ArrowLeft size={16} className="text-blue-400" />
-              <span className="text-gray-400 dark:text-gray-400 light:text-gray-600">Geri Dön</span>
+              <span className="text-gray-400 dark:text-gray-400 light:text-gray-600">Go Back</span>
             </button>
           </div>
 
@@ -63,7 +63,7 @@ export const PostDetail = () => {
                 </div>
               </div>
               
-              <h1 className={`${typography.hero.subtitle} ${fonts.primary} font-light text-white dark:text-white light:text-gray-900 leading-[0.9] mb-6`}>
+              <h1 className={`${typography.section.title} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 leading-tight mb-6`}>
                 {post.title}
               </h1>
               
@@ -101,41 +101,40 @@ export const PostDetail = () => {
             <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.4s' }}>
               <div className="bg-gray-900/30 dark:bg-gray-900/30 light:bg-white/50 border border-gray-800/60 dark:border-gray-800/60 light:border-gray-200 rounded-xl p-6 mb-12">
                 <div className="prose prose-invert dark:prose-invert light:prose max-w-none">
-                  <h2 className="text-white dark:text-white light:text-gray-900">Giriş</h2>
+                  <h2 className="text-2xl font-medium text-white dark:text-white light:text-gray-900 mb-4">Introduction</h2>
                   <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 leading-relaxed mb-6">
-                    Bu yazıda, {post.title.toLowerCase()} konusunu detaylı bir şekilde ele alacağız. 
-                    Modern web geliştirme dünyasında bu konu oldukça önemli bir yere sahip ve günümüzde 
-                    birçok geliştirici tarafından aktif olarak kullanılmaktadır.
+                    In this article, we will explore {post.title.toLowerCase()} in detail. 
+                    This topic holds significant importance in the modern web development world and is 
+                    actively used by many developers today.
                   </p>
                   
-                  <h2 className="text-white dark:text-white light:text-gray-900">Ana Konular</h2>
+                  <h2 className="text-2xl font-medium text-white dark:text-white light:text-gray-900 mb-4">Main Topics</h2>
                   <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 leading-relaxed mb-6">
-                    {post.excerpt} Bu yaklaşım, hem performans hem de kullanıcı deneyimi açısından 
-                    önemli avantajlar sağlamaktadır. Özellikle büyük ölçekli projelerde bu yöntemlerin 
-                    uygulanması kritik önem taşımaktadır.
+                    {post.excerpt} This approach provides important advantages in terms of both performance 
+                    and user experience. Implementing these methods is especially critical in large-scale projects.
                   </p>
 
-                  <h3 className="text-white dark:text-white light:text-gray-900">Temel Prensipler</h3>
-                  <ul className="text-gray-400 dark:text-gray-400 light:text-gray-600 mb-6">
-                    <li>Modern teknolojilerin etkin kullanımı</li>
-                    <li>Performans optimizasyonu</li>
-                    <li>Kullanıcı deneyimi odaklı yaklaşım</li>
-                    <li>Sürdürülebilir kod yapısı</li>
+                  <h3 className="text-xl font-medium text-white dark:text-white light:text-gray-900 mb-3">Core Principles</h3>
+                  <ul className="text-gray-400 dark:text-gray-400 light:text-gray-600 mb-6 pl-5 space-y-2">
+                    <li>Effective use of modern technologies</li>
+                    <li>Performance optimization</li>
+                    <li>User experience-focused approach</li>
+                    <li>Sustainable code structure</li>
                   </ul>
 
-                  <h2 className="text-white dark:text-white light:text-gray-900">Sonuç</h2>
+                  <h2 className="text-2xl font-medium text-white dark:text-white light:text-gray-900 mb-4">Conclusion</h2>
                   <p className="text-gray-400 dark:text-gray-400 light:text-gray-600 leading-relaxed">
-                    Bu yazıda ele aldığımız konular, modern web geliştirme süreçlerinde oldukça önemli 
-                    bir yere sahiptir. Bu yöntemleri projelerinizde uygulayarak daha kaliteli ve 
-                    sürdürülebilir çözümler geliştirebilirsiniz.
+                    The topics covered in this article hold significant importance in modern web development processes. 
+                    By implementing these methods in your projects, you can develop higher quality and 
+                    more sustainable solutions.
                   </p>
                 </div>
               </div>
             </div>
 
             <div className={`${isLoaded ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.6s' }}>
-              <h3 className={`${typography.post.title} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-6`}>
-                İlgili Yazılar
+              <h3 className={`${typography.section.subtitle} ${fonts.primary} font-medium text-white dark:text-white light:text-gray-900 mb-4`}>
+                Related Posts
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {postsContent.posts.filter(p => p.id !== post.id).slice(0, 2).map((relatedPost) => (
@@ -156,7 +155,7 @@ export const PostDetail = () => {
                       onClick={() => navigate(`/post/${relatedPost.id}`)}
                       className="text-sm text-blue-400 hover:text-blue-300 transition-colors duration-300"
                     >
-                      Devamını Oku →
+                      Read More →
                     </button>
                   </div>
                 ))}
