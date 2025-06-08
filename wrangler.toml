@@ -1,4 +1,4 @@
-name = "canakyuz-dev"
+name = "canakyuz.dev"
 main = "./dist/index.html"
 compatibility_date = "2023-10-30"
 
@@ -13,9 +13,9 @@ command = "npm run build"
 upload.format = "service-worker"
 
 [env.production]
-name = "canakyuz-dev"
+name = "canakyuz.dev"
 route = "canakyuz.dev/*"
 
 [env.staging]
-name = "canakyuz-dev-staging"
+name = "canakyuz.dev-staging"
 route = "staging.canakyuz.dev/*" 
