@@ -13,10 +13,8 @@ dist
 dist-ssr
 *.local
 
-# Cloudflare specific
-.wrangler
-.dev.vars
-.env
+# Vercel
+.vercel
 
 # Editor directories and files
 .vscode/*
