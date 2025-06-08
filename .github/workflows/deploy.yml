@@ -35,7 +35,7 @@ jobs:
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ZemaM-AC2dWX-z7rNnG
           accountId: 865875349ebed4d48445e79e01c9ba0
           projectName: canakyuz-dev # Cloudflare Pages proje adınız
           directory: dist # Vite projesi için build çıktı klasörü
