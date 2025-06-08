@@ -25,6 +25,8 @@ export default {
 				'inter': ['Inter', 'system-ui', 'sans-serif'],
 				'departure': ['JetBrains Mono', 'monospace'],
 				'display': ['Inter', 'system-ui', 'sans-serif'], // For large headings
+				'playfair': ['"Playfair Display"', 'serif'],
+				'space-grotesk': ['"Space Grotesk"', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

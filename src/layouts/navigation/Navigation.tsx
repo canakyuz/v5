@@ -20,7 +20,7 @@ export const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-6">
         <div className="flex items-center justify-between">
           <div className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white font-display">
-            {navigationContent.brand}
+            <img src={navigationContent.brandLogo} alt="Bekircan Akyüz" className="w-10 h-10" />
           </div>
           
           {/* Desktop Menu */}

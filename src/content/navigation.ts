@@ -1,6 +1,7 @@
 
 export const navigationContent = {
-  brand: "Bekircan Akyüz",
+  brand: "",
+  brandLogo: "../../../public/logo.svg",
   menu: {
     home: "Home",
     about: "About",
