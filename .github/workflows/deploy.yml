@@ -1,0 +1,36 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main # Ana branch'e her push yapıldığında çalışacak
+  workflow_dispatch: # Manuel olarak çalıştırılabilir
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy to Cloudflare Pages
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 865875349ebed4d48445e79e01c9ba0
+          projectName: canakyuz-dev # Cloudflare Pages proje adınız
+          directory: dist # Vite projesi için build çıktı klasörü
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }} 

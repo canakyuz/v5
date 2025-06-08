@@ -12,7 +12,7 @@ export const Hero = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative overflow-hidden">
+    <section id="hero" className="relative overflow-hidden pt-16 md:pt-20">
       {/* Subtle Mathematical Background Pattern */}
       <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden z-0">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBzdHJva2U9IiMyMDIwMjAiIHN0cm9rZS13aWR0aD0iMC4yNSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIwLjUiLz48L2c+PC9zdmc+')] opacity-10 dark:opacity-5"></div>
@@ -21,7 +21,7 @@ export const Hero = () => {
 
       <div className="container px-4 mx-auto">
         {/* Main Content */}
-        <div className="relative z-10 min-h-screen flex items-center">
+        <div className="relative z-10 min-h-[calc(100vh-4rem)] flex items-center">
           <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-12 w-full">
             
             {/* Professional Badge */}

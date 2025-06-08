@@ -1,0 +1,21 @@
+name = "canakyuz-dev"
+main = "./dist/index.html"
+compatibility_date = "2023-10-30"
+
+account_id = "865875349ebed4d48445e79e01c9ba0"
+zone_id = "2829e954edb43721f256b29742499c6"
+
+[site]
+bucket = "./dist"
+
+[build]
+command = "npm run build"
+upload.format = "service-worker"
+
+[env.production]
+name = "canakyuz-dev"
+route = "canakyuz.dev/*"
+
+[env.staging]
+name = "canakyuz-dev-staging"
+route = "staging.canakyuz.dev/*" 
